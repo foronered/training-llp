@@ -7,7 +7,7 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color: blue;
 `
 
@@ -17,10 +17,12 @@ const RedBox = styled.div`
   background-color: red;
 `
 
-export const Module1 = () => {
+export const Module2 = () => {
   return (
     <ModuleWrapper>
       <Container>
+        <RedBox />
+        <RedBox />
         <RedBox />
       </Container>
     </ModuleWrapper>
