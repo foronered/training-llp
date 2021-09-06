@@ -11,12 +11,11 @@ const Container = styled.div`
 
 // Navbar
 const RedBox = styled.div`
-  width: 300px;
+  width: 304px;
   height: 100%;
   background-color: red;
   padding: 8px;
 `
-
 
 const BlueBox = styled.div`
   flex: 1;
@@ -33,8 +32,7 @@ const ViewContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
-  padding: 8px 16px;
-  padding-bottom: 0px;
+  padding: 8px 16px 0 16px;
 `
 
 const PurpleBox = styled.div`
@@ -47,12 +45,11 @@ const PurpleBox = styled.div`
   background-color: purple;
   padding: 8px;
 `
-// Why does align-items not work here?
 
 // Why can't I replace width with flex here?
 
 const RedWidebox = styled.div`
-  flex: 1;
+  width: 100%;
   height: 144px;
   background-color: red;
   margin-bottom: 8px;
@@ -66,6 +63,7 @@ const RedSquare = styled.div`
 export const Module10 = () => {
   return (
     <ModuleWrapper>
+      <p>Module 10</p>
       <Container>
         <RedBox>
           <BlueBox />

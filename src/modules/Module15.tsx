@@ -67,7 +67,7 @@ const GreenBox = styled.div`
   margin-bottom: 8px;
 `
 
-const GreenBoxes = 18;
+const GreenBoxes = 18
 
 // Contentview
 
@@ -110,8 +110,7 @@ const RedSquare = styled.div`
   background-color: red;
   margin-right: 8px;
 `
-const RedSquares = 4;
-
+const RedSquares = 4
 
 const ContentView = styled.div`
   flex: 1;
@@ -127,7 +126,7 @@ const BlueSquareContent = styled.div`
   background-color: lightblue;
   margin: 24px;
 `
-const BlueSquares = 36;
+const BlueSquares = 36
 
 export const Module15 = () => {
   return (
@@ -139,7 +138,9 @@ export const Module15 = () => {
             <BlueSquare />
           </PinkBox>
           <RedBox>
-            {[...Array(GreenBoxes)].map((_, i) => <GreenBox key={i} />)}
+            {[...Array(GreenBoxes)].map((_, i) => (
+              <GreenBox key={i} />
+            ))}
           </RedBox>
           <OrangeBox>
             <BlueSquare />
@@ -150,12 +151,16 @@ export const Module15 = () => {
           <OrangeBar>
             <RedNav />
             <BlueNav>
-              {[...Array(RedSquares)].map((_, i) => <RedSquare key={i} />)}
+              {[...Array(RedSquares)].map((_, i) => (
+                <RedSquare key={i} />
+              ))}
             </BlueNav>
           </OrangeBar>
-        <ContentView>
-          {[...Array(BlueSquares)].map((_, i) => <BlueSquareContent key={i} />)}
-        </ContentView>
+          <ContentView>
+            {[...Array(BlueSquares)].map((_, i) => (
+              <BlueSquareContent key={i} />
+            ))}
+          </ContentView>
         </ContentViewBar>
       </Container>
     </ModuleWrapper>

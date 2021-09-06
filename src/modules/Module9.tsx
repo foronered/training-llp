@@ -12,7 +12,7 @@ const Container = styled.div`
 
 // Navbar
 const RedBox = styled.div`
-  flex: 0 0 300px;
+  flex: 0 0 304px;
   height: 100%;
   background-color: red;
 `
@@ -54,7 +54,7 @@ const RedSquare = styled.div`
   background-color: red;
   margin-right: 8px;
 
-  &:last-child { margin-right: 0px}
+  &:last-child { margin-right: 0px};
 `
 
 export const Module9 = () => {

@@ -17,7 +17,7 @@ const GreenBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 16px 0px 16px;
+  padding: 0px 16px;
 `
 
 const PinkSquare = styled.div`
@@ -57,7 +57,7 @@ const OrangeBox = styled.div`
   margin-bottom: 8px;
 `
 
-const blueBoxes = 12;
+const blueBoxes = 12
 
 // How to get pinksquare on the bottom to the left? Create new container?
 
@@ -72,7 +72,12 @@ export const Module14 = () => {
           <PinkBox />
         </GreenBox>
         <RedBox>
-          {[...Array(blueBoxes)].map((_, i) => <BlueBox key={i} > <OrangeBox /> </BlueBox>)}
+          {[...Array(blueBoxes)].map((_, i) => (
+            <BlueBox key={i}>
+              {' '}
+              <OrangeBox />{' '}
+            </BlueBox>
+          ))}
         </RedBox>
         <GreenBox>
           <PinkBox />

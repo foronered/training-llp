@@ -10,7 +10,7 @@ const Container = styled.div`
   padding: 8px 16px;
 `
 const RedBox = styled.div`
-  flex: 0 0 300px;
+  flex: 0 0 304px;
   height: 100%;
   background-color: red;
 `

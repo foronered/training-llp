@@ -41,7 +41,7 @@ const GreenBox = styled.div`
 
 const OrangeBox = styled.div`
   width: 100%;
-  height: 128px;
+  flex: 0 0 128px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -65,21 +65,21 @@ const ContentViewBar = styled.div`
   flex-direction: column;
 `
 
-const BarLeft = styled.div`
-  flex: 1;
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`
+// const BarLeft = styled.div`
+//   flex: 1;
+//   height: 100%;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+// `
 
-const BarRight = styled.div`
-  flex: 1;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`
+// const BarRight = styled.div`
+//   flex: 1;
+//   height: 100%;
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+// `
 
 const OrangeBar = styled.div`
   width: 100%;
@@ -87,6 +87,7 @@ const OrangeBar = styled.div`
   display: flex;
   background-color: orange;
   padding: 8px;
+  align-items: center;
 `
 
 const RedNav = styled.div`
@@ -95,6 +96,7 @@ const RedNav = styled.div`
   display: flex;
   background-color: red;
   margin-left: 16px;
+  margin-right: auto;
 `
 
 const BlueNav = styled.div`
@@ -103,22 +105,8 @@ const BlueNav = styled.div`
   display: flex;
   background-color: lightblue;
   padding: 8px;
-`
-
-const BlueLeft = styled.div`
-  flex: 1;
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
   align-items: center;
-`
-
-const BlueRight = styled.div`
-  flex: 1;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  div:nth-child(2) {margin-right: auto};
 `
 
 const RedBar = styled.div`
@@ -152,7 +140,7 @@ const GreenContent = styled.div`
   height: 72px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: green;
   margin-bottom: 32px;
   padding: 16px;
@@ -176,8 +164,6 @@ const GreenContentRight = styled.div`
   margin-bottom: 16px;
 `
 
-// how to align stuff in navbar without helper bars? barleft, barright
-
 
 export const Module16 = () => {
   return (
@@ -196,27 +182,22 @@ export const Module16 = () => {
 
           <ContentViewBar>
             <OrangeBar>
-
-              <BarLeft>
-                <RedSquare />
-                <RedNav />
-              </BarLeft>
-              <BarRight>
-                <BlueNav>
-                  <BlueLeft>
-                    <RedBar />
-                    <RedBar />
-                  </BlueLeft>
-                  <BlueRight>
-                    <RedBar />
-                  </BlueRight>
-                </BlueNav>
-              </BarRight>
-
+              <RedSquare />
+              <RedNav />
+              <BlueNav>
+                <RedBar />
+                <RedBar />
+                <RedBar />
+              </BlueNav>
             </OrangeBar>
             <ContentView>
               <LeftContent>
-                {[...Array(GreenContentCount)].map((_, i) => <GreenContent key={i}> <RedSquare /> <BlueNav /> </GreenContent>)}
+                {[...Array(GreenContentCount)].map((_, i) => 
+                <GreenContent key={i}> 
+                  <RedSquare />
+                  <BlueNav />
+                </GreenContent>
+                )}
               </LeftContent>
               <RightContent>
                 {[...Array(GreenContentCount)].map((_, i) => <GreenContentRight />)}

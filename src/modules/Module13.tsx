@@ -12,8 +12,8 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 304px;
+  height: 304px;
   background-color: red;
   padding: 8px;
   overflow-y: scroll;

@@ -11,7 +11,7 @@ const Container = styled.div`
 
 // Navbar
 const RedBox = styled.div`
-  flex: 0 0 300px;
+  flex: 0 0 304px;
   height: 100%;
   background-color: red;
 `

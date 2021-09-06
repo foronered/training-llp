@@ -12,8 +12,8 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 304px;
+  height: 304px;
   background-color: red;
   padding: 8px;
   overflow-y: scroll;
@@ -29,6 +29,7 @@ const GreenBox = styled.div`
 export const Module12 = () => {
   return (
     <ModuleWrapper>
+      <p>Module 12 - LLP2</p>
       <Container>
         <RedBox>
           <GreenBox />
