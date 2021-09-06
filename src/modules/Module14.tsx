@@ -40,7 +40,6 @@ const RedBox = styled.div`
   padding: 40px;
 `
 
-
 const BlueBox = styled.div`
   width: 100%;
   height: 128px;
@@ -52,7 +51,7 @@ const BlueBox = styled.div`
 `
 
 const OrangeBox = styled.div`
-  width: 63px;
+  width: 64px;
   height: 64px;
   background-color: orange;
   margin-bottom: 8px;
