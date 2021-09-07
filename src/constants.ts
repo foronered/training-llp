@@ -1,0 +1,2 @@
+export const MOBILE_BREAKPOINT_N = 800
+export const MOBILE_BREAKPOINT = `${MOBILE_BREAKPOINT_N}px`
