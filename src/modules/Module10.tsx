@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -7,6 +8,17 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   background-color: blue;
+
+  ${DESKTOP_STYLE} {
+    flex-direction: row;
+  }
+
+  ${MOBILE_STYLE} {
+    padding: 24px;
+    flex-direction: column;
+    overflow-y: scroll;
+    align-items: center;
+  }
 `
 
 // Navbar
@@ -14,14 +26,32 @@ const RedBox = styled.div`
   width: 304px;
   height: 100%;
   background-color: red;
-  padding: 8px;
+
+  ${DESKTOP_STYLE} {
+    width: 304px;
+    height: 100%;
+    padding: 8px;
+  }
+
+  ${MOBILE_STYLE} {
+    width: 128px;
+    height: 100%;
+    padding: 16px;
+  }
 `
 
 const BlueBox = styled.div`
   flex: 1;
   height: 40px;
   background-color: blue;
-  margin-bottom: 8px;
+
+  ${DESKTOP_STYLE} {
+    margin-bottom: 8px;
+  }
+
+  ${MOBILE_STYLE} {
+    margin-bottom: 16px;
+  }
 `
 
 // View
