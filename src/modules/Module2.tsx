@@ -9,16 +9,14 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   background-color: blue;
+  justify-content: space-evenly;
 
   ${DESKTOP_STYLE} {
     flex-direction: row;
-    justify-content: space-evenly;
   }
 
   ${MOBILE_STYLE} {
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: ;
   }
 `
 

@@ -23,8 +23,6 @@ const Container = styled.div`
 
 // Navbar
 const RedBox = styled.div`
-  width: 304px;
-  height: 100%;
   background-color: red;
 
   ${DESKTOP_STYLE} {
