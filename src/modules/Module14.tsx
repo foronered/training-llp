@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -12,21 +13,40 @@ const Container = styled.div`
 
 const GreenBox = styled.div`
   width: 100%;
-  height: 128px;
+  flex: 0 0 128px;
   background-color: green;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0px 16px;
+
+  ${DESKTOP_STYLE} {
+    justify-content: space-between;
+  }
+
+  ${MOBILE_STYLE}  {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `
 
 const PinkSquare = styled.div`
   width: 64px;
   height: 64px;
   background-color: pink;
+  margin: 16px;
 `
 
 const PinkBox = styled.div`
+  width: 256px;
+  height: 64px;
+  background-color: pink;
+
+  ${MOBILE_STYLE} {
+    display: none;
+  }
+`
+
+const PinkBoxFooter = styled.div`
   width: 256px;
   height: 64px;
   background-color: pink;
@@ -80,7 +100,7 @@ export const Module14 = () => {
           ))}
         </RedBox>
         <GreenBox>
-          <PinkBox />
+          <PinkBoxFooter />
           <PinkSquare />
           <PinkSquare />
         </GreenBox>
