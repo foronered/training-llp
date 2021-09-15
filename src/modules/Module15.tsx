@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -12,10 +13,18 @@ const Container = styled.div`
 // Navbar
 
 const NavBar = styled.div`
-  flex: 0 0 280px;
-  height: 100%;
   display: flex;
   flex-direction: column;
+
+  ${DESKTOP_STYLE}  {
+    flex: 0 0 280px;
+    height: 100%;
+  }
+
+  ${MOBILE_STYLE}  {
+    flex: 0 0 104px;
+    height: 100%;
+  }
 `
 
 const PinkBox = styled.div`
@@ -24,8 +33,15 @@ const PinkBox = styled.div`
   display: flex;
   background-color: pink;
   align-items: center;
-  justify-content: space-between;
   padding: 8px;
+
+  ${DESKTOP_STYLE}  {
+    justify-content: space-between;
+  }
+
+  ${MOBILE_STYLE}  {
+    justify-content: center;
+  }
 `
 
 const BlueSquare = styled.div`
@@ -35,11 +51,26 @@ const BlueSquare = styled.div`
   background-color: lightblue;
 `
 
+const BlueSquareDesktop = styled.div`
+  width: 36px;
+  height: 36px;
+  display: flex;
+  background-color: lightblue;
+
+  ${MOBILE_STYLE}  {
+    display: none;
+  }
+`
+
 const BlueBox = styled.div`
   width: 128px;
   height: 36px;
   display: flex;
   background-color: lightblue;
+
+  ${MOBILE_STYLE}  {
+    display: none;
+  }
 `
 
 const RedBox = styled.div`
@@ -48,6 +79,12 @@ const RedBox = styled.div`
   background-color: red;
   overflow-y: scroll;
   padding: 8px;
+  flex-wrap: wrap;
+
+  ${MOBILE_STYLE}  {
+    display: flex;
+    justify-content: center;
+  }
 `
 
 const OrangeBox = styled.div`
@@ -56,18 +93,35 @@ const OrangeBox = styled.div`
   display: flex;
   background-color: orange;
   align-items: center;
-  justify-content: space-between;
   padding: 8px;
+
+  ${DESKTOP_STYLE}  {
+    justify-content: space-between;
+  }
+
+  ${MOBILE_STYLE}  {
+    justify-content: center;
+  }
 `
 
 const GreenBox = styled.div`
-  flex: 1;
-  height: 64px;
   background-color: green;
   margin-bottom: 8px;
+  display: flex;
+
+  ${DESKTOP_STYLE}  {
+    flex: 1;
+    height: 64px;
+  }
+
+  ${MOBILE_STYLE}  {
+    width: 36px;
+    height: 36px;
+    margin: 16px;
+  }
 `
 
-const GreenBoxes = 18;
+const GreenBoxes = 18
 
 // Contentview
 
@@ -96,22 +150,47 @@ const RedNav = styled.div`
 `
 
 const BlueNav = styled.div`
-  width: 256px;
-  height: 40px;
   display: flex;
   background-color: lightblue;
   padding: 8px;
-  justify-content: space-evenly;
+
+  ${DESKTOP_STYLE}  {
+    width: 256px;
+    height: 40px;
+    justify-content: space-evenly;
+  }
+
+  ${MOBILE_STYLE}  {
+    width: 60px;
+    height: 40px;
+    justify-content: center;
+  }
 `
 
 const RedSquare = styled.div`
   width: 32px;
   height: 24px;
   background-color: red;
-  margin-right: 8px;
-`
-const RedSquares = 4;
 
+  ${DESKTOP_STYLE}  {
+    margin-right: 8px;
+  }
+
+  ${MOBILE_STYLE}  {
+    margin: 0px;
+  }
+`
+
+const RedSquareDesktop = styled.div`
+  width: 32px;
+  height: 24px;
+  background-color: red;
+  margin-right: 8px;
+
+  ${MOBILE_STYLE}  {
+    display: none;
+  }
+`
 
 const ContentView = styled.div`
   flex: 1;
@@ -119,6 +198,10 @@ const ContentView = styled.div`
   display: flex;
   flex-wrap: wrap;
   overflow-y: scroll;
+
+  ${MOBILE_STYLE}  {
+    justify-content: center;
+  }
 `
 
 const BlueSquareContent = styled.div`
@@ -127,7 +210,7 @@ const BlueSquareContent = styled.div`
   background-color: lightblue;
   margin: 24px;
 `
-const BlueSquares = 36;
+const BlueSquares = 36
 
 export const Module15 = () => {
   return (
@@ -136,10 +219,12 @@ export const Module15 = () => {
         <NavBar>
           <PinkBox>
             <BlueSquare />
-            <BlueSquare />
+            <BlueSquareDesktop />
           </PinkBox>
           <RedBox>
-            {[...Array(GreenBoxes)].map((_, i) => <GreenBox key={i} />)}
+            {[...Array(GreenBoxes)].map((_, i) => (
+              <GreenBox key={i} />
+            ))}
           </RedBox>
           <OrangeBox>
             <BlueSquare />
@@ -150,12 +235,17 @@ export const Module15 = () => {
           <OrangeBar>
             <RedNav />
             <BlueNav>
-              {[...Array(RedSquares)].map((_, i) => <RedSquare key={i} />)}
+              <RedSquare />
+              <RedSquareDesktop />
+              <RedSquareDesktop />
+              <RedSquareDesktop />
             </BlueNav>
           </OrangeBar>
-        <ContentView>
-          {[...Array(BlueSquares)].map((_, i) => <BlueSquareContent key={i} />)}
-        </ContentView>
+          <ContentView>
+            {[...Array(BlueSquares)].map((_, i) => (
+              <BlueSquareContent key={i} />
+            ))}
+          </ContentView>
         </ContentViewBar>
       </Container>
     </ModuleWrapper>

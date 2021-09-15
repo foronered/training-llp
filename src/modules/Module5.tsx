@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -17,6 +18,14 @@ const RedBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${DESKTOP_STYLE} {
+    flex-direction: row;
+  }
+
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+  }
 `
 
 const GreenBox = styled.div`

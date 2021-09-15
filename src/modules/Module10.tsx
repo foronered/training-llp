@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -7,22 +8,48 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   background-color: blue;
+
+  ${DESKTOP_STYLE} {
+    flex-direction: row;
+  }
+
+  ${MOBILE_STYLE} {
+    padding: 24px;
+    flex-direction: column;
+    overflow-y: scroll;
+    align-items: center;
+  }
 `
 
 // Navbar
 const RedBox = styled.div`
-  width: 300px;
-  height: 100%;
   background-color: red;
-  padding: 8px;
-`
 
+  ${DESKTOP_STYLE} {
+    width: 304px;
+    height: 100%;
+    padding: 8px;
+  }
+
+  ${MOBILE_STYLE} {
+    width: 128px;
+    height: 100%;
+    padding: 16px;
+  }
+`
 
 const BlueBox = styled.div`
   flex: 1;
   height: 40px;
   background-color: blue;
-  margin-bottom: 8px;
+
+  ${DESKTOP_STYLE} {
+    margin-bottom: 8px;
+  }
+
+  ${MOBILE_STYLE} {
+    margin-bottom: 16px;
+  }
 `
 
 // View
@@ -33,8 +60,7 @@ const ViewContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
-  padding: 8px 16px;
-  padding-bottom: 0px;
+  padding: 8px 16px 0 16px;
 `
 
 const PurpleBox = styled.div`
@@ -47,12 +73,11 @@ const PurpleBox = styled.div`
   background-color: purple;
   padding: 8px;
 `
-// Why does align-items not work here?
 
 // Why can't I replace width with flex here?
 
 const RedWidebox = styled.div`
-  flex: 1;
+  width: 100%;
   height: 144px;
   background-color: red;
   margin-bottom: 8px;
@@ -66,6 +91,7 @@ const RedSquare = styled.div`
 export const Module10 = () => {
   return (
     <ModuleWrapper>
+      <p>Module 10</p>
       <Container>
         <RedBox>
           <BlueBox />

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -12,21 +13,40 @@ const Container = styled.div`
 
 const GreenBox = styled.div`
   width: 100%;
-  height: 128px;
+  flex: 0 0 128px;
   background-color: green;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px 16px 0px 16px;
+  padding: 0px 16px;
+
+  ${DESKTOP_STYLE} {
+    justify-content: space-between;
+  }
+
+  ${MOBILE_STYLE}  {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `
 
 const PinkSquare = styled.div`
   width: 64px;
   height: 64px;
   background-color: pink;
+  margin: 16px;
 `
 
 const PinkBox = styled.div`
+  width: 256px;
+  height: 64px;
+  background-color: pink;
+
+  ${MOBILE_STYLE} {
+    display: none;
+  }
+`
+
+const PinkBoxFooter = styled.div`
   width: 256px;
   height: 64px;
   background-color: pink;
@@ -40,7 +60,6 @@ const RedBox = styled.div`
   padding: 40px;
 `
 
-
 const BlueBox = styled.div`
   width: 100%;
   height: 128px;
@@ -52,13 +71,13 @@ const BlueBox = styled.div`
 `
 
 const OrangeBox = styled.div`
-  width: 63px;
+  width: 64px;
   height: 64px;
   background-color: orange;
   margin-bottom: 8px;
 `
 
-const blueBoxes = 12;
+const blueBoxes = 12
 
 // How to get pinksquare on the bottom to the left? Create new container?
 
@@ -73,10 +92,15 @@ export const Module14 = () => {
           <PinkBox />
         </GreenBox>
         <RedBox>
-          {[...Array(blueBoxes)].map((_, i) => <BlueBox key={i} > <OrangeBox /> </BlueBox>)}
+          {[...Array(blueBoxes)].map((_, i) => (
+            <BlueBox key={i}>
+              {' '}
+              <OrangeBox />{' '}
+            </BlueBox>
+          ))}
         </RedBox>
         <GreenBox>
-          <PinkBox />
+          <PinkBoxFooter />
           <PinkSquare />
           <PinkSquare />
         </GreenBox>

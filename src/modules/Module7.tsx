@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -8,14 +9,27 @@ const Container = styled.div`
   display: flex;
   background-color: blue;
   padding: 8px 16px;
+
+  ${DESKTOP_STYLE} {
+    flex-direction: row;
+  }
+
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+  }
 `
+
+const Wrapper = styled.div`
+  flex: 1;
+  height: 100%;
+  display: flex;
+`
+
 const RedBox = styled.div`
   flex: 1;
   height: 100%;
   background-color: red;
 `
-
-// Generally don't use percentages with flex, the ratios are better
 
 const OrangeBox = styled.div`
   flex: 1;
@@ -29,13 +43,14 @@ const GreenBox = styled.div`
   background-color: lime;
 `
 
-
 export const Module7 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox />
-        <OrangeBox />
+        <Wrapper>
+          <RedBox />
+          <OrangeBox />
+        </Wrapper>
         <GreenBox />
       </Container>
     </ModuleWrapper>

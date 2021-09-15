@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -9,6 +10,14 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
+
+  ${DESKTOP_STYLE}  {
+    flex-direction: row;
+  }
+
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+  }
 `
 
 const MediaContainer = styled.div`
@@ -23,17 +32,39 @@ const MediaContainer = styled.div`
 `
 
 const RedBox = styled.div`
-  flex: 0 0 300px;
-  height: 100%;
   background-color: red;
   padding: 8px;
+  display: flex;
+
+  ${DESKTOP_STYLE}  {
+    flex: 0 0 304px;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  ${MOBILE_STYLE} {
+    flex: 0 0 80px;
+    width: 100%;
+    flex-direction: row;
+    overflow-x: scroll;
+  }
 `
 
 const GreenBox = styled.div`
-  flex: 1;
-  height: 40px;
   background-color: green;
-  margin-bottom: 8px;
+  display: flex;
+
+  ${DESKTOP_STYLE}  {
+    flex: 0 0 40px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  ${MOBILE_STYLE} {
+    flex: 0 0 128px;
+    height: 100%;
+    margin-right: 8px;
+  }
 `
 
 const RedSquare = styled.div`
@@ -43,7 +74,7 @@ const RedSquare = styled.div`
   margin: 8px;
 `
 
-const NumberOfBoxes = 36;
+const NumberOfBoxes = 36
 
 export const Module11 = () => {
   return (
@@ -57,7 +88,9 @@ export const Module11 = () => {
           <GreenBox />
         </RedBox>
         <MediaContainer>
-          {[...Array(NumberOfBoxes)].map((_, i) => <RedSquare key={i} />)}
+          {[...Array(NumberOfBoxes)].map((_, i) => (
+            <RedSquare key={i} />
+          ))}
         </MediaContainer>
       </Container>
     </ModuleWrapper>

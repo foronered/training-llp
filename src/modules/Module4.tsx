@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -12,12 +13,17 @@ const Container = styled.div`
   padding: 8px 16px;
 `
 
-// Correct to solve this with padding on container?
-
 const RedBox = styled.div`
   flex: 1;
   height: 100%;
-  background-color: red;
+
+  ${DESKTOP_STYLE} {
+    background-color: red;
+  }
+
+  ${MOBILE_STYLE} {
+    background-color: lightblue;
+  }
 `
 
 export const Module4 = () => {

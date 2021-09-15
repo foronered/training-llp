@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 // How do I get them to overlap? Disable flex?
@@ -15,16 +16,30 @@ const Container = styled.div`
 const RedBox = styled.div`
   width: 400px;
   height: 400px;
-  background-color: red;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${DESKTOP_STYLE} {
+    background-color: red;
+  }
+
+  ${MOBILE_STYLE} {
+    background-color: black;
+  }
 `
 
 const OrangeBox = styled.div`
   width: 200px;
   height: 200px;
-  background-color: orange;
+
+  ${DESKTOP_STYLE} {
+    background-color: orange;
+  }
+
+  ${MOBILE_STYLE} {
+    background-color: green;
+  }
 `
 
 export const Module3 = () => {
