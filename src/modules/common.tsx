@@ -1,20 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { DESKTOP_STYLE, MOBILE_BREAKPOINT, MOBILE_STYLE } from '../constants'
 
 // DO NOT EDIT
 export const ModuleWrapper = styled.div`
   height: 600px;
-  margin-bottom: 32px;
   overflow: hidden;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${DESKTOP_STYLE} {
     width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 32px auto;
   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     width: 100%;
+    margin-bottom: 32px;
   }
 `
 //

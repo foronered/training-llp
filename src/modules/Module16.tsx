@@ -183,6 +183,7 @@ const ContentView = styled.div`
   flex: 1;
   width: 100%;
   display: flex;
+  overflow: hidden;
 
   ${DESKTOP_STYLE}  {
     padding: 32px;
