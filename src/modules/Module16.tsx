@@ -183,6 +183,7 @@ const ContentView = styled.div`
   flex: 1;
   width: 100%;
   display: flex;
+  overflow-y: hidden;
 
   ${DESKTOP_STYLE}  {
     padding: 32px;
@@ -250,7 +251,7 @@ const RightContent = styled.div`
 
 const GreenContentRight = styled.div`
   width: 100%;
-  height: 40px;
+  flex: 0 0 40px;
   display: flex;
   background-color: green;
   margin-bottom: 16px;

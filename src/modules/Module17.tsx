@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -13,10 +14,17 @@ const RepeatBoxes = 10
 
 // Left part
 const LeftContainer = styled.div`
-  flex: 2;
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  ${DESKTOP_STYLE} {
+    flex: 2;
+  }
+
+  ${MOBILE_STYLE} {
+    flex: 0 0 40px;
+  }
 `
 
 // OrangeBackground
@@ -36,6 +44,10 @@ const LeftRedBox = styled.div`
   display: flex;
   align-items: center;
   padding: 8px;
+
+  ${MOBILE_STYLE} {
+    justify-content: center;
+  }
 `
 
 const LeftOrangeSquare = styled.div`
@@ -45,7 +57,28 @@ const LeftOrangeSquare = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${DESKTOP_STYLE} {
+    margin-right: 8px;
+  }
+
+  ${MOBILE_STYLE} {
+    margin-right: 0px;
+  }
+`
+
+const LeftOrangeSquareDesktop = styled.div`
+  width: 56px;
+  height: 56px;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 8px;
+
+  ${MOBILE_STYLE}  {
+    display: none;
+  }
 `
 
 const LeftBlueSquare = styled.div`
@@ -81,7 +114,28 @@ const LeftGreenBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${DESKTOP_STYLE} {
+    margin-right: 16px;
+  }
+
+  ${MOBILE_STYLE} {
+    margin-right: 0px;
+  }
+`
+
+const LeftGreenBoxDesktop = styled.div`
+  width: 80px;
+  height: 104px;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 16px;
+
+  ${MOBILE_STYLE} {
+    display: none;
+  }
 `
 
 const LeftBlackBox = styled.div`
@@ -97,6 +151,10 @@ const MidPartRedBackground = styled.div`
   background-color: red;
   padding: 16px;
   overflow-y: scroll;
+
+  ${MOBILE_STYLE}  {
+    display: none;
+  }
 `
 
 const MidGreenBox = styled.div`
@@ -166,10 +224,14 @@ const RightBlackBox = styled.div`
   width: 16px;
   display: flex;
   background-color: black;
+
+  ${MOBILE_STYLE} {
+    display: none;
+  }
 `
 
 // Pink background
-const LeftPinkBackground = styled.div`
+const RightPinkBackground = styled.div`
   flex: 3;
   width: 100%;
   display: flex;
@@ -185,6 +247,10 @@ const LeftPinkBlueBox = styled.div`
   display: flex;
   background-color: lightblue;
   padding: 16px;
+
+  ${MOBILE_STYLE} {
+    display: none;
+  }
 `
 
 const LeftBlueBlack = styled.div`
@@ -194,14 +260,15 @@ const LeftBlueBlack = styled.div`
 `
 
 const RightPinkContainer = styled.div`
-  height: 800px;
-  flex: 0 0 160px;
   display: flex;
   flex-direction: column;
+  height: 800px;
+  flex: 0 0 160px;
 `
 
 const RightPinkBlack = styled.div`
-  height: 128px;
+  display: flex;
+  flex: 0 0 128px;
   width: 100%;
   background-color: black;
   margin-bottom: 16px;
@@ -224,23 +291,23 @@ export const Module17 = () => {
                 <LeftOrangeSquare>
                   <LeftBlueSquare />
                 </LeftOrangeSquare>
-                <LeftOrangeSquare style={{ marginRight: 'auto' }}>
+                <LeftOrangeSquareDesktop style={{ marginRight: 'auto' }}>
                   <LeftBlueSquare />
-                </LeftOrangeSquare>
-                <LeftOrangeSquare>
+                </LeftOrangeSquareDesktop>
+                <LeftOrangeSquareDesktop>
                   <LeftBlueSquare />
-                </LeftOrangeSquare>
+                </LeftOrangeSquareDesktop>
               </LeftRedBox>
             ))}
           </LeftOrangeBackground>
           <LeftBlueBackground>
             {[...Array(RepeatBoxes)].map((_, i) => (
               <LeftRedBox2>
-                <LeftGreenBox />
+                <LeftGreenBoxDesktop />
                 <LeftGreenBox>
                   <LeftBlackBox />
                 </LeftGreenBox>
-                <LeftGreenBox />
+                <LeftGreenBoxDesktop />
               </LeftRedBox2>
             ))}
           </LeftBlueBackground>
@@ -263,7 +330,7 @@ export const Module17 = () => {
               </RightRedBox>
             ))}
           </RightBlueBackground>
-          <LeftPinkBackground>
+          <RightPinkBackground>
             <LeftPinkBlueBox>
               <LeftBlueBlack />
             </LeftPinkBlueBox>
@@ -271,7 +338,7 @@ export const Module17 = () => {
               <RightPinkBlack />
               <RightPinkBlue />
             </RightPinkContainer>
-          </LeftPinkBackground>
+          </RightPinkBackground>
         </RightContainer>
       </Container>
     </ModuleWrapper>
