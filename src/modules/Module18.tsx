@@ -8,41 +8,35 @@ const Container = styled.div`
   display: flex;
   background-color: lightgreen;
   align-items: center;
-  justify-content: center;
-`
-
-const Wrapper = styled.div`
-  width: 128px;
-  height: 128px;
-  display: grid;
-  grid-template-columns: 16px 16px 1fr 16px 16px;
-  grid-template-rows: 16px 16px 1fr 16px 16px;
+  justify-content: space-evenly;
 `
 
 const Count = 4
 
 const RedSquare = styled.div`
+  width: 128px;
+  height: 128px;
   background-color: red;
-  grid-row-start: 2;
-  grid-row-end: 5;
-  grid-column-start: 2;
-  grid-column-end: 5;
+  position: relative;
 `
 
 const BlueCircle = styled.div`
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background-color: lightblue;
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-column: 4;
+  position: absolute;¨
+  top: 0;
+  right: 0;
+  margin: -32px;
 `
 
 const OrangeCircle = styled.div`
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background-color: orange;
 `
@@ -53,12 +47,11 @@ export const Module18 = () => {
       <p>LLP-4</p>
       <Container>
         {[...Array(Count)].map((_, i) => (
-          <Wrapper key={i}>
-            <RedSquare />
+          <RedSquare>
             <BlueCircle>
               <OrangeCircle />
             </BlueCircle>
-          </Wrapper>
+          </RedSquare>
         ))}
       </Container>
     </ModuleWrapper>

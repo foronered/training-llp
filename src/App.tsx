@@ -19,6 +19,9 @@ import { Module15 } from './modules/Module15'
 import { Module16 } from './modules/Module16'
 import { Module17 } from './modules/Module17'
 import { Module18 } from './modules/Module18'
+import { Module19 } from './modules/Module19'
+import { Module20 } from './modules/Module20'
+import { Module21 } from './modules/Module21'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -63,6 +66,9 @@ export const App = () => {
       <Module16 />
       <Module17 />
       <Module18 />
+      <Module19 />
+      <Module20 />
+      <Module21 />
     </Wrapper>
   )
 }
