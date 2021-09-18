@@ -28,10 +28,9 @@ const BlueCircle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;¨
-  top: 0;
-  right: 0;
-  margin: -32px;
+  position: absolute;
+  top: -32px;
+  right: -32px;
 `
 
 const OrangeCircle = styled.div`

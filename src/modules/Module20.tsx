@@ -26,9 +26,8 @@ const BlackCircleLeftUp = styled.div`
   border-radius: 50%;
   background-color: black;
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: -16px;
+  top: -16px;
+  left: -16px;
 `
 
 const BlackCircleLeftDown = styled.div`
@@ -37,9 +36,8 @@ const BlackCircleLeftDown = styled.div`
   border-radius: 50%;
   background-color: black;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: -16px;
+  bottom: -16px;
+  left: -16px;
 `
 
 const BlackCircleRightUp = styled.div`
@@ -48,9 +46,8 @@ const BlackCircleRightUp = styled.div`
   border-radius: 50%;
   background-color: black;
   position: absolute;
-  right: 0;
-  top: 0;
-  margin: -16px;
+  right: -16px;
+  top: -16px;
 `
 
 const BlackCircleRightDown = styled.div`
@@ -59,9 +56,8 @@ const BlackCircleRightDown = styled.div`
   border-radius: 50%;
   background-color: black;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: -16px;
+  right: -16px;
+  bottom: -16px;
 `
 
 const BlackCircleCenter = styled.div`
@@ -70,11 +66,8 @@ const BlackCircleCenter = styled.div`
   border-radius: 50%;
   background-color: black;
   position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  right: calc(50% - 16px);
+  top: calc(50% - 16px);
 `
 
 export const Module20 = () => {

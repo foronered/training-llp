@@ -27,10 +27,9 @@ const BlueCircle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;¨
-  top: 0;
-  right: 0;
-  margin: -32px;
+  position: absolute;
+  top: -32px;
+  right: -32px;
 `
 
 const OrangeCircle = styled.div`
@@ -60,9 +59,8 @@ const BlackCircleLeft = styled.div`
   border-radius: 50%;
   background-color: black;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: -16px;
+  bottom: -16px;
+  left: -16px;
 `
 
 // Also here, how to correctly center with position: relative parent?
@@ -73,11 +71,8 @@ const BlackCircleMid = styled.div`
   border-radius: 50%;
   background-color: black;
   position: absolute;
-  left: 0;
-  right: 0;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: -16px;
+  left: calc(50% - 16px);
+  top: -16px;
 `
 
 const BlackCircleRight = styled.div`
@@ -86,9 +81,8 @@ const BlackCircleRight = styled.div`
   border-radius: 50%;
   background-color: black;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: -16px;
+  right: -16px;
+  bottom: -16px;
 `
 
 export const Module19 = () => {
