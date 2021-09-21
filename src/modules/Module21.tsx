@@ -8,7 +8,8 @@ const Container = styled.div`
   display: flex;
   background-color: lightgreen;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-direction: column;
   position: relative;
 `
 
@@ -18,40 +19,33 @@ const BlackBar = styled.div`
   width: 64px;
   height: 320px;
   background-color: black;
-  position: absolute;
-  display: flex;
-  justify-content: center;
   z-index: 1;
 `
 
 const BlueSquare = styled.div`
-  width: 240px;
-  height: 160px;
+  align-items: flex-start;
   background-color: lightblue;
   display: flex;
+  height: 160px;
   justify-content: center;
-  position: absolute;
-  top: 15%;
-  z-index: 0;
+  margin-bottom: 32px;
+  padding-top: 32px;
+  width: 240px;
 `
 
 const RedSquare = styled.div`
   width: 320px;
   height: 240px;
   background-color: red;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 10%;
-  z-index: 0;
 `
 
 export const Module21 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <BlackBar />
-        <BlueSquare />
+        <BlueSquare>
+          <BlackBar />
+        </BlueSquare>
         <RedSquare />
       </Container>
     </ModuleWrapper>

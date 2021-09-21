@@ -17,6 +17,8 @@ const RedSquare = styled.div`
   background-color: red;
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const BlueCircle = styled.div`
@@ -45,11 +47,6 @@ const BlueBox = styled.div`
   width: 400px;
   height: 64px;
   background-color: lightblue;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
   position: relative;
 `
 

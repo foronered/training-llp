@@ -18,6 +18,7 @@ const RedSquare = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 `
 
 const BlackCircleLeftUp = styled.div`
@@ -65,12 +66,27 @@ const BlackCircleCenter = styled.div`
   height: 32px;
   border-radius: 50%;
   background-color: black;
-  position: absolute;
-  right: calc(50% - 16px);
-  top: calc(50% - 16px);
 `
 
 export const Module20 = () => {
+  const dots = [
+    {
+      left: 0,
+      top: 0,
+    },
+    {
+      right: 0,
+      bottom: 0,
+    },
+    {
+      left: 0,
+      top: 0,
+    },
+    {
+      left: 0,
+      top: 0,
+    },
+  ]
   return (
     <ModuleWrapper>
       <Container>
