@@ -6,23 +6,35 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
 
+  padding: 8px 16px;
+
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-color: blue;
 `
 
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 100%;
+  
+  flex-shrink: 0;
   background-color: red;
 `
 
-export const Module1 = () => {
+const GreenBox = styled.div`
+  width: 100%;
+  height: 100%;
+  
+  background-color: lime;
+`
+
+export const Module6 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox/>
+        <RedBox />
+        <GreenBox />
       </Container>
     </ModuleWrapper>
   )

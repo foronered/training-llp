@@ -13,16 +13,29 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: red;
 `
 
-export const Module1 = () => {
+const OrangeBox = styled.div`
+  width: 200px;
+  height: 200px;
+  
+  background-color: orange;
+`
+
+export const Module3 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox/>
+        <RedBox>
+          <OrangeBox />
+        </RedBox>
       </Container>
     </ModuleWrapper>
   )

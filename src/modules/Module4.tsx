@@ -5,24 +5,27 @@ import {ModuleWrapper} from './common'
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  
+  padding: 8px 16px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-color: blue;
 `
 
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
+  
   background-color: red;
 `
 
-export const Module1 = () => {
+export const Module4 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox/>
+        <RedBox />
       </Container>
     </ModuleWrapper>
   )
