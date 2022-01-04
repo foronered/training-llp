@@ -75,7 +75,6 @@ const RedBox = styled.div`
   background-color: red;
 `
 
-// Tried with grid for a little while, but responsive widths just seem to be so much easier w. Flexbox. So I switched.
 export const Module11 = () => {
   return (
     <ModuleWrapper>
