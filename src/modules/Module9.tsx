@@ -7,7 +7,6 @@ const Container = styled.div`
   height: 100%;
   
   display: flex;
-  justify-content: center;
   align-items: center;
   background-color: blue;
 `
@@ -27,7 +26,6 @@ const BlueContainerBox = styled.div`
   padding: 8px 16px;
   
   display: flex;
-  justify-content: center;
   align-items: center;
   background-color: blue;
 `
