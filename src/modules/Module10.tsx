@@ -52,7 +52,7 @@ const BlueContainerBox = styled.div`
   width: 100%;
   height: 100%;
 
-  padding: 8px 16px;
+  padding: 8px 16px 0 16px;
   
   display: flex;
   align-items: center;
