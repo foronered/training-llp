@@ -6,27 +6,41 @@ import {ModuleWrapper} from './common'
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  
-  padding: 8px 16px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: blue;
 `
 
 const RedBox = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
   
+  padding: 16px;
+  
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   background-color: red;
+  
+  overflow: scroll;
 `
 
-export const Module4 = () => {
+const GreenRectangle = styled.div`
+  width: 100%;
+  height: 500%;
+  
+  background-color: lime;
+`
+
+export const Module12 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox />
+        <RedBox>
+          <GreenRectangle />
+        </RedBox>
       </Container>
     </ModuleWrapper>
   )

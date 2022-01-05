@@ -2,31 +2,27 @@ import React from 'react'
 import styled from 'styled-components'
 import {ModuleWrapper} from './common'
 
+export interface BreakProps {
+  text: string
+}
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  
-  padding: 8px 16px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: blue;
-`
-
-const RedBox = styled.div`
-  width: 100%;
-  height: 100%;
+  justify-content: center;
   
-  background-color: red;
+  font-size: 36px;
+  font-family: sans-serif;
 `
 
-export const Module4 = () => {
+export const Break = (props: BreakProps) => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox />
+        {props.text}
       </Container>
     </ModuleWrapper>
   )

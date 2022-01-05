@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import {ModuleWrapper} from './common'
 
-interface RedBoxProps{
+
+interface RedBoxProps {
   flex?: string,
 
   width?: string,
