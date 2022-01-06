@@ -3,13 +3,26 @@ import styled from 'styled-components'
 import {ModuleWrapper} from './common'
 
 
-export interface AuxiliaryBoxProps {
+interface AuxiliaryBoxProps {
   width: string,
   height: string,
 
   color: string,
 }
 
+const AuxiliaryBox = styled.div.attrs((props: AuxiliaryBoxProps) => props)`
+  width: ${props => props.width};
+  height: ${props => props.height};
+  
+  background-color: ${props => props.color};;
+`
+
+const AuxiliaryFlexBox = styled.div.attrs((props: AuxiliaryBoxProps) => props)`
+  flex: 0 1 ${props => props.width};
+  height: ${props => props.height};
+  
+  background-color: ${props => props.color};;
+`
 
 const Container = styled.div`
   width: 100%;
@@ -36,20 +49,6 @@ const SidebarHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: rgb(235, 83, 159);
-`
-
-const AuxiliaryBox = styled.div.attrs((props: AuxiliaryBoxProps) => props)`
-  width: ${props => props.width};
-  height: ${props => props.height};
-  
-  background-color: ${props => props.color};;
-`
-
-const AuxiliaryFlexBox = styled.div.attrs((props: AuxiliaryBoxProps) => props)`
-  flex: 0 1 ${props => props.width};
-  height: ${props => props.height};
-  
-  background-color: ${props => props.color};;
 `
 
 const SidebarContent = styled.div`
@@ -117,7 +116,7 @@ const MainHeader = styled.div`
 `
 
 const RightHeaderMenu = styled.div`
-  flex: 0 1 245px;
+  flex: 0 1 270px;
   height: 48px;
 
   padding: 0 16px;
