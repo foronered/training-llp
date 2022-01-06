@@ -3,6 +3,14 @@ import styled from 'styled-components'
 import {ModuleWrapper} from './common'
 
 
+export interface AuxiliaryBoxProps {
+  width: string,
+  height: string,
+
+  color: string,
+}
+
+
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -22,7 +30,26 @@ const SidebarHeader = styled.div`
   width: 100%;
   flex: 0 0 80px;
   
-  background-color: palevioletred;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(235, 83, 159);
+`
+
+const AuxiliaryBox = styled.div.attrs((props: AuxiliaryBoxProps) => props)`
+  width: ${props => props.width};
+  height: ${props => props.height};
+  
+  background-color: ${props => props.color};;
+`
+
+const AuxiliaryFlexBox = styled.div.attrs((props: AuxiliaryBoxProps) => props)`
+  flex: 0 1 ${props => props.width};
+  height: ${props => props.height};
+  
+  background-color: ${props => props.color};;
 `
 
 const SidebarContent = styled.div`
@@ -42,26 +69,31 @@ const SidebarContent = styled.div`
 
 const SidebarRectangle = styled.div`
   width: 100%;
-  flex: 0 0 40px;
+  flex: 0 0 60px;
 
-  margin: 8px 0;
+  margin: 16px 0;
   
   :first-of-type {
-    margin: 0 0 8px 0;
+    margin: 0 0 16px 0;
   }
 
   :last-of-type {
-    margin: 8px 0 0 0;
+    margin: 16px 0 0 0;
   }
-  
-  background-color: lime;
+
+  background-color: rgb(129, 214, 83);
 `
 
 const SidebarFooter = styled.div`
   width: 100%;
   flex: 0 0 80px;
-  
-  background-color: bisque;
+
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(242, 177, 61);
 `
 
 const Main = styled.div`
@@ -75,8 +107,25 @@ const Main = styled.div`
 const MainHeader = styled.div`
   width: 100%;
   flex: 0 0 80px;
+  
+  padding: 0 32px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(242, 177, 61);
+`
 
-  background-color: bisque;
+const RightHeaderMenu = styled.div`
+  flex: 0 1 245px;
+  height: 48px;
+
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(71, 159, 248);
 `
 
 const MainContent = styled.div`
@@ -113,9 +162,9 @@ const MainContentRow = styled.div`
 `
 
 const MainContentBox = styled.div`
-  flex: 0 1 300px;
-  height: 200px;
-  background-color: lightskyblue;
+  flex: 0 1 250px;
+  height: 150px;
+  background-color: rgb(71, 159, 248);
 
   :first-of-type {
     margin: 0 32px 0 0;
@@ -127,7 +176,10 @@ export const Module16 = () => {
     <ModuleWrapper>
       <Container>
         <Sidebar>
-          <SidebarHeader />
+          <SidebarHeader>
+            <AuxiliaryBox width={"48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
+            <AuxiliaryBox width={"48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
+          </SidebarHeader>
           <SidebarContent>
             <SidebarRectangle />
             <SidebarRectangle />
@@ -142,10 +194,21 @@ export const Module16 = () => {
             <SidebarRectangle />
             <SidebarRectangle />
           </SidebarContent>
-          <SidebarFooter />
+          <SidebarFooter>
+            <AuxiliaryBox width={"48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
+            <AuxiliaryBox width={"172px"} height={"48px"} color={"rgb(71, 159, 248)"} />
+          </SidebarFooter>
         </Sidebar>
         <Main>
-          <MainHeader />
+          <MainHeader>
+            <AuxiliaryFlexBox width={"196px"} height={"32px"} color={"red"} />
+            <RightHeaderMenu>
+              <AuxiliaryFlexBox width={"42px"} height={"32px"} color={"red"} />
+              <AuxiliaryFlexBox width={"42px"} height={"32px"} color={"red"} />
+              <AuxiliaryFlexBox width={"42px"} height={"32px"} color={"red"} />
+              <AuxiliaryFlexBox width={"42px"} height={"32px"} color={"red"} />
+            </RightHeaderMenu>
+          </MainHeader>
           <MainContent>
             <MainContentRow>
               <MainContentBox />

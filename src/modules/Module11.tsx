@@ -33,7 +33,7 @@ const GreenSidebarItem = styled.div`
   
   flex-shrink: 1;
   margin: 4px 0;
-  background-color: lime;
+  background-color: rgb(84, 174, 50);
 
   :first-of-type {
       margin: 8px 0 4px 0;

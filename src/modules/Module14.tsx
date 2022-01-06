@@ -20,21 +20,21 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: lime;
+  background-color: rgb(129, 214, 83);
 `
 
 const PinkBoxSmall = styled.div`
   width: 64px;
   height: 100%;
   
-  background-color: palevioletred;
+  background-color: rgb(235, 83, 159);
 `
 
 const PinkBoxLarge = styled.div`
   width: 33%;
   height: 100%;
   
-  background-color: palevioletred;
+  background-color: rgb(235, 83, 159);
 `
 
 const Content = styled.div`
@@ -58,7 +58,7 @@ const LightBlueRectangle = styled.div`
 
   margin: 8px 0;
   
-  background-color: lightskyblue;
+  background-color: rgb(71, 159, 248);
 
   :first-of-type {
     margin: 0 0 8px 0;
