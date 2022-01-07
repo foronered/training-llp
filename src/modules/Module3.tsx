@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {ModuleWrapper} from './common'
+import {MOBILE_BREAKPOINT} from "../constants";
 
 
 const Container = styled.div`
@@ -20,14 +21,22 @@ const RedBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: red;
+  background-color: black;
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    background-color: red;
+  }
 `
 
 const OrangeBox = styled.div`
   width: 200px;
   height: 200px;
   
-  background-color: orange;
+  background-color: lime;
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    background-color: orange;
+  }
 `
 
 export const Module3 = () => {
