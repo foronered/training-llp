@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {ModuleWrapper} from './common'
+import {MOBILE_BREAKPOINT} from "../constants";
 
 
 const Container = styled.div`
@@ -18,22 +19,51 @@ const Header = styled.div`
   padding: 16px;
   
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   background-color: lime;
 `
 
-const PinkBoxSmall = styled.div`
-  flex: 0 1 64px;
+const HeaderContainer = styled.div`
+  flex: 0 1 45%;
   height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: lime;
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 1 0 auto;
+    flex-direction: row;
+  }
+`
+
+const PinkBoxSmall = styled.div`
+  flex: 0 0 48px;
+  width: 64px;
   
+  margin: 0 0 12px 0;
   background-color: rgb(235, 83, 159);
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 1 64px;
+    width: auto;
+    height: 100%;
+  }
 `
 
 const PinkBoxLarge = styled.div`
-  flex: 0 1 33%;
-  height: 100%;
+  flex: 0 0 48px;
+  width: 100%;
   
   background-color: rgb(235, 83, 159);
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 1 33%;
+    width: auto;
+    height: 100%;
+  }
 `
 
 const Content = styled.div`
@@ -45,13 +75,14 @@ const Content = styled.div`
   
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: red;
 
   overflow: scroll;
 `
 
 const LightBlueRectangle = styled.div`
-  width: 100%;
+  width: 25%;
   flex: 0 0 80px;
 
   margin: 0 0 16px 0;
@@ -60,6 +91,10 @@ const LightBlueRectangle = styled.div`
   :last-of-type {
     margin: 0 0 32px 0;  // Because our margins are different from our parent paddings
   }
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+  }
 `
 
 export const Module14 = () => {
@@ -67,8 +102,10 @@ export const Module14 = () => {
     <ModuleWrapper>
       <Container>
         <Header>
-          <PinkBoxSmall />
-          <PinkBoxLarge />
+          <HeaderContainer>
+            <PinkBoxSmall />
+            <PinkBoxLarge />
+          </HeaderContainer>
         </Header>
         <Content>
           <LightBlueRectangle />
