@@ -31,7 +31,7 @@ const GreenRectangle = styled.div`
   width: 100%;
   height: 500%;
   
-  background-color: rgb(129, 214,83);
+  background-color: lime;
 `
 
 export const Module12 = () => {

@@ -16,15 +16,14 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 300px;
+  flex: 0 0 300px;
   height: 100%;
   
-  flex-shrink: 0;
   background-color: red;
 `
 
 const GreenBox = styled.div`
-  width: 100%;
+  flex: 1 0 auto;
   height: 100%;
   
   background-color: lime;

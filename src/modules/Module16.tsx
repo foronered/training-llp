@@ -80,7 +80,7 @@ const SidebarRectangle = styled.div`
     margin: 16px 0 0 0;
   }
 
-  background-color: rgb(129, 214, 83);
+  background-color: lime;
 `
 
 const SidebarFooter = styled.div`

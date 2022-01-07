@@ -10,27 +10,25 @@ const Container = styled.div`
   padding: 8px 16px;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: blue;
 `
 
 const RedBox = styled.div`
-  width: 25%;
+  flex: 0 0 25%;
   height: 100%;
   
   background-color: red;
 `
 
 const OrangeBox = styled.div`
-  width: 25%;
+  flex: 0 0 25%;
   height: 100%;
   
   background-color: orange;
 `
 
 const GreenBox = styled.div`
-  width: 50%;
+  flex: 0 0 50%;
   height: 100%;
   
   background-color: lime;

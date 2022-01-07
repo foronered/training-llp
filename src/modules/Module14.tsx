@@ -20,7 +20,7 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(129, 214, 83);
+  background-color: lime;
 `
 
 const PinkBoxSmall = styled.div`

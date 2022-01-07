@@ -44,7 +44,7 @@ const Row = styled.div.attrs((props: RowProps) => props)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(129, 214, 83);
+  background-color: lime;
 
   :first-of-type {
     margin: 0 0 16px 0;
@@ -194,11 +194,11 @@ export const Module17 = () => {
       <Container>
         <Sidebar>
           <SidebarContent>
-            <AuxiliaryBox width={"48px"} height={"48px"} color={"rgb(129, 214, 83)"} />
-            <AuxiliaryBox width={"100%"} height={"48px"} margin={"16px 0"} color={"rgb(129, 214, 83)"} />
+            <AuxiliaryBox width={"48px"} height={"48px"} color={"lime"} />
+            <AuxiliaryBox width={"100%"} height={"48px"} margin={"16px 0"} color={"lime"} />
           </SidebarContent>
           <SidebarFooter>
-            <AuxiliaryBox width={"100%"} height={"48px"} color={"rgb(129, 214, 83)"} />
+            <AuxiliaryBox width={"100%"} height={"48px"} color={"lime"} />
             <FooterRow>
               <AuxiliaryBox width={"64px"} height={"64px"} color={"red"} />
               <AuxiliaryBox width={"64px"} height={"64px"} color={"red"} />

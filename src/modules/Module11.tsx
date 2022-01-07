@@ -8,64 +8,41 @@ const Container = styled.div`
   height: 100%;
   
   display: flex;
-  align-items: center;
   background-color: blue;
 `
 
 const RedSidebar = styled.div`
-  position: sticky;
-  
-  width: 300px;
+  flex: 0 0 300px;
   height: 100%;
   
-  flex-shrink: 0;
-  background-color: red;
-  
+  padding: 8px 8px 0 8px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0 8px;
+  background-color: red;
 `
 
 const GreenSidebarItem = styled.div`
   width: 100%;
-  height: 40px;
+  flex: 0 0 40px;
   
-  flex-shrink: 1;
-  margin: 4px 0;
-  background-color: rgb(84, 174, 50);
-
-  :first-of-type {
-      margin: 8px 0 4px 0;
-  }
-    
-  :last-of-type {
-      margin: 4px 0 8px 0;
-  }
+  margin-bottom: 8px;
+  background-color: lime;
 `
 
-const BlueContainerBox = styled.div`
-  width: 100%;
+const Content = styled.div`
+  flex: 1 0 auto;
   height: 100%;
 
-  padding: 16px 16px;
-  
-  display: flex;
-  gap: 8px;
-  flex-direction: column;
-  background-color: blue;
-  
+  padding: 16px;
   overflow: scroll;
 `
 
-const RedBoxRow = styled.div`
-  width: 100%;
+const ContentGrid = styled.div`
+  width: fit-content; // We need this to left align the grid container
   
-  display: flex;
+  display: grid;
+  grid-template: repeat(12, 1fr) / repeat(3, 1fr);
   gap: 8px;
-  
-  justify-content: flex-start;
-  align-items: center;
 `
 
 const RedBox = styled.div`
@@ -86,68 +63,46 @@ export const Module11 = () => {
           <GreenSidebarItem />
           <GreenSidebarItem />
         </RedSidebar>
-        <BlueContainerBox>
-          <RedBoxRow>
+        <Content>
+          <ContentGrid>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-          <RedBoxRow>
             <RedBox />
             <RedBox />
             <RedBox />
-          </RedBoxRow>
-        </BlueContainerBox>
+          </ContentGrid>
+        </Content>
       </Container>
     </ModuleWrapper>
   )

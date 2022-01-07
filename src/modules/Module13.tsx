@@ -46,7 +46,7 @@ const GreenRectangle = styled.div`
   margin: 8px 0;
   
   flex: 0 0 40px;
-  background-color: rgb(129, 214,83);
+  background-color: lime;
 
   :first-of-type {
     margin: 0 0 8px 0;

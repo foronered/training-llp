@@ -8,33 +8,27 @@ const Container = styled.div`
   height: 100%;
   
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: blue;
 `
 
 const RedSidebar = styled.div`
-  width: 300px;
+  flex: 0 0 300px;
   height: 100%;
   
-  flex-shrink: 0;
   background-color: red;
 `
 
-const BlueContainerBox = styled.div`
-  width: 100%;
+const ContentBox = styled.div`
+  flex: 1 0 auto;
   height: 100%;
 
   padding: 8px 16px 0 16px;
   
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: blue;
 `
 
 const GreenBox = styled.div`
-  width: 100%;
+  flex: 1 0 auto;
   height: 100%;
   
   background-color: lime;
@@ -45,9 +39,9 @@ export const Module8 = () => {
     <ModuleWrapper>
       <Container>
         <RedSidebar />
-        <BlueContainerBox>
+        <ContentBox>
           <GreenBox />
-        </BlueContainerBox>
+        </ContentBox>
       </Container>
     </ModuleWrapper>
   )
