@@ -4,21 +4,14 @@ import {ModuleWrapper} from './common'
 
 
 interface AuxiliaryBoxProps {
-  width: string,
+  flex: string,
   height: string,
 
   color: string,
 }
 
 const AuxiliaryBox = styled.div.attrs((props: AuxiliaryBoxProps) => props)`
-  width: ${props => props.width};
-  height: ${props => props.height};
-  
-  background-color: ${props => props.color};;
-`
-
-const AuxiliaryFlexBox = styled.div.attrs((props: AuxiliaryBoxProps) => props)`
-  flex: 0 1 ${props => props.width};
+  flex: ${props => props.flex};
   height: ${props => props.height};
   
   background-color: ${props => props.color};;
@@ -43,24 +36,21 @@ const SidebarHeader = styled.div`
   width: 100%;
   flex: 0 0 80px;
   
-  padding: 0 32px;
+  padding: 16px 32px;
 
   display: flex;
-  align-items: center;
   justify-content: space-between;
   background-color: rgb(235, 83, 159);
 `
 
 const SidebarContent = styled.div`
   width: 100%;
-  height: auto;
+  height: auto;  // Same issue with flex disallowing scroll... ask Luke
   
-  padding: 32px;
+  padding: 32px 32px 0 32px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   background-color: red;
   
   overflow: scroll;
@@ -70,27 +60,21 @@ const SidebarRectangle = styled.div`
   width: 100%;
   flex: 0 0 60px;
 
-  margin: 16px 0;
-  
-  :first-of-type {
-    margin: 0 0 16px 0;
-  }
-
-  :last-of-type {
-    margin: 16px 0 0 0;
-  }
-
+  margin: 0 0 16px 0;
   background-color: lime;
+  
+  :last-of-type {
+    margin: 0 0 32px 0;  // Margins are different from parent padding
+  }
 `
 
 const SidebarFooter = styled.div`
   width: 100%;
   flex: 0 0 80px;
 
-  padding: 0 32px;
+  padding: 16px 32px;
 
   display: flex;
-  align-items: center;
   justify-content: space-between;
   background-color: rgb(242, 177, 61);
 `
@@ -106,8 +90,8 @@ const Main = styled.div`
 const MainHeader = styled.div`
   width: 100%;
   flex: 0 0 80px;
-  
-  padding: 0 32px;
+
+  padding: 16px 32px;
   
   display: flex;
   align-items: center;
@@ -119,24 +103,21 @@ const RightHeaderMenu = styled.div`
   flex: 0 1 270px;
   height: 48px;
 
-  padding: 0 16px;
+  padding: 8px 16px;
 
   display: flex;
-  align-items: center;
   justify-content: space-between;
   background-color: rgb(71, 159, 248);
 `
 
 const MainContent = styled.div`
   width: 100%;
-  height: auto;
+  height: auto;  // Can't use flex for overflow again
 
-  padding: 32px;
+  padding: 32px 32px 0 32px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   background-color: blue;
 
   overflow: scroll;
@@ -144,20 +125,12 @@ const MainContent = styled.div`
 
 const MainContentRow = styled.div`
   width: 100%;
+  flex: 0 0 auto;
 
-  margin: 16px 0;
+  margin:  0 0 32px 0;
 
   display: flex;
-  align-items: center;
   justify-content: flex-start;
-
-  :first-of-type {
-    margin: 0 0 16px 0;
-  }
-
-  :last-of-type {
-    margin: 16px 0 0 0;
-  }
 `
 
 const MainContentBox = styled.div`
@@ -176,8 +149,8 @@ export const Module16 = () => {
       <Container>
         <Sidebar>
           <SidebarHeader>
-            <AuxiliaryBox width={"48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
-            <AuxiliaryBox width={"48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
+            <AuxiliaryBox flex={"0 0 48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
+            <AuxiliaryBox flex={"0 0 48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
           </SidebarHeader>
           <SidebarContent>
             <SidebarRectangle />
@@ -194,18 +167,18 @@ export const Module16 = () => {
             <SidebarRectangle />
           </SidebarContent>
           <SidebarFooter>
-            <AuxiliaryBox width={"48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
-            <AuxiliaryBox width={"172px"} height={"48px"} color={"rgb(71, 159, 248)"} />
+            <AuxiliaryBox flex={"0 0 48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
+            <AuxiliaryBox flex={"0 0 172px"} height={"48px"} color={"rgb(71, 159, 248)"} />
           </SidebarFooter>
         </Sidebar>
         <Main>
           <MainHeader>
-            <AuxiliaryFlexBox width={"196px"} height={"32px"} color={"red"} />
+            <AuxiliaryBox flex={"0 0 196px"} height={"32px"} color={"red"} />
             <RightHeaderMenu>
-              <AuxiliaryFlexBox width={"42px"} height={"32px"} color={"red"} />
-              <AuxiliaryFlexBox width={"42px"} height={"32px"} color={"red"} />
-              <AuxiliaryFlexBox width={"42px"} height={"32px"} color={"red"} />
-              <AuxiliaryFlexBox width={"42px"} height={"32px"} color={"red"} />
+              <AuxiliaryBox flex={"0 0 42px"} height={"32px"} color={"red"} />
+              <AuxiliaryBox flex={"0 0 42px"} height={"32px"} color={"red"} />
+              <AuxiliaryBox flex={"0 0 42px"} height={"32px"} color={"red"} />
+              <AuxiliaryBox flex={"0 0 42px"} height={"32px"} color={"red"} />
             </RightHeaderMenu>
           </MainHeader>
           <MainContent>
