@@ -10,8 +10,6 @@ const Container = styled.div`
   padding: 8px 16px;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: blue;
 `
 

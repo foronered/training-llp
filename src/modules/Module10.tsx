@@ -29,16 +29,16 @@ const BlueSidebarItem = styled.div`
   background-color: blue;
 `
 
-const BlueContainerBox = styled.div`
+const ContentBox = styled.div`
   flex: 1 0 auto;
   height: 100%;
 
   padding: 8px 16px 0 16px;
-  background-color: blue;
+  display: flex;
 `
 
 const PurpleBox = styled.div`
-  width: 100%;
+  flex: 1 0 auto;
   height: 100%;
 
   padding: 8px 8px 0 8px;
@@ -49,14 +49,15 @@ const PurpleBox = styled.div`
 
 const RedBoxRow = styled.div`
   width: 100%;
-  display: flex;
+  flex: 0 0 auto;  // Take the height of the content
   
   margin: 0 0 8px 0;
+  display: flex;
   justify-content: space-between;
 `
 
 const LongRedBox = styled.div`
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   height: 144px;
   
   background-color: red;
@@ -69,7 +70,6 @@ const RedBox = styled.div`
   background-color: red;
 `
 
-// Tried with grid for a little while, but responsive widths just seem to be so much easier w. Flexbox. So I switched.
 export const Module10 = () => {
   return (
     <ModuleWrapper>
@@ -81,7 +81,7 @@ export const Module10 = () => {
           <BlueSidebarItem />
           <BlueSidebarItem />
         </RedSidebar>
-        <BlueContainerBox>
+        <ContentBox>
           <PurpleBox>
             <RedBoxRow>
               <LongRedBox />
@@ -91,7 +91,7 @@ export const Module10 = () => {
               <RedBox />
             </RedBoxRow>
           </PurpleBox>
-        </BlueContainerBox>
+        </ContentBox>
       </Container>
     </ModuleWrapper>
   )

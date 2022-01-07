@@ -10,13 +10,11 @@ const Container = styled.div`
   padding: 8px 16px;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: blue;
 `
 
 const RedBox = styled.div`
-  width: 100%;
+  flex: 1 0 auto;
   height: 100%;
   
   background-color: red;

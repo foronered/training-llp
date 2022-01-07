@@ -8,42 +8,37 @@ const Container = styled.div`
   height: 100%;
   
   display: flex;
-  align-items: center;
   background-color: blue;
 `
 
 const RedSidebar = styled.div`
-  width: 300px;
+  flex: 0 0 300px;
   height: 100%;
   
-  flex-shrink: 0;
   background-color: red;
 `
 
-const BlueContainerBox = styled.div`
-  width: 100%;
+const ContentBox = styled.div`
+  flex: 1 0 auto;
   height: 100%;
-
-  padding: 8px 16px 0 16px;
   
+  padding: 8px 16px 0 16px;
   display: flex;
-  align-items: center;
-  background-color: blue;
 `
 
 const PurpleBox = styled.div`
-  width: 100%;
+  flex: 1 0 auto;
   height: 100%;
   
+  padding: 8px;
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  gap: 8px;
   
   background-color: purple;
 `
 
 const RedBox = styled.div`
-  margin: 8px;
-  
   background-color: red;
 `
 
@@ -52,7 +47,7 @@ export const Module9 = () => {
     <ModuleWrapper>
       <Container>
         <RedSidebar />
-        <BlueContainerBox>
+        <ContentBox>
           <PurpleBox>
             <RedBox />
             <RedBox />
@@ -61,7 +56,7 @@ export const Module9 = () => {
             <RedBox />
             <RedBox />
           </PurpleBox>
-        </BlueContainerBox>
+        </ContentBox>
       </Container>
     </ModuleWrapper>
   )

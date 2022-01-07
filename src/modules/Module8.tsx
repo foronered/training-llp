@@ -23,7 +23,6 @@ const ContentBox = styled.div`
   height: 100%;
 
   padding: 8px 16px 0 16px;
-  
   display: flex;
 `
 
