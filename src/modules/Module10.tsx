@@ -3,72 +3,47 @@ import styled from 'styled-components'
 import {ModuleWrapper} from './common'
 
 
-interface RedBoxProps {
-  flex?: string,
-
-  width?: string,
-  height: string,
-}
-
 const Container = styled.div`
   width: 100%;
   height: 100%;
   
   display: flex;
-  align-items: center;
   background-color: blue;
 `
 
 const RedSidebar = styled.div`
-  width: 300px;
+  flex: 0 0 300px;
   height: 100%;
   
-  flex-shrink: 0;
-  background-color: red;
-  
+  padding: 8px 8px 0 8px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0 8px;
+  background-color: red;
 `
 
 const BlueSidebarItem = styled.div`
   width: 100%;
-  height: 40px;
+  flex: 0 0 40px;
   
-  flex-shrink: 1;
-  margin: 4px 0;
+  margin: 0 0 8px 0;
   background-color: blue;
-
-  :first-of-type {
-      margin: 8px 0 4px 0;
-  }
-    
-  :last-of-type {
-      margin: 4px 0 8px 0;
-  }
 `
 
 const BlueContainerBox = styled.div`
-  width: 100%;
+  flex: 1 0 auto;
   height: 100%;
 
   padding: 8px 16px 0 16px;
-  
-  display: flex;
-  align-items: center;
   background-color: blue;
 `
 
 const PurpleBox = styled.div`
   width: 100%;
   height: 100%;
-  
+
+  padding: 8px 8px 0 8px;
   display: flex;
   flex-direction: column;
-  
-  padding: 8px;
-    
   background-color: purple;
 `
 
@@ -76,24 +51,20 @@ const RedBoxRow = styled.div`
   width: 100%;
   display: flex;
   
-  margin: 4px 0;
+  margin: 0 0 8px 0;
   justify-content: space-between;
-  align-items: center;
-
-  :first-of-type {
-    margin: 0 0 4px 0;
-  }
-
-  :last-of-type {
-    margin: 4px 0 8px 0;
-  }
 `
 
-const RedBox = styled.div.attrs((props: RedBoxProps) => props)`
-  flex: ${(props) => props.flex ? props.flex : "1"};
+const LongRedBox = styled.div`
+  flex: 1 0 auto;
+  height: 144px;
   
-  width: ${(props) => props.width ? props.width : ""};
-  height: ${(props) => props.height ? props.height : ""};
+  background-color: red;
+`
+
+const RedBox = styled.div`
+  flex: 0 1 200px;
+  height: 200px;
   
   background-color: red;
 `
@@ -113,11 +84,11 @@ export const Module10 = () => {
         <BlueContainerBox>
           <PurpleBox>
             <RedBoxRow>
-              <RedBox height="144px" />
+              <LongRedBox />
             </RedBoxRow>
             <RedBoxRow>
-              <RedBox flex="0 1 200px" height="200px" />
-              <RedBox flex="0 1 200px" height="200px" />
+              <RedBox />
+              <RedBox />
             </RedBoxRow>
           </PurpleBox>
         </BlueContainerBox>
