@@ -20,8 +20,7 @@ const RedBox = styled.div`
   padding: 16px;
   
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
   background-color: red;
   
   overflow: scroll;
@@ -29,7 +28,7 @@ const RedBox = styled.div`
 
 const GreenRectangle = styled.div`
   width: 100%;
-  height: 500%;
+  flex: 0 0 500%;
   
   background-color: lime;
 `

@@ -18,20 +18,19 @@ const Header = styled.div`
   padding: 16px;
   
   display: flex;
-  align-items: center;
   justify-content: space-between;
   background-color: lime;
 `
 
 const PinkBoxSmall = styled.div`
-  width: 64px;
+  flex: 0 1 64px;
   height: 100%;
   
   background-color: rgb(235, 83, 159);
 `
 
 const PinkBoxLarge = styled.div`
-  width: 33%;
+  flex: 0 1 33%;
   height: 100%;
   
   background-color: rgb(235, 83, 159);
@@ -39,14 +38,13 @@ const PinkBoxLarge = styled.div`
 
 const Content = styled.div`
   width: 100%;
-  height: auto;
+  //flex: 1 0 auto; // For some reason can't use flex here as it messes with the overflow scrolling, ask Luke what he thinks
+  height: auto; 
   
-  padding: 32px;
+  padding: 32px 32px 0 32px;
   
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   background-color: red;
 
   overflow: scroll;
@@ -56,16 +54,11 @@ const LightBlueRectangle = styled.div`
   width: 100%;
   flex: 0 0 80px;
 
-  margin: 8px 0;
-  
+  margin: 0 0 16px 0;
   background-color: rgb(71, 159, 248);
-
-  :first-of-type {
-    margin: 0 0 8px 0;
-  }
-
+  
   :last-of-type {
-    margin: 8px 0 0 0;
+    margin: 0 0 32px 0;  // Because our margins are different from our parent paddings
   }
 `
 
