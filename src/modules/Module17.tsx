@@ -1,27 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import {ModuleWrapper} from './common'
+import {MOBILE_BREAKPOINT} from "../constants";
 
-
-interface AuxiliaryBoxProps {
-  width?: string,
-  flex?: string,
-  height: string,
-
-  margin?: string,
-
-  color: string,
-}
-
-const AuxiliaryBox = styled.div.attrs((props: AuxiliaryBoxProps) => props)`
-  flex: ${props => props.flex};
-  width: ${props => props.width};
-  height: ${props => props.height};
-  
-  margin: ${props => props.margin};
-  
-  background-color: ${props => props.color};;
-`
 
 const Container = styled.div`
   width: 100%;
@@ -31,11 +12,15 @@ const Container = styled.div`
 `
 
 const Sidebar = styled.div`
-  flex: 0 0 300px;
+  flex: 0 0 128px;
   height: 100%;
   
   display: flex;
   flex-direction: column;
+
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 0 300px;
+  }
 `
 
 const SidebarContent = styled.div`
@@ -46,9 +31,33 @@ const SidebarContent = styled.div`
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   background-color: red;
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    align-items: flex-start;
+  }
+`
+
+const SidebarTopBox = styled.div`
+  width: 64px;
+  flex: 0 0 64px;
+  
+  background-color: lime;
+`
+
+const SidebarBottomBox = styled.div`
+  width: 100%;
+  flex: 0 0 64px;
+  
+  margin: 16px 0;
+  display: none;
+  background-color: lime;
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    display: block;
+  }
 `
 
 const SidebarFooter = styled.div`
@@ -59,7 +68,19 @@ const SidebarFooter = styled.div`
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: rgb(242, 177, 61);
+`
+
+const FooterTopBox = styled.div`
+  flex: 0 0 64px;
+  width: 64px;
+  
+  background-color: lime;
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+  }
 `
 
 const FooterRow = styled.div`
@@ -69,7 +90,19 @@ const FooterRow = styled.div`
   margin: 16px 0 0 0;
   
   display: flex;
+  visibility: hidden;
   justify-content: space-between;
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    visibility: visible;
+  }
+`
+
+const FooterRowBox = styled.div`
+  flex: 0 1 64px;
+  height: 64px;
+  
+  background-color: red;
 `
 
 const Main = styled.div`
@@ -82,42 +115,85 @@ const Main = styled.div`
 
 const MainHeader = styled.div`
   width: 100%;
-  flex: 0 0 80px;
+  flex: 0 0 96px;
   
-  padding: 0 32px;
-  
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 16px 32px 0 32px;
   background-color: rgb(242, 177, 61);
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+`
+
+const MainHeaderRow = styled.div`
+  width: 100%;
+  display: flex;
+  
+  margin: 0 0 16px 0;
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    width: 50%;
+  }
+`
+
+const HeaderRedBox = styled.div`
+  flex: 0 1 48px;
+  height: 48px;
+  
+  background-color: red;
+`
+
+const HeaderLeftFlexBox = styled.div`
+  flex: 0 1 180px;
+  height: 48px;
+  
+  margin: 0 0 0 30px;
+  background-color: red;
+`
+
+const HeaderRightFlexBox = styled.div`
+  flex: 0 1 48px;
+  height: 48px;
+  
+  margin: 0 auto 0 18px;
+  background-color: red;
 `
 
 const RightHeaderMenu = styled.div`
   flex: 0 1 270px;
-  height: 48px;
-
+  height: 64px;
+  
   padding: 8px 16px;
-
   display: flex;
   justify-content: space-between;
   background-color: rgb(71, 159, 248);
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    margin: 0 0 0 auto;
+  }
 `
 
 const MainContent = styled.div`
   width: 100%;
   height: auto;  // Same issue
 
-  padding: 32px;
+  padding: 0;
 
   display: flex;
   justify-content: space-between;
   background-color: blue;
 
   overflow: hidden;
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    padding: 32px;
+  }
 `
 
 const LeftContentPane = styled.div`
-  flex: 0 1 63%;
+  flex: 1 0 auto;
   height: 100%;
   
   padding: 32px 32px 0 32px;
@@ -127,6 +203,10 @@ const LeftContentPane = styled.div`
   background-color: rgb(71, 159, 248);
   
   overflow: scroll;
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 1 63%;
+  }
 `
 
 const LeftRow = styled.div`
@@ -137,8 +217,43 @@ const LeftRow = styled.div`
   padding: 32px;
 
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   background-color: lime;
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: row;
+  }
+`
+
+const LeftRowRedBox = styled.div`
+  flex: 0 0 64px;
+  width: 64px;
+  
+  margin: 0 16px 16px 16px;
+  background-color: red;
+
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 1 64px;
+    width: auto;
+    height: 64px;
+    margin: 0 16px;
+  }
+`
+
+const LeftRowBlueBox = styled.div`
+  flex: 0 0 64px;
+  width: 100%;
+  
+  margin: 0 16px;
+  background-color: rgb(71, 159, 248);
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 1 1 256px;
+    width: auto;
+    height: 64px;
+  }
 `
 
 const RightContentPane = styled.div`
@@ -146,12 +261,16 @@ const RightContentPane = styled.div`
   height: 100%;
 
   padding: 32px 32px 0 32px;
-
-  display: flex;
+  
+  display: none;
   flex-direction: column;
   background-color: rgb(71, 159, 248);
   
   overflow: scroll;
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+  }
 `
 
 const RightRow = styled.div`
@@ -172,49 +291,53 @@ export const Module17 = () => {
       <Container>
         <Sidebar>
           <SidebarContent>
-            <AuxiliaryBox flex={"0 0 64px"} width={"64px"} color={"lime"} />
-            <AuxiliaryBox flex={"0 0 64px"} width={"100%"} margin={"16px 0"} color={"lime"} />
+            <SidebarTopBox />
+            <SidebarBottomBox />
           </SidebarContent>
           <SidebarFooter>
-            <AuxiliaryBox flex={"0 0 64px"} width={"100%"} color={"lime"} />
+            <FooterTopBox />
             <FooterRow>
-              <AuxiliaryBox flex={"0 1 64px"} height={"64px"} color={"red"} />
-              <AuxiliaryBox flex={"0 1 64px"} height={"64px"} color={"red"} />
-              <AuxiliaryBox flex={"0 1 64px"} height={"64px"} color={"red"} />
+              <FooterRowBox />
+              <FooterRowBox />
+              <FooterRowBox />
             </FooterRow>
           </SidebarFooter>
         </Sidebar>
         <Main>
           <MainHeader>
-            <AuxiliaryBox flex={"0 1 48px"} height={"36px"} color={"red"} />
-            <AuxiliaryBox flex={"0 1 180px"} height={"36px"} margin={"0 auto 0 30px;"} color={"red"} />
-            <RightHeaderMenu>
-              <AuxiliaryBox flex={"0 1 42px"} height={"32px"} color={"red"} />
-              <AuxiliaryBox flex={"0 1 42px"} height={"32px"} margin={"0 auto 0 18px;"} color={"red"} />
-              <AuxiliaryBox flex={"0 1 42px"} height={"32px"} color={"red"} />
-            </RightHeaderMenu>
+            <MainHeaderRow>
+              <HeaderRedBox />
+              <HeaderLeftFlexBox />
+            </MainHeaderRow>
+            <MainHeaderRow>
+              <RightHeaderMenu>
+                <HeaderRedBox />
+                <HeaderRightFlexBox />
+                <HeaderRedBox />
+              </RightHeaderMenu>
+            </MainHeaderRow>
           </MainHeader>
           <MainContent>
             <LeftContentPane>
               <LeftRow>
-                <AuxiliaryBox flex={"0 1 64px"} height={"64px"} margin={"0 16px"} color={"red"} />
-                <AuxiliaryBox flex={"1 1 256px"} height={"64px"} margin={"0 16px"} color={"rgb(71, 159, 248)"} />
+                <LeftRowRedBox />
+                <LeftRowBlueBox />
               </LeftRow>
               <LeftRow>
-                <AuxiliaryBox flex={"0 1 64px"} height={"64px"} margin={"0 16px"} color={"red"} />
-                <AuxiliaryBox flex={"1 1 256px"} height={"64px"} margin={"0 16px"} color={"rgb(71, 159, 248)"} />
+                <LeftRowRedBox />
+                <LeftRowBlueBox />
               </LeftRow>
               <LeftRow>
-                <AuxiliaryBox flex={"0 1 64px"} height={"64px"} margin={"0 16px"} color={"red"} />
-                <AuxiliaryBox flex={"1 1 256px"} height={"64px"} margin={"0 16px"} color={"rgb(71, 159, 248)"} />
+                <LeftRowRedBox />
+                <LeftRowBlueBox />
               </LeftRow>
               <LeftRow>
-                <AuxiliaryBox flex={"0 1 64px"} height={"64px"} margin={"0 16px"} color={"red"} />
-                <AuxiliaryBox flex={"1 1 256px"} height={"64px"} margin={"0 16px"} color={"rgb(71, 159, 248)"} />
+                <LeftRowRedBox />
+                <LeftRowBlueBox />
               </LeftRow>
               <LeftRow>
-                <AuxiliaryBox flex={"0 1 64px"} height={"64px"} margin={"0 16px"} color={"red"} />
-                <AuxiliaryBox flex={"1 1 256px"} height={"64px"} margin={"0 16px"} color={"rgb(71, 159, 248)"} />
+                <LeftRowRedBox />
+                <LeftRowBlueBox />
               </LeftRow>
             </LeftContentPane>
             <RightContentPane>
