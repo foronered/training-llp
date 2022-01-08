@@ -1,20 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
 import {ModuleWrapper} from './common'
+import {MOBILE_BREAKPOINT} from "../constants";
 
 
 interface AuxiliaryBoxProps {
   flex: string,
   height: string,
 
+  hide?: boolean,
   color: string,
 }
 
+/* One could very well argue that this is too fancy.
+   Nonetheless, I noticed I was getting lost in my boxes a bit and there was a lot of repeated ones,
+   so I decided to try this out. */
 const AuxiliaryBox = styled.div.attrs((props: AuxiliaryBoxProps) => props)`
   flex: ${props => props.flex};
   height: ${props => props.height};
   
-  background-color: ${props => props.color};;
+  display: ${props => props.hide ? "none" : "block"};  // We can conditionally hide the element with this prop
+  background-color: ${props => props.color};
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    display: block;
+  }
 `
 
 const Container = styled.div`
@@ -25,58 +35,80 @@ const Container = styled.div`
 `
 
 const Sidebar = styled.div`
-  flex: 0 0 300px;
+  flex: 0 0 128px;
   height: 100%;
   
   display: flex;
   flex-direction: column;
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 0 300px;
+  }
 `
 
 const SidebarHeader = styled.div`
   width: 100%;
-  flex: 0 0 80px;
+  flex: 0 0 96px;
   
-  padding: 16px 32px;
+  padding: 16px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   background-color: rgb(235, 83, 159);
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: space-between;
+  }
+`
+
+const HeaderLeftBox = styled.div`
+  flex: 0 1 196px;
+  height: 48px;
+  
+  margin: 0 16px 0 0;
+
+  background-color: red;
 `
 
 const SidebarContent = styled.div`
   width: 100%;
   height: auto;  // Same issue with flex disallowing scroll... ask Luke
   
-  padding: 32px 32px 0 32px;
+  padding: 16px 16px 0 16px;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: red;
   
   overflow: scroll;
 `
 
 const SidebarRectangle = styled.div`
-  width: 100%;
-  flex: 0 0 60px;
+  width: 64px;
+  flex: 0 0 64px;
 
   margin: 0 0 16px 0;
   background-color: lime;
   
-  :last-of-type {
-    margin: 0 0 32px 0;  // Margins are different from parent padding
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
   }
 `
 
 const SidebarFooter = styled.div`
   width: 100%;
-  flex: 0 0 80px;
+  flex: 0 0 96px;
 
-  padding: 16px 32px;
+  padding: 16px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   background-color: rgb(242, 177, 61);
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: space-between;
+  }
 `
 
 const Main = styled.div`
@@ -89,7 +121,7 @@ const Main = styled.div`
 
 const MainHeader = styled.div`
   width: 100%;
-  flex: 0 0 80px;
+  flex: 0 0 96px;
 
   padding: 16px 32px;
   
@@ -100,14 +132,18 @@ const MainHeader = styled.div`
 `
 
 const RightHeaderMenu = styled.div`
-  flex: 0 1 270px;
-  height: 48px;
+  flex: 0 0 80px;
+  height: 64px;
 
   padding: 8px 16px;
 
   display: flex;
   justify-content: space-between;
   background-color: rgb(71, 159, 248);
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 1 270px;
+  }
 `
 
 const MainContent = styled.div`
@@ -128,18 +164,27 @@ const MainContentRow = styled.div`
   flex: 0 0 auto;
 
   margin:  0 0 32px 0;
-
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 `
 
 const MainContentBox = styled.div`
-  flex: 0 1 250px;
+  flex: 0 1 75%;
   height: 150px;
+  
+  margin: 0 auto 0 auto;
   background-color: rgb(71, 159, 248);
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 1 250px;
+    margin: 0;
+  }
 
   :first-of-type {
-    margin: 0 32px 0 0;
+    @media(min-width: ${MOBILE_BREAKPOINT}) {
+      margin: 0 32px 0 0;
+    }
   }
 `
 
@@ -149,8 +194,8 @@ export const Module16 = () => {
       <Container>
         <Sidebar>
           <SidebarHeader>
-            <AuxiliaryBox flex={"0 0 48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
-            <AuxiliaryBox flex={"0 0 48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
+            <AuxiliaryBox flex={"0 0 64px"} height={"64px"} color={"rgb(71, 159, 248)"} hide={true}/>
+            <AuxiliaryBox flex={"0 0 64px"} height={"64px"} color={"rgb(71, 159, 248)"} />
           </SidebarHeader>
           <SidebarContent>
             <SidebarRectangle />
@@ -167,21 +212,25 @@ export const Module16 = () => {
             <SidebarRectangle />
           </SidebarContent>
           <SidebarFooter>
-            <AuxiliaryBox flex={"0 0 48px"} height={"48px"} color={"rgb(71, 159, 248)"} />
-            <AuxiliaryBox flex={"0 0 172px"} height={"48px"} color={"rgb(71, 159, 248)"} />
+            <AuxiliaryBox flex={"0 0 64px"} height={"64px"} color={"rgb(71, 159, 248)"} />
+            <AuxiliaryBox flex={"0 0 192px"} height={"64px"} color={"rgb(71, 159, 248)"} hide={true} />
           </SidebarFooter>
         </Sidebar>
         <Main>
           <MainHeader>
-            <AuxiliaryBox flex={"0 0 196px"} height={"32px"} color={"red"} />
+            <HeaderLeftBox />
             <RightHeaderMenu>
-              <AuxiliaryBox flex={"0 0 42px"} height={"32px"} color={"red"} />
-              <AuxiliaryBox flex={"0 0 42px"} height={"32px"} color={"red"} />
-              <AuxiliaryBox flex={"0 0 42px"} height={"32px"} color={"red"} />
-              <AuxiliaryBox flex={"0 0 42px"} height={"32px"} color={"red"} />
+              <AuxiliaryBox flex={"0 0 48px"} height={"48px"} color={"red"} />
+              <AuxiliaryBox flex={"0 0 48px"} height={"48px"} color={"red"} hide={true} />
+              <AuxiliaryBox flex={"0 0 48px"} height={"48px"} color={"red"} hide={true} />
+              <AuxiliaryBox flex={"0 0 48px"} height={"48px"} color={"red"} hide={true} />
             </RightHeaderMenu>
           </MainHeader>
           <MainContent>
+            <MainContentRow>
+              <MainContentBox />
+              <MainContentBox />
+            </MainContentRow>
             <MainContentRow>
               <MainContentBox />
               <MainContentBox />
