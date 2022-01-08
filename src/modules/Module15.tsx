@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {ModuleWrapper} from './common'
+import {MOBILE_BREAKPOINT} from "../constants";
 
 
 const Container = styled.div`
@@ -18,32 +19,31 @@ const Header = styled.div`
   padding: 16px;
   
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   background-color: lime;
+  
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: space-between;
+  }
 `
 
-const PinkBoxSmall = styled.div`
-  flex: 0 1 64px;
-  height: 100%;
+const PinkBoxSmallTop = styled.div`
+  flex: 0 0 64px;
+  height: 64px;
   
   background-color: rgb(235, 83, 159);
 `
 
-const PinkBoxSmallLeft = styled.div`
-  flex: 0 1 64px;
-  height: 100%;
-  
-  margin-left: 16px;
-  margin-right: auto;
-  
-  background-color: rgb(235, 83, 159);
-`
-
-const PinkBoxLarge = styled.div`
+const PinkBoxLargeTop = styled.div`
   flex: 0 1 33%;
-  height: 100%;
+  height: 64px;
   
+  display: none;
   background-color: rgb(235, 83, 159);
+  
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    display: block;
+  }
 `
 
 const Content = styled.div`
@@ -55,13 +55,14 @@ const Content = styled.div`
   
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: red;
 
   overflow: scroll;
 `
 
 const LightBlueRectangle = styled.div`
-  width: 100%;
+  width: 25%;
   flex: 0 0 80px;
 
   margin: 0 0 16px 0;
@@ -73,6 +74,10 @@ const LightBlueRectangle = styled.div`
   :last-of-type {
     margin: 0 0 32px 0;  // Because our margins are different from our parent paddings
   }
+  
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+  }
 `
 
 const YellowSquare = styled.div`
@@ -83,16 +88,53 @@ const YellowSquare = styled.div`
 `
 
 const Footer = styled.div`
-  // Technically, you could just use the header element from above, as here they are 100% identical
-  // But what if in a real world scenario the footer changed? Hence it's best practice to keep them separate
   width: 100%;
   flex: 0 0 80px;
 
-  padding: 16px;
-
-  display: flex;
-  justify-content: space-between;
+  padding: 16px 16px 0 16px;
   background-color: lime;
+  
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+  }
+`
+
+// I think this is a pretty clean solution for the footer, interested in your feedback
+const FooterRow = styled.div`
+  width: 50%;
+  margin: 0 auto 16px auto;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 1 50%;
+  }
+`
+
+const PinkBoxLargeBottom = styled.div`
+  flex: 1 0 auto;
+  height: 64px;
+  
+  background-color: rgb(235, 83, 159);
+`
+
+const PinkBoxSmallBottomLeft = styled.div`
+  flex: 0 0 64px;
+  height: 64px;
+  
+  margin: 0 auto 0 16px;
+  background-color: rgb(235, 83, 159);
+`
+
+const PinkBoxSmallBottomRight = styled.div`
+  flex: 0 0 64px;
+  height: 64px;
+  
+  background-color: rgb(235, 83, 159);
+  
+  @media(min-width: ${MOBILE_BREAKPOINT}) {
+    margin: 0 0 0 auto;
+  }
 `
 
 const ContentBlock = () => {
@@ -108,8 +150,8 @@ export const Module15 = () => {
     <ModuleWrapper>
       <Container>
         <Header>
-          <PinkBoxSmall />
-          <PinkBoxLarge />
+          <PinkBoxSmallTop />
+          <PinkBoxLargeTop />
         </Header>
         <Content>
           <ContentBlock />
@@ -122,9 +164,13 @@ export const Module15 = () => {
           <ContentBlock />
         </Content>
         <Footer>
-          <PinkBoxLarge />
-          <PinkBoxSmallLeft />
-          <PinkBoxSmall />
+          <FooterRow>
+            <PinkBoxLargeBottom />
+            <PinkBoxSmallBottomLeft />
+          </FooterRow>
+          <FooterRow>
+            <PinkBoxSmallBottomRight />
+          </FooterRow>
         </Footer>
       </Container>
     </ModuleWrapper>
