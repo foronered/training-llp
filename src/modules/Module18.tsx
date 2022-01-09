@@ -107,8 +107,37 @@ const BlackBox = styled.div`
 const MiddleColumn = styled.div`
   flex: 0 0 25%;
   height: 100%;
-  
+
+  display: flex;
+  padding: 32px 32px 0 32px;
+  flex-direction: column;
   background-color: red;
+  
+  overflow: scroll;
+`
+
+const GreenRow = styled.div`
+  flex: 0 0 128px;
+  width: 100%;
+
+  margin: 0 0 32px 0;
+  padding: 16px 16px 16px 16px;
+  background-color: lime;
+`
+
+const TopBlueBox = styled.div`
+  width: 64px;
+  height: 32px;
+  
+  margin: 0 0 32px 0;
+  background-color: rgb(71, 159, 248);
+`
+
+const BottomBlueBox = styled.div`
+  width: 100%;
+  height: 32px;
+  
+  background-color: rgb(71, 159, 248);
 `
 
 const RightColumn = styled.div`
@@ -122,17 +151,100 @@ const RightColumn = styled.div`
 const RightTopColumn = styled.div`
   flex: 0 0 25%;
   width: 100%;
+
+  padding: 32px 32px 0 32px;
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+  
+  overflow: scroll;
+`
+
+const RedTopRow = styled.div`
+  flex: 0 0 64px;
+  width: 100%;
   
   display: flex;
-  background-color: blue;
+  margin: 0 0 16px 0;
+  padding: 16px;
+  background-color: red;
+  
+  :last-of-type {
+    margin: 0 0 32px 0;
+  }
+`
+
+const LightBlueBox = styled.div`
+  flex: 1 0 auto;
+  height: 100%;
+  
+  padding: 8px;
+  display: flex;
+  background-color: rgb(71, 159, 248);
+`
+
+const TopBlackBox = styled.div`
+  flex: 0 0 16px;
+  height: 100%;
+  
+  background-color: black;
 `
 
 const RightBottomColumn = styled.div`
   flex: 0 0 75%;
   width: 100%;
   
+  padding: 32px;
   display: flex;
+  justify-content: center;
+  gap: 16px;
   background-color: fuchsia;
+  overflow-x: hidden;
+  overflow-y: scroll;
+`
+
+const RightBottomLeft = styled.div`
+  flex: 0 1 50%;
+  height: 800px;
+`
+
+const RightBottomLeftBlueBox = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  padding: 32px;
+  background-color: rgb(71, 159, 248);
+`
+
+const RightBottomLeftBlackBox = styled.div`
+  flex: 1 0 auto;
+  width: 100%;
+  
+  background-color: black;
+`
+
+const RightBottomRight = styled.div`
+  flex: 0 1 50%;
+  height: 800px;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`
+
+const RightBottomRightBlackBox = styled.div`
+  flex: 0 0 150px;
+  width: 100%;
+  
+  background-color: black;
+`
+
+const RightBottomRightBlueBox = styled.div`
+  flex: 1 0 auto;
+  width: 100%;
+
+  background-color: rgb(71, 159, 248);
 `
 
 const LeftTopContent = () => {
@@ -163,6 +275,25 @@ const LeftBottomContent = () => {
   )
 }
 
+const MiddleContent = () => {
+  return (
+    <GreenRow>
+      <TopBlueBox />
+      <BottomBlueBox />
+    </GreenRow>
+  )
+}
+
+const RightTopContent = () => {
+  return (
+    <RedTopRow>
+      <LightBlueBox>
+        <TopBlackBox />
+      </LightBlueBox>
+    </RedTopRow>
+  )
+}
+
 export const Module18 = () => {
   return (
     <ModuleWrapper>
@@ -183,10 +314,33 @@ export const Module18 = () => {
             <LeftBottomContent />
           </LeftBottomColumn>
         </LeftColumn>
-        <MiddleColumn />
+        <MiddleColumn>
+          <MiddleContent />
+          <MiddleContent />
+          <MiddleContent />
+          <MiddleContent />
+          <MiddleContent />
+          <MiddleContent />
+        </MiddleColumn>
         <RightColumn>
-          <RightTopColumn />
-          <RightBottomColumn />
+          <RightTopColumn>
+            <RightTopContent />
+            <RightTopContent />
+            <RightTopContent />
+            <RightTopContent />
+            <RightTopContent />
+          </RightTopColumn>
+          <RightBottomColumn>
+            <RightBottomLeft>
+              <RightBottomLeftBlueBox>
+                <RightBottomLeftBlackBox />
+              </RightBottomLeftBlueBox>
+            </RightBottomLeft>
+            <RightBottomRight>
+              <RightBottomRightBlackBox />
+              <RightBottomRightBlueBox />
+            </RightBottomRight>
+          </RightBottomColumn>
         </RightColumn>
       </Container>
     </ModuleWrapper>
