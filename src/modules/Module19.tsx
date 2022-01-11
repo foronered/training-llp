@@ -6,7 +6,6 @@ import {ModuleWrapper} from './common'
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,10 +22,8 @@ const RedBox = styled.div`
 
 const BlueCircle = styled.div`
   position: absolute;
-  
   top: -24px;
   right: -24px;
-  
   width: 48px;
   height: 48px;
   border-radius: 50%;

@@ -7,7 +7,6 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +39,6 @@ const BlackBarContainer = styled.div`
 const BlackBar = styled.div`
   flex: 0 0 40px;
   height: 50%;
-  
   background-color: black;
 `
 

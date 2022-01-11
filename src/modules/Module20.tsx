@@ -6,7 +6,6 @@ import {ModuleWrapper} from './common'
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,13 +14,12 @@ const Container = styled.div`
 
 const RedBox = styled.div`
   position: relative;
-  
+  width: 300px; 
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px 32px;
-  width: 300px; 
-  height: 50px;
   background-color: red;
 `
 
@@ -34,10 +32,8 @@ const BlueBox = styled.div`
 
 const BlackCircle1 = styled.div`
   position: absolute;
-
   bottom: -8px;
   left: -8px;
-  
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -46,10 +42,8 @@ const BlackCircle1 = styled.div`
 
 const BlackCircle2 = styled.div`
   position: absolute;
-
   top: -8px;
-  left: 110px; // 300px - 64px (padding) - 8px;
-  
+  left: 110px; // 300px - 64px (padding) - 8px = 110px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -58,10 +52,8 @@ const BlackCircle2 = styled.div`
 
 const BlackCircle3 = styled.div`
   position: absolute;
-
   bottom: -8px;
   right: -8px;
-  
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -70,10 +62,8 @@ const BlackCircle3 = styled.div`
 
 const BlueCircle = styled.div`
   position: absolute;
-  
   top: -24px;
   right: -24px;
-  
   width: 48px;
   height: 48px;
   border-radius: 50%;

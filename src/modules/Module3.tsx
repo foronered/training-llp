@@ -1,13 +1,10 @@
-import React from 'react'
 import styled from 'styled-components'
-import {ModuleWrapper} from './common'
-import {MOBILE_BREAKPOINT} from "../constants";
+import {DESKTOP_STYLE, MOBILE_STYLE, ModuleWrapper} from './common'
 
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,13 +14,15 @@ const Container = styled.div`
 const RedBox = styled.div`
   width: 400px;
   height: 400px;
-  
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
+    background-color: black;
+  }
+
+  ${DESKTOP_STYLE} {
     background-color: red;
   }
 `
@@ -31,10 +30,12 @@ const RedBox = styled.div`
 const OrangeBox = styled.div`
   width: 200px;
   height: 200px;
-  
-  background-color: lime;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
+    background-color: lime;
+  }
+
+  ${DESKTOP_STYLE} {
     background-color: orange;
   }
 `

@@ -1,15 +1,11 @@
-import React from 'react'
 import styled from 'styled-components'
-import {ModuleWrapper} from './common'
-import {MOBILE_BREAKPOINT} from "../constants";
+import {DESKTOP_STYLE, MOBILE_STYLE, ModuleWrapper} from './common'
 
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
-
   padding: 8px 16px;
-
   display: flex;
   background-color: blue;
 `
@@ -17,50 +13,56 @@ const Container = styled.div`
 const RedBox = styled.div`
   flex: 1 0 auto;
   height: 100%;
-  
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-
   background-color: red;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+  }
+
+  ${DESKTOP_STYLE} {
     flex-direction: row;
   }
 `
 
 const GreenBox = styled.div`
-  width: 64px;
   flex: 0 1 64px;
-  
   background-color: lime;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    flex: 0 1 64px;
+  ${MOBILE_STYLE} {
+    width: 64px;
+  }
+
+  ${DESKTOP_STYLE} {
     height: 64px;
   }
 `
 
 const BlueBox = styled.div`
-  width: 256px;
-  flex: 0 1 64px;
-  
   background-color: deepskyblue;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
+    flex: 0 1 64px;
+    width: 256px;
+  }
+
+  ${DESKTOP_STYLE} {
     flex: 0 1 256px;
     height: 64px;
   }
 `
 
 const OrangeBox = styled.div`
-  width: 128px;
-  flex: 0 1 64px;
-  
   background-color: orange;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
+    flex: 0 1 64px;
+    width: 128px;
+  }
+
+  ${DESKTOP_STYLE} {
     flex: 0 1 128px;
     height: 64px;
   }
