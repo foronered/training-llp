@@ -6,6 +6,8 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
+  background-color: blue;
 `
 
 const Sidebar = styled.div`
@@ -107,10 +109,17 @@ const FooterRowBox = styled.div`
 `
 
 const Main = styled.div`
-  flex: 1 0 auto;
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  ${MOBILE_STYLE} {
+    flex: 0 1 350px;
+  }
+
+  ${DESKTOP_STYLE} {
+    flex: 1 0 auto;
+  }
 `
 
 const MainHeader = styled.div`

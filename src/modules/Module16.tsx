@@ -31,6 +31,8 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
+  background-color: blue;
 `
 
 const Sidebar = styled.div`
@@ -112,10 +114,17 @@ const SidebarFooter = styled.div`
 `
 
 const Main = styled.div`
-  flex: 1 0 auto;
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  ${MOBILE_STYLE} {
+    flex: 0 1 350px;
+  }
+
+  ${DESKTOP_STYLE} {
+    flex: 1 0 auto;
+  }
 `
 
 const MainHeader = styled.div`
@@ -164,16 +173,19 @@ const MainContentRow = styled.div`
 `
 
 const MainContentBox = styled.div`
+  flex: 0 1 250px;
   height: 150px;
   background-color: rgb(71, 159, 248);
 
   ${MOBILE_STYLE} {
-    flex: 0 1 75%;
     margin: 0 auto 0 auto;
+
+    :first-of-type {
+      margin: 0 auto 32px auto;
+    }
   }
 
   ${DESKTOP_STYLE} {
-    flex: 0 1 250px;
     margin: 0;
 
     :first-of-type {
