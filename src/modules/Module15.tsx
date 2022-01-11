@@ -48,7 +48,6 @@ const PinkBoxLargeTop = styled.div`
 const Content = styled.div`
   width: 100%;
   //flex: 1 0 auto; // see Module 14
-  height: auto;
   padding: 32px 32px 0 32px;
   display: flex;
   flex-direction: column;
@@ -70,7 +69,7 @@ const LightBlueRectangle = styled.div`
   }
   
   ${MOBILE_STYLE} {
-    width: 25%;
+    width: 200px;
   }
 
   ${DESKTOP_STYLE} {

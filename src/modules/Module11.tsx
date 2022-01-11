@@ -54,9 +54,9 @@ const GreenSidebarItem = styled.div`
 `
 
 const Content = styled.div`
-  flex: 1 0 80%;
+  flex: 1;
   padding: 16px;
-  overflow: scroll;
+  overflow-y: scroll;
 
   ${MOBILE_STYLE} {
     width: 100%;
@@ -74,7 +74,7 @@ const ContentGrid = styled.div`
   gap: 8px;
 
   ${MOBILE_STYLE} {
-    margin: auto;
+    margin: 0 auto 0 auto;
   }
 
   ${DESKTOP_STYLE} {
@@ -87,6 +87,13 @@ const RedBox = styled.div`
   height: 200px;
   background-color: red;
 `
+
+// I would like to type this but I am getting an error which is probably a topic for conversation
+let GridArray: any[] = []
+
+for (let i = 0; i < 36; i++) {
+  GridArray.push(<RedBox />)
+}
 
 export const Module11 = () => {
   return (
@@ -101,42 +108,7 @@ export const Module11 = () => {
         </RedSidebar>
         <Content>
           <ContentGrid>
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
-            <RedBox />
+            {GridArray}
           </ContentGrid>
         </Content>
       </Container>

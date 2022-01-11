@@ -23,13 +23,13 @@ const HeaderContainer = styled.div`
   display: flex;
 
   ${MOBILE_STYLE} {
-    flex: 0 1 45%;
+    flex: 0 1 50%;
     flex-direction: column;
     align-items: flex-start;
   }
 
   ${DESKTOP_STYLE} {
-    flex: 1 0 auto;
+    flex: 1;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -86,7 +86,7 @@ const LightBlueRectangle = styled.div`
   }
 
   ${MOBILE_STYLE} {
-    width: 25%;
+    width: 200px;
   }
 
   ${DESKTOP_STYLE} {

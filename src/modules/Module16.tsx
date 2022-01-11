@@ -155,7 +155,6 @@ const RightHeaderMenu = styled.div`
 
 const MainContent = styled.div`
   width: 100%;
-  height: auto;  // Can't use flex for overflow again
   padding: 32px 32px 0 32px;
   display: flex;
   flex-direction: column;
@@ -164,7 +163,6 @@ const MainContent = styled.div`
 `
 
 const MainContentRow = styled.div`
-  flex: 0 0 auto;  // Take height of content
   width: 100%;
   margin:  0 0 32px 0;
   display: flex;

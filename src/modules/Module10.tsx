@@ -28,7 +28,7 @@ const RedSidebar = styled.div`
   background-color: red;
 
   ${MOBILE_STYLE} {
-    flex: 1 0 auto;
+    flex: 1;
     width: 300px;
   }
 
@@ -77,13 +77,13 @@ const RedBoxRow = styled.div`
 `
 
 const LongRedBox = styled.div`
-  flex: 1 1 auto;
+  flex: 1;
   height: 144px;
   background-color: red;
 `
 
 const RedBox = styled.div`
-  flex: 0 1 200px;
+  flex: 0 0 200px;
   height: 200px;
   background-color: red;
 `
