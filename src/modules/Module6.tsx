@@ -12,33 +12,49 @@ const Container = styled.div`
 
   ${DESKTOP_STYLE} {
     padding: 8px 16px;
+    flex-direction: row;
   }
 
   ${MOBILE_STYLE} {
     padding: 75px;
+    flex-direction: column;
   }
 `
 
-const InnerBox = styled.div`
-  width: 100%;
-  height: 100%;
+const RedContainer = styled.div`
+  background-color: red;
 
   ${DESKTOP_STYLE} {
-    background-color: red;
-    padding: 8px 16px;
+    width: 300px;
+    height: 100%;
   }
 
   ${MOBILE_STYLE} {
-    background-color: dodgerblue;
-    padding: 75px;
+    width: 100%;
+    flex: 1;
   }
 `
 
-export const Module4 = () => {
+const GreenContainer = styled.div`
+  background-color: greenyellow;
+
+  ${DESKTOP_STYLE} {
+    height: 100%;
+    flex: 1;
+  }
+
+  ${MOBILE_STYLE} {
+    flex: 2;
+    width: 100%;
+  }
+`
+
+export const Module6 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <InnerBox />
+        <RedContainer />
+        <GreenContainer />
       </Container>
     </ModuleWrapper>
   )
