@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { MOBILE_BREAKPOINT } from '../constants'
 
@@ -17,4 +16,6 @@ export const ModuleWrapper = styled.div`
     width: 100%;
   }
 `
-//
+
+export const MOBILE_STYLE = `@media (max-width: ${MOBILE_BREAKPOINT})`
+export const DESKTOP_STYLE = `@media (min-width: ${MOBILE_BREAKPOINT})`
