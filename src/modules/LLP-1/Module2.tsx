@@ -10,19 +10,24 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   background-color: blue;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    align-items: space-evenly;
+  }
 `
 
 const RedBox = styled.div`
   flex: 0 0 200px;
   height: 200px;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
-  }
+  background-color: firebrick;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+    width: 200px;
   }
+
+  // where should the gap between the red boxes come from
+  // making the blue container bigger or the red boxes smaller?
 `
 
 export const Module2 = () => {

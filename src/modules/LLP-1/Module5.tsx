@@ -18,12 +18,10 @@ const RedBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
-  }
+  background-color: firebrick;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+    flex-direction: column;
   }
 `
 
@@ -32,6 +30,10 @@ const GreenBox = styled.div`
   height: 64px;
 
   background-color: green;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 64px;
+  }
 `
 
 const BlueBox = styled.div`
@@ -39,6 +41,10 @@ const BlueBox = styled.div`
   height: 64px;
 
   background-color: blue;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 256px;
+    flex: 0 0 64px;
+  }
 `
 
 const OrangeBox = styled.div`
@@ -46,6 +52,10 @@ const OrangeBox = styled.div`
   height: 64px;
 
   background-color: orange;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 128px;
+    flex: 0 0 64px;
+  }
 `
 
 export const Module5 = () => {

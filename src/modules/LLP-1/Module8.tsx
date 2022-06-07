@@ -11,6 +11,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   background-color: blue;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
 `
 
 const RedBox = styled.div`
@@ -21,12 +25,11 @@ const RedBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
-  }
+  background-color: firebrick;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+    width: 100%;
+    flex: 1;
   }
 `
 
@@ -36,6 +39,11 @@ const BlueBox = styled.div`
   padding: 8px 16px;
 
   background-color: blue;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+    flex: 4;
+  }
 `
 
 const GreenBox = styled.div`

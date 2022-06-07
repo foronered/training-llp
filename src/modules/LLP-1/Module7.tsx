@@ -9,6 +9,10 @@ const Container = styled.div`
   padding: 8px 16px;
   display: flex;
   background-color: blue;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
 `
 
 const RedBox = styled.div`
@@ -18,6 +22,8 @@ const RedBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: firebrick;
 
   @media (min-width: ${MOBILE_BREAKPOINT}) {
     background-color: firebrick;
@@ -34,6 +40,8 @@ const GreenBox = styled.div`
 
   background-color: green;
 `
+
+// how to make the red and orange beaneath each other?
 
 const OrangeBox = styled.div`
   flex: 1;

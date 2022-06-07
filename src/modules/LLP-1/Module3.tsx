@@ -20,12 +20,9 @@ const RedBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
-  }
-
+  background-color: firebrick;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+    background-color: black;
   }
 `
 
@@ -34,6 +31,10 @@ const OrangeBox = styled.div`
   height: 200px;
 
   background-color: orange;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    background-color: green;
+  }
 `
 
 export const Module3 = () => {

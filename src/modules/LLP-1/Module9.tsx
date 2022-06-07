@@ -11,6 +11,11 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   background-color: blue;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    overflow: scroll;
+  }
 `
 
 const RedBox = styled.div`
@@ -21,12 +26,11 @@ const RedBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
-  }
+  background-color: firebrick;
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+    width: 100%;
+    flex: 1;
   }
 `
 
@@ -36,6 +40,11 @@ const BlueBox = styled.div`
   padding: 8px 16px;
 
   background-color: blue;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+    flex: 4;
+  }
 `
 
 const PurpleBox = styled.div`
@@ -48,6 +57,14 @@ const PurpleBox = styled.div`
   background-color: purple;
   flex-wrap: wrap;
   gap: 8px;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    background-color: transparent;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    align-items: center;
+  }
 `
 
 const SmallRedBox = styled.div`
@@ -55,6 +72,10 @@ const SmallRedBox = styled.div`
   height: 200px;
 
   background-color: firebrick;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 200px;
+    flex: 0 0 200px;
+  }
 `
 
 export const Module9 = () => {

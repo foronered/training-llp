@@ -9,26 +9,35 @@ const Container = styled.div`
   padding: 8px 16px;
   display: flex;
   background-color: blue;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
 `
 
 const RedBox = styled.div`
   flex: 0 0 300px;
   height: 100%;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
-  }
+  background-color: firebrick;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+  @media ((max-width: ${MOBILE_BREAKPOINT})) {
+    width: 100%;
+    flex: 1;
   }
 `
+
+// how to make red box bigger than green one?
 
 const GreenBox = styled.div`
   flex: 1;
   height: 100%;
 
   background-color: green;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex: 3;
+    width: 100%;
+  }
 `
 
 export const Module6 = () => {
