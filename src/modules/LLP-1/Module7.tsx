@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DesktopStyle, MobileStyle, MOBILE_BREAKPOINT } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -10,52 +10,80 @@ const Container = styled.div`
   display: flex;
   background-color: blue;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${DesktopStyle} {
+    flex-direction: row;
+  }
+
+  ${MobileStyle} {
     flex-direction: column;
   }
 `
 
 const RedBox = styled.div`
-  flex: 1;
-  height: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
 
   background-color: firebrick;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+  ${DesktopStyle} {
+    flex: 1;
+    height: 100%;
   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+  ${MobileStyle} {
+    flex: 1;
+    width: 100%;
   }
 `
 
 const GreenBox = styled.div`
-  flex: 2;
-  height: 100%;
+  ${DesktopStyle} {
+    flex: 1;
+    height: 100%;
+  }
+
+  ${MobileStyle} {
+    flex: 1;
+  }
 
   background-color: green;
 `
 
-// how to make the red and orange beaneath each other?
-
 const OrangeBox = styled.div`
-  flex: 1;
-  height: 100%;
+  ${DesktopStyle} {
+    flex: 1;
+    height: 100%;
+  }
+
+  ${MobileStyle} {
+    flex: 1;
+    height: 100%;
+  }
 
   background-color: orange;
+`
+
+const HelperBox = styled.div`
+  display: flex;
+
+  ${DesktopStyle} {
+    flex: 1;
+    height: 100%;
+  }
+  ${MobileStyle} {
+    flex: 0 0 100px;
+  }
 `
 
 export const Module7 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox />
-        <OrangeBox />
+        <HelperBox>
+          <RedBox />
+          <OrangeBox />
+        </HelperBox>
         <GreenBox />
       </Container>
     </ModuleWrapper>

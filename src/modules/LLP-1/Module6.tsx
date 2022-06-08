@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DesktopStyle, MobileStyle, MOBILE_BREAKPOINT } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -9,19 +9,24 @@ const Container = styled.div`
   padding: 8px 16px;
   display: flex;
   background-color: blue;
+  ${DesktopStyle} {
+    flex-direction: row;
+  }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MobileStyle} {
     flex-direction: column;
   }
 `
 
 const RedBox = styled.div`
-  flex: 0 0 300px;
-  height: 100%;
-
   background-color: firebrick;
 
-  @media ((max-width: ${MOBILE_BREAKPOINT})) {
+  ${DesktopStyle} {
+    flex: 0 0 300px;
+    height: 100%;
+  }
+
+  ${MobileStyle} {
     width: 100%;
     flex: 1;
   }
@@ -30,11 +35,14 @@ const RedBox = styled.div`
 // how to make red box bigger than green one?
 
 const GreenBox = styled.div`
-  flex: 1;
-  height: 100%;
-
   background-color: green;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+
+  ${DesktopStyle} {
+    flex: 1;
+    height: 100%;
+  }
+
+  ${MobileStyle} {
     flex: 3;
     width: 100%;
   }

@@ -1,33 +1,39 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DesktopStyle, MobileStyle, MOBILE_BREAKPOINT } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   background-color: blue;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+
+  ${DesktopStyle} {
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  ${MobileStyle} {
+    padding: 16px;
     flex-direction: column;
-    align-items: space-evenly;
+    align-items: center;
+    gap: 16px;
+    overflow-y: auto;
   }
 `
 
 const RedBox = styled.div`
-  flex: 0 0 200px;
-  height: 200px;
-
   background-color: firebrick;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${DesktopStyle} {
+    flex: 0 0 200px;
+    height: 200px;
+  }
+  ${MobileStyle} {
+    flex: 0 0 200px;
     width: 200px;
   }
-
-  // where should the gap between the red boxes come from
-  // making the blue container bigger or the red boxes smaller?
 `
 
 export const Module2 = () => {

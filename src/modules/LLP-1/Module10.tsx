@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DesktopStyle, MobileStyle, MOBILE_BREAKPOINT } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -9,13 +9,19 @@ const Container = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   background-color: blue;
+
+  ${DesktopStyle} {
+    flex-direction: row;
+  }
+  ${MobileStyle} {
+    padding-top: 16px;
+    flex-direction: column;
+    overflow: scroll;
+  }
 `
 
 const RedBox = styled.div`
-  flex: 0 0 300px;
-  height: 100%;
   padding: 8px;
 
   display: flex;
@@ -23,12 +29,15 @@ const RedBox = styled.div`
   align-items: center;
   flex-direction: column;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
-  }
+  background-color: firebrick;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+  ${DesktopStyle} {
+    flex: 0 0 300px;
+    height: 100%;
+  }
+  ${MobileStyle} {
+    width: 160px;
+    flex: 3;
   }
 `
 
@@ -41,33 +50,46 @@ const SmallBlueBox = styled.div`
 `
 
 const BlueBox = styled.div`
-  flex: 1;
-  height: 100%;
   padding: 8px 16px;
 
   background-color: blue;
+
+  ${DesktopStyle} {
+    flex: 1;
+    height: 100%;
+  }
+  ${MobileStyle} {
+    flex: 1;
+    width: 60%;
+  }
 `
 
 const PurpleBox = styled.div`
-  flex: 1;
-  height: 100%;
   padding: 8px;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  align-content: flex-start;
   gap: 8px;
 
   background-color: purple;
+
+  ${DesktopStyle} {
+    flex: 1;
+    height: 100%;
+    justify-content: space-between;
+    align-content: flex-start;
+  }
+
+  ${MobileStyle} {
+    flex: 1;
+    width: 100%;
+  }
 `
 
 const SmallRedBox = styled.div`
+  background-color: firebrick;
   flex: 0 0 200px;
   height: 200px;
-
-  background-color: firebrick;
 `
 
 export const Module10 = () => {

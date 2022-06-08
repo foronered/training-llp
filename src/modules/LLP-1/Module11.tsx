@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DesktopStyle, MobileStyle, MOBILE_BREAKPOINT } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -11,38 +11,53 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   background-color: blue;
+
+  ${DesktopStyle} {
+    flex-direction: row;
+  }
+  ${MobileStyle} {
+    flex-direction: column;
+  }
 `
 
 const RedBox = styled.div`
-  width: 300px;
-  height: 100%;
   padding: 8px;
-
+  gap: 8px;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+  background-color: firebrick;
+
+  ${DesktopStyle} {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 0 0 300px;
+    height: 100%;
   }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
+  ${MobileStyle} {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    gap: 8px;
+    overflow-x: auto;
   }
 `
 
 const SmallGreenBox = styled.div`
-  flex: 0 0 40px;
-  width: 100%;
-  margin-bottom: 8px;
-
   background-color: green;
+
+  ${DesktopStyle} {
+    flex: 0 0 40px;
+    width: 100%;
+  }
+  ${MobileStyle} {
+    flex: 0 0 180px;
+    height: 50px;
+  }
 `
 
 const BlueBox = styled.div`
-  flex: 1;
-  height: 100%;
   padding: 16px;
   gap: 8px;
 
@@ -50,8 +65,18 @@ const BlueBox = styled.div`
 
   display: flex;
   flex-wrap: wrap;
+  overflow-y: auto;
 
-  overflow: scroll;
+  ${DesktopStyle} {
+    flex: 1;
+    height: 100%;
+  }
+  ${MobileStyle} {
+    width: 100%;
+    flex: 5;
+    padding: 32px;
+    justify-content: center;
+  }
 `
 
 const SmallRedBox = styled.div`

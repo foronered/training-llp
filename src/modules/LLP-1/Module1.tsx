@@ -16,13 +16,7 @@ const RedBox = styled.div`
   flex: 0 0 200px;
   height: 200px;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: firebrick;
-  }
+  background-color: firebrick;
 `
 
 export const Module1 = () => {

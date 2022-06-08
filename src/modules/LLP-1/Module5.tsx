@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DesktopStyle, MobileStyle, MOBILE_BREAKPOINT } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -20,39 +20,50 @@ const RedBox = styled.div`
 
   background-color: firebrick;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${DesktopStyle} {
+    flex-direction: row;
+  }
+
+  ${MobileStyle} {
     flex-direction: column;
   }
 `
 
 const GreenBox = styled.div`
-  flex: 0 0 64px;
-  height: 64px;
-
   background-color: green;
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${DesktopStyle} {
+    flex: 0 0 64px;
+    height: 64px;
+  }
+  ${MobileStyle} {
+    flex: 0 0 64px;
     width: 64px;
   }
 `
 
 const BlueBox = styled.div`
-  flex: 0 0 256px;
-  height: 64px;
+  ${DesktopStyle} {
+    background-color: blue;
+    flex: 0 0 256px;
+    height: 64px;
+  }
 
-  background-color: blue;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MobileStyle} {
     width: 256px;
     flex: 0 0 64px;
+    background-color: lightblue;
   }
 `
 
 const OrangeBox = styled.div`
-  flex: 0 0 128px;
-  height: 64px;
-
   background-color: orange;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+
+  ${DesktopStyle} {
+    flex: 0 0 128px;
+    height: 64px;
+  }
+  ${MobileStyle} {
     width: 128px;
     flex: 0 0 64px;
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DesktopStyle, MobileStyle, MOBILE_BREAKPOINT } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -19,9 +19,10 @@ const RedBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: firebrick;
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${DesktopStyle} {
+    background-color: firebrick;
+  }
+  ${MobileStyle} {
     background-color: lightblue;
   }
 `
