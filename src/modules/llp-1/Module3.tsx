@@ -13,19 +13,19 @@ const Container = styled.div`
 `
 
 const OuterBox = styled.div`
-width: 400px;
-height: 400px;
-display: flex;
-align-items: center;
-justify-content: center;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-@media (min-width: ${MOBILE_BREAKPOINT}) {
-  background-color: red;
-}
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    background-color: red;
+  }
 
-@media (max-width: ${MOBILE_BREAKPOINT}) {
-  background-color: black;
-}
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    background-color: black;
+  }
 `
 
 const InnerBox = styled.div`

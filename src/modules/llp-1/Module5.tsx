@@ -8,42 +8,39 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   background-color: blue;
 `
 
 const Box = styled.div`
-width: calc(100% - 32px);
-height: calc(100% - 16px);
-display: flex;
-align-items: center;
-justify-content:center;
-background-color: red;
+  width: calc(100% - 32px);
+  height: calc(100% - 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
 
-@media (min-width: ${MOBILE_BREAKPOINT}) {
-}
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
 
-@media (max-width: ${MOBILE_BREAKPOINT}) {
-  flex-direction: column;
-}
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
 `
 const GreenBox = styled.div`
-width: 64px;
-height: 64px;
-background-color: lime;
-
+  width: 64px;
+  height: 64px;
+  background-color: lime;
 `
 const BlueBox = styled.div`
-width: 256px;
-height: 64px;
-background-color: dodgerblue;
-
+  width: 256px;
+  height: 64px;
+  background-color: dodgerblue;
 `
 const OrangeBox = styled.div`
-width: 128px;
-height: 64px;
-background-color: orange;
-
+  width: 128px;
+  height: 64px;
+  background-color: orange;
 `
 
 export const Module5 = () => {
@@ -51,9 +48,9 @@ export const Module5 = () => {
     <ModuleWrapper>
       <Container>
         <Box>
-          <GreenBox/>
-          <BlueBox/>
-          <OrangeBox/>
+          <GreenBox />
+          <BlueBox />
+          <OrangeBox />
         </Box>
       </Container>
     </ModuleWrapper>

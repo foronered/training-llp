@@ -8,35 +8,32 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   background-color: blue;
 `
 
 const Box = styled.div`
-width: calc(100% - 32px);
-height: calc(100% - 16px);
-display: flex;
-justify-content:center;
-background-color: red;
+  width: calc(100% - 32px);
+  height: calc(100% - 16px);
+  display: flex;
+  justify-content: center;
+  background-color: red;
 
-@media (min-width: ${MOBILE_BREAKPOINT}) {
-}
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
 
-@media (max-width: ${MOBILE_BREAKPOINT}) {
-  flex-direction: column;
-}
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
 `
 const RedBox = styled.div`
-max-width: 300px;
-height: 100%;
-flex:1;
-
+  width: 300px;
+  min-height: 100px;
 `
 const GreenBox = styled.div`
-width: 100%;
-flex: 2;
-height: 100%;
-background-color: lime;
+  min-width: calc(100% - 300px);
+  height: 100%;
+  background-color: lime;
 `
 
 export const Module6 = () => {
@@ -44,8 +41,8 @@ export const Module6 = () => {
     <ModuleWrapper>
       <Container>
         <Box>
-          <RedBox/>
-          <GreenBox/>
+          <RedBox />
+          <GreenBox />
         </Box>
       </Container>
     </ModuleWrapper>

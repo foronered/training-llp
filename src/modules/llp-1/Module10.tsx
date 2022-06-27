@@ -10,57 +10,68 @@ const Container = styled.div`
   justify-content: flex-start;
   background-color: blue;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
+    overflow: scroll;
+    padding: 8px;
+    align-items: center;
     flex-direction: column;
   }
 `
 
 const RedBox = styled.div`
   width: 300px;
-  min-height: 100px;
   background-color: red;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: 100%;
-  }
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 `
 
 const PurpleBox = styled.div`
   padding: 8px;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 200px auto 200px;
+  grid-template-rows: 144px 200px;
   grid-gap: 8px;
-  align-content: start;
   background-color: purple;
   min-width: calc(100% - 332px);
   margin: 0 16px;
   margin-top: 8px;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    display: flex;
-    background-color: transparent;
-    flex-direction: column;
-    align-items: center;
-  }
 `
 
 const SmallBox = styled.div`
-  width: 100%;
+  width: 200px;
   aspect-ratio: 1;
   background-color: red;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: 250px;
-  }
+`
+const WideBox = styled.div`
+  width: 100%;
+  height: 100%;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color: red;
 `
 
-export const Module9 = () => {
+const BlueBox = styled.div`
+  height: 40px;
+  width: 100%;
+  background-color: blue;
+`
+
+export const Module10 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox />
+        <RedBox>
+          <BlueBox />
+          <BlueBox />
+          <BlueBox />
+          <BlueBox />
+          <BlueBox />
+        </RedBox>
         <PurpleBox>
+          <WideBox />
           <SmallBox />
-          <SmallBox />
-          <SmallBox />
-          <SmallBox />
-          <SmallBox />
+          <div />
           <SmallBox />
         </PurpleBox>
       </Container>

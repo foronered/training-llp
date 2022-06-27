@@ -8,26 +8,25 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   background-color: blue;
 `
 
 const Box = styled.div`
-width: calc(100% - 32px);
-height: calc(100% - 16px);
-display: flex;
-@media (min-width: ${MOBILE_BREAKPOINT}) {
-  
-}
+  width: calc(100% - 32px);
+  height: calc(100% - 16px);
+  display: flex;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
 
-@media (max-width: ${MOBILE_BREAKPOINT}) {
-  flex-direction: column;
-}
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
 `
 
 const Half = styled.div`
   width: 100%;
-  min-height: 64px;
+  min-height: 100px;
   display: flex;
 `
 const RedBox = styled.div`
@@ -35,11 +34,11 @@ const RedBox = styled.div`
   background-color: red;
 `
 const OrangeBox = styled(RedBox)`
-background-color: orange;
+  background-color: orange;
 `
 const GreenBox = styled(Half)`
-height: 100%;
-background-color: lime;
+  height: 100%;
+  background-color: lime;
 `
 
 export const Module7 = () => {
@@ -48,10 +47,10 @@ export const Module7 = () => {
       <Container>
         <Box>
           <Half>
-            <RedBox/>
-            <OrangeBox/>
+            <RedBox />
+            <OrangeBox />
           </Half>
-          <GreenBox/>
+          <GreenBox />
         </Box>
       </Container>
     </ModuleWrapper>

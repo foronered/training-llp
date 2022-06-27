@@ -10,6 +10,8 @@ import { Module6 } from './modules/llp-1/Module6'
 import { Module7 } from './modules/llp-1/Module7'
 import { Module8 } from './modules/llp-1/Module8'
 import { Module9 } from './modules/llp-1/Module9'
+import { Module10 } from './modules/llp-1/Module10'
+import { Module11 } from './modules/llp-1/Module11'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -45,6 +47,8 @@ export const App = () => {
       <Module7 />
       <Module8 />
       <Module9 />
+      <Module10 />
+      <Module11 />
     </Wrapper>
   )
 }

@@ -13,23 +13,23 @@ const Container = styled.div`
 `
 
 const Box = styled.div`
-width: calc(100% - 32px);
-height: calc(100% - 16px);
+  width: calc(100% - 32px);
+  height: calc(100% - 16px);
 
-@media (min-width: ${MOBILE_BREAKPOINT}) {
-  background-color: red;
-}
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    background-color: red;
+  }
 
-@media (max-width: ${MOBILE_BREAKPOINT}) {
-  background-color: dodgerblue;
-}
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    background-color: dodgerblue;
+  }
 `
 
 export const Module4 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <Box/>
+        <Box />
       </Container>
     </ModuleWrapper>
   )
