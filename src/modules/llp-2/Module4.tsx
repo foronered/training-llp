@@ -35,16 +35,16 @@ const Red = styled.div`
   gap: 16px;
   flex-direction: column;
   background-color: red;
-`
-
-const RedScrollView = styled.div`
-  background-color: red;
-  height: 100%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     margin: 0 auto;
     width: 256px;
   }
   padding: 32px;
+`
+
+const RedScrollView = styled.div`
+  background-color: red;
+  height: 100%;
   overflow: scroll;
 `
 
