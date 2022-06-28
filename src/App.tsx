@@ -1,7 +1,10 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 
-import { Module1 } from './modules/Module1'
+import { Module1 } from './modules/LLP-4/Module1'
+import { Module2 } from './modules/LLP-4/Module2'
+import { Module3 } from './modules/LLP-4/Module3'
+import { Module4 } from './modules/LLP-4/Module4'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -29,6 +32,9 @@ export const App = () => {
     <Wrapper>
       <GlobalStyle />
       <Module1 />
+      <Module2 />
+      <Module3 />
+      <Module4 />
     </Wrapper>
   )
 }
