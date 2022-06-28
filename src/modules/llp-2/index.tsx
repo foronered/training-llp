@@ -4,6 +4,7 @@ import { Module2 } from './Module2'
 import { Module1 } from './Module1'
 import { Module3 } from './Module3'
 import { Module4 } from './Module4'
+import { Module5 } from './Module5'
 
 export const LLP2 = () => {
   return (
@@ -13,6 +14,7 @@ export const LLP2 = () => {
       <Module2 />
       <Module3 />
       <Module4 />
+      <Module5 />
     </>
   )
 }

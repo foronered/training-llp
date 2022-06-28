@@ -6,98 +6,147 @@ import { ModuleWrapper } from '../common'
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: red;
+  background-color: blue;
 `
-
-const Green = styled.div`
+const Content = styled.div`
   width: 100%;
-  padding: 16px;
-  background-color: lime;
-`
-const GreenWrapper = styled.div`
-  display: flex;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 100px auto 100px;
   @media (min-width: ${MOBILE_BREAKPOINT}) {
-    justify-content: space-between;
+    grid-template-columns: 30% 70%;
   }
   @media (max-width: ${MOBILE_BREAKPOINT}) {
+    max-width: 448px;
     margin: 0 auto;
-    align-items: center;
-    width: fit-content;
-    flex-direction: column;
+    grid-template-columns: 100px auto;
   }
 `
 
-const Red = styled.div`
+const Menu = styled.div`
+  width: 100%;
+  padding: 16px;
   display: flex;
   gap: 16px;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+`
+
+const PinkMenu = styled(Menu)`
+  background-color: hotpink;
+`
+const Blue = styled.div`
+  background-color: dodgerblue;
+`
+const BlueSquare = styled(Blue)`
+  height 100%;
+  aspect-ratio: 1;
+`
+const BlueBar = styled(Blue)`
+  height 100%;
+  width: 100%;
+`
+const BlueItem = styled(Blue)`
+  width: 300px;
+  height: 200px;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 200px;
+    height: 150px;
+  }
+`
+
+const RedBar = styled.div`
   background-color: red;
+  height 36px;
+  width: 48px;
+`
+const LongRedBar = styled(RedBar)`
+  width: 192px;
+  margin: 16px;
+`
+
+const BlueMenu = styled(Menu)`
+  background-color: dodgerblue;
+  width: fit-content;
+  height: 100%;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 88px;
+    justify-content: center;
+  }
+`
+const OrangeMenu = styled(Menu)`
+  background-color: orange;
+  align-items: center;
+  flex-wrap: nowrap;
+  min-height: 100px;
 `
 
 const RedScrollView = styled.div`
   background-color: red;
-  height: 100%;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    margin: 0 auto;
-    width: 256px;
-  }
+  gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
   padding: 32px;
   overflow: scroll;
-`
-
-const Blue = styled.div`
-  width: 100%;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: dodgerblue;
-`
-
-const PinkOne = styled.div`
-  width: 64px;
-  height: 48px;
-  background-color: hotpink;
-`
-const PinkLong = styled(PinkOne)`
-  width: 256px;
-`
-const PinkTwo = styled(PinkLong)`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    display: none;
+    padding: 16px;
   }
 `
-const Row = styled.div`
+
+const GreenBar = styled.div`
+  background-color: lime;
+  height: 68px;
+  width: 100%;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    height: 60px;
+  }
+`
+
+const ContentArea = styled.div`
+  width: 100%;
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 32px;
+  overflow: scroll;
+  padding: 32px;
+  grid-row-start: span 2;
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: center;
+  }
 `
 
-const Orange = styled.div`
-  width: 40px;
-  height: 32px;
-  background-color: orange;
-`
-
-const BlueItem = () => (
-  <Blue>
-    <Orange />
-  </Blue>
-)
-
-export const Module4 = () => {
+export const Module5 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <Green>
-          <GreenWrapper>
-            <PinkOne />
-            <PinkTwo />
-          </GreenWrapper>
-        </Green>
-        <RedScrollView>
-          <Red>
+        <Content>
+          <PinkMenu>
+            <BlueSquare />
+            <BlueSquare />
+          </PinkMenu>
+          <OrangeMenu>
+            <LongRedBar />
+            <BlueMenu>
+              <RedBar />
+              <RedBar />
+              <RedBar />
+              <RedBar />
+            </BlueMenu>
+          </OrangeMenu>
+          <RedScrollView>
+            <GreenBar />
+            <GreenBar />
+            <GreenBar />
+            <GreenBar />
+            <GreenBar />
+            <GreenBar />
+            <GreenBar />
+            <GreenBar />
+            <GreenBar />
+            <GreenBar />
+          </RedScrollView>
+          <ContentArea>
             <BlueItem />
             <BlueItem />
             <BlueItem />
@@ -108,17 +157,12 @@ export const Module4 = () => {
             <BlueItem />
             <BlueItem />
             <BlueItem />
-          </Red>
-        </RedScrollView>
-        <Green>
-          <GreenWrapper>
-            <Row>
-              <PinkLong />
-              <PinkOne />
-            </Row>
-            <PinkOne />
-          </GreenWrapper>
-        </Green>
+          </ContentArea>
+          <OrangeMenu>
+            <BlueSquare />
+            <BlueBar />
+          </OrangeMenu>
+        </Content>
       </Container>
     </ModuleWrapper>
   )
