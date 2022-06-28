@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 import { LLP1 } from './modules/llp-1'
 import { LLP2 } from './modules/llp-2'
+import { LLP3 } from './modules/llp-3'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -38,6 +39,7 @@ export const App = () => {
       <GlobalStyle />
       <LLP1 />
       <LLP2 />
+      <LLP3 />
     </Wrapper>
   )
 }

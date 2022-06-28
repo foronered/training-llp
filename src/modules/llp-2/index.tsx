@@ -9,7 +9,7 @@ import { Module6 } from './Module6'
 
 export const LLP2 = () => {
   return (
-    <div style={{ paddingBottom: '1000px' }}>
+    <div>
       <h1>LLP 2</h1>
       <Module1 />
       <Module2 />
