@@ -40,11 +40,11 @@ const Blue = styled.div`
   background-color: dodgerblue;
 `
 const BlueSquare = styled(Blue)`
-  height 100%;
+  height: 100%;
   aspect-ratio: 1;
 `
 const BlueBar = styled(Blue)`
-  height 100%;
+  height: 100%;
   width: 100%;
 `
 const BlueItem = styled(Blue)`
@@ -58,7 +58,7 @@ const BlueItem = styled(Blue)`
 
 const RedBar = styled.div`
   background-color: red;
-  height 36px;
+  height: 36px;
   width: 48px;
 `
 const LongRedBar = styled(RedBar)`
