@@ -13,7 +13,7 @@ const Container = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px 40px;
-  overflow: scroll;
+  overflow-y: scroll;
 `
 
 const Red = styled.div`

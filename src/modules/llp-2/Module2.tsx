@@ -20,7 +20,7 @@ const RedBox = styled.div`
   width: 200px;
   height: 200px;
   padding: 16px;
-  overflow: scroll;
+  overflow-y: scroll;
   background-color: red;
 `
 const Inner = styled.div`

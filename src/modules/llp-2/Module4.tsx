@@ -45,7 +45,7 @@ const Red = styled.div`
 const RedScrollView = styled.div`
   background-color: red;
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
 `
 
 const Blue = styled.div`
@@ -62,10 +62,15 @@ const PinkOne = styled.div`
   height: 48px;
   background-color: hotpink;
 `
-const PinkLong = styled(PinkOne)`
+const PinkLong = styled.div`
   width: 256px;
+  height: 48px;
+  background-color: hotpink;
 `
-const PinkTwo = styled(PinkLong)`
+const PinkTwo = styled.div`
+  width: 256px;
+  height: 48px;
+  background-color: hotpink;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: none;
   }

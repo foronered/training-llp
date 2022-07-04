@@ -44,7 +44,7 @@ const RedScrollView = styled.div`
     width: 256px;
   }
   padding: 32px;
-  overflow: scroll;
+  overflow-y: scroll;
 `
 
 const BlueItem = styled.div`
@@ -58,7 +58,9 @@ const PinkOne = styled.div`
   height: 48px;
   background-color: hotpink;
 `
-const PinkTwo = styled(PinkOne)`
+const PinkTwo = styled.div`
+  background-color: hotpink;
+  height: 48px;
   width: 256px;
 `
 

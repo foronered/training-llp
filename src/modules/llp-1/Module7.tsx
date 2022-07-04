@@ -33,10 +33,13 @@ const RedBox = styled.div`
   width: 100%;
   background-color: red;
 `
-const OrangeBox = styled(RedBox)`
+const OrangeBox = styled.div`
+  width: 100%;
   background-color: orange;
 `
-const GreenBox = styled(Half)`
+const GreenBox = styled.div`
+  width: 100%;
+  display: flex;
   height: 100%;
   background-color: lime;
 `

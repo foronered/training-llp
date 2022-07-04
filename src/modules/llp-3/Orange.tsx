@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: center;
   background-color: orange;
   padding: 24px 48px;
-  overflow: scroll;
+  overflow-y: scroll;
 `
 
 const Red = styled.div`

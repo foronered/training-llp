@@ -16,37 +16,28 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 300px;
-  padding: 8px;
-  height: 100%;
   display: flex;
-  flex-direction: column;
+  flex: 0 0 300px;
+  padding: 8px;
   gap: 8px;
+  flex-direction: column;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     flex-direction: row;
-    width: fit-content;
-  }
-`
-const BlueScrollWrapper = styled.div`
-  overflow: scroll;
-  padding: 16px;
-`
-
-const RedScrollWrapper = styled.div`
-  overflow: scroll;
-  min-height: 56px;
-  width: 300px;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
     width: 100%;
+    max-height: 56px;
   }
   background-color: red;
+  overflow-y: scroll;
 `
 
-const ContentArea = styled.div`
-  max-width: 616px;
+const BlueContentArea = styled.div`
+  max-width: 700px;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  overflow-y: scroll;
+  padding: 16px;
 `
 
 const SmallBox = styled.div`
@@ -56,8 +47,15 @@ const SmallBox = styled.div`
 `
 
 const GreenBox = styled.div`
-  height: 40px;
-  width: 284px;
+  // use flex 0 0 40px instead. good practice so that the height/width doesn't change
+  // --> so that scroll is possible within the flex container.
+  // otherwise, a wrapper is needed or flex-direction row and flex-wrap wrap
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 0 40px;
+  }
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex: 0 0 200px;
+  }
   background-color: green;
 `
 
@@ -67,22 +65,31 @@ export const Module11 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedScrollWrapper>
-          <RedBox>
-            <GreenBox />
-            <GreenBox />
-            <GreenBox />
-            <GreenBox />
-            <GreenBox />
-          </RedBox>
-        </RedScrollWrapper>
-        <BlueScrollWrapper>
-          <ContentArea>
-            {objects.map(() => (
-              <SmallBox />
-            ))}
-          </ContentArea>
-        </BlueScrollWrapper>
+        <RedBox>
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+          <GreenBox />
+        </RedBox>
+        <BlueContentArea>
+          {objects.map(() => (
+            <SmallBox />
+          ))}
+        </BlueContentArea>
       </Container>
     </ModuleWrapper>
   )

@@ -28,6 +28,9 @@ const Box = styled.div`
   }
 `
 const GreenBox = styled.div`
+  // todo: use flex shorthand
+  // BUT: how to handle mobile breakpoint then? because if the flex direction changes, everything falls apart.
+  // --> do I need to specify each style for mobile / desktop individually?
   width: 64px;
   height: 64px;
   background-color: lime;

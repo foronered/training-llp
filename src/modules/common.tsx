@@ -4,10 +4,10 @@ import { MOBILE_BREAKPOINT } from '../constants'
 
 // DO NOT EDIT
 export const ModuleWrapper = styled.div`
-margin-bottom: 32px;
-overflow: hidden;
+  margin-bottom: 32px;
+  overflow: hidden;
 
-@media (min-width: ${MOBILE_BREAKPOINT}) {
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
     height: 700px;
     width: 1200px;
     margin-left: auto;

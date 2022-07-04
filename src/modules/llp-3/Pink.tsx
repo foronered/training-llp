@@ -12,7 +12,7 @@ const Container = styled.div`
   grid-template-columns: auto auto;
   grid-template-rows: 156px auto;
   padding: 32px 40px;
-  overflow: scroll;
+  overflow-y: scroll;
 `
 
 const Blue = styled.div`
@@ -21,7 +21,11 @@ const Blue = styled.div`
   padding: 24px;
   height: 700px;
 `
-const FirstBlue = styled(Blue)`
+const FirstBlue = styled.div`
+  background-color: deepskyblue;
+  width: 100%;
+  padding: 24px;
+  height: 700px;
   grid-row-start: span 2;
 `
 const Black = styled.div`

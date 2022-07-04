@@ -33,9 +33,6 @@ const Menu = styled.div`
   flex-wrap: wrap;
   overflow: hidden;
 `
-const Blue = styled.div`
-  background-color: dodgerblue;
-`
 const GreenSquare = styled.div`
   height: 64px;
   background-color: lime;
@@ -45,22 +42,24 @@ const GreenSquare = styled.div`
     height: inherit;
   }
 `
-const RedSquare = styled.div`
+const RedSquareLeft = styled.div`
   height: 80px;
   background-color: red;
   aspect-ratio: 1;
-`
-const RedSquareLeft = styled(RedSquare)`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: none;
   }
 `
-const RedSquareRight = styled(RedSquare)`
+const RedSquareRight = styled.div`
+  height: 80px;
+  background-color: red;
+  aspect-ratio: 1;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     height: 56px;
   }
 `
-const BlueBar = styled(Blue)`
+const BlueBar = styled.div`
+  background-color: dodgerblue;
   height: 100%;
   width: 100%;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -73,7 +72,9 @@ const RedBar = styled.div`
   height: 36px;
   width: 48px;
 `
-const LongRedBar = styled(RedBar)`
+const LongRedBar = styled.div`
+  background-color: red;
+  height: 36px;
   width: 192px;
   margin: 0 16px;
 `
@@ -104,7 +105,10 @@ const GreenBar = styled.div`
   height: 40px;
   width: 100%;
 `
-const GreenBarTop = styled(GreenBar)`
+const GreenBarTop = styled.div`
+  background-color: lime;
+  height: 40px;
+  width: 100%;
   margin-top: 18px;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     display: none;
@@ -116,7 +120,7 @@ const ContentArea = styled.div`
   display: flex;
   gap: 32px;
   padding: 32px;
-  overflow: hidden;
+  overflow-y: hidden;
   padding-bottom: 0;
   grid-row-start: span 2;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -160,13 +164,13 @@ const BlueContentLeft = styled.div`
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     gap: 16px;
   }
-  overflow: scroll;
+  overflow-y: scroll;
 `
 const BlueContentRight = styled.div`
   background-color: dodgerblue;
   height: 100%;
   width: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;

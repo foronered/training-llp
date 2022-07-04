@@ -37,6 +37,8 @@ export const Black = styled.div`
   background-color: black;
   position: relative;
 `
+
+//todo: "I wouldn't extend styley" --> Makes sense, but? not even in this case? (https://github.com/foronered/training-llp/pull/5#discussion_r908446373)
 const Left = styled(Black)`
   left: -16px;
   align-self: flex-end;

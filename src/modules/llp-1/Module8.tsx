@@ -26,8 +26,7 @@ const RedBox = styled.div`
 const GreenBox = styled.div`
   height: 100%;
   min-width: calc(100% - 332px);
-  margin: 0 16px;
-  margin-top: 8px;
+  margin: 8px 16px 0;
   background-color: lime;
 `
 

@@ -13,7 +13,7 @@ const Container = styled.div`
   flex-wrap: wrap;
   gap: 32px;
   padding: 32px 40px;
-  overflow: scroll;
+  overflow-y: scroll;
 `
 
 const Green = styled.div`
@@ -31,7 +31,8 @@ const SmallBlue = styled.div`
   width: 30%;
   background-color: deepskyblue;
 `
-const LargeBlue = styled(SmallBlue)`
+const LargeBlue = styled.div`
+  background-color: deepskyblue;
   width: 100%;
   height: 40px;
 `

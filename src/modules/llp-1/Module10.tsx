@@ -10,7 +10,7 @@ const Container = styled.div`
   justify-content: flex-start;
   background-color: blue;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 8px;
     align-items: center;
     flex-direction: column;

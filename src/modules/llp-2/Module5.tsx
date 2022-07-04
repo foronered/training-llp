@@ -36,18 +36,18 @@ const Menu = styled.div`
 const PinkMenu = styled(Menu)`
   background-color: hotpink;
 `
-const Blue = styled.div`
+const BlueSquare = styled.div`
   background-color: dodgerblue;
-`
-const BlueSquare = styled(Blue)`
   height: 100%;
   aspect-ratio: 1;
 `
-const BlueBar = styled(Blue)`
+const BlueBar = styled.div`
+  background-color: dodgerblue;
   height: 100%;
   width: 100%;
 `
-const BlueItem = styled(Blue)`
+const BlueItem = styled.div`
+  background-color: dodgerblue;
   width: 300px;
   height: 200px;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
@@ -61,7 +61,9 @@ const RedBar = styled.div`
   height: 36px;
   width: 48px;
 `
-const LongRedBar = styled(RedBar)`
+const LongRedBar = styled.div`
+  background-color: red;
+  height: 36px;
   width: 192px;
   margin: 16px;
 `
@@ -88,7 +90,7 @@ const RedScrollView = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 32px;
-  overflow: scroll;
+  overflow-y: scroll;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
     padding: 16px;
   }
@@ -108,7 +110,7 @@ const ContentArea = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 32px;
   grid-row-start: span 2;
   @media (max-width: ${MOBILE_BREAKPOINT}) {
