@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -23,7 +23,7 @@ const Inner = styled.div`
   width: 100%;
   background-color: lime;
   height: 400px;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     background-color: orange;
   }
 `

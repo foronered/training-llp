@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -9,7 +9,7 @@ const Container = styled.div`
   display: flex;
   justify-content: flex-start;
   background-color: blue;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     overflow-y: scroll;
     padding: 8px;
     align-items: center;

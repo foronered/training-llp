@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -18,10 +18,10 @@ const Green = styled.div`
 `
 const GreenWrapper = styled.div`
   display: flex;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${DESKTOP_STYLE} {
     justify-content: space-between;
   }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     margin: 0 auto;
     align-items: center;
     width: fit-content;
@@ -35,7 +35,7 @@ const Red = styled.div`
   gap: 16px;
   flex-direction: column;
   background-color: red;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     margin: 0 auto;
     width: 256px;
   }
@@ -71,7 +71,7 @@ const PinkTwo = styled.div`
   width: 256px;
   height: 48px;
   background-color: hotpink;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     display: none;
   }
 `

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -13,10 +13,10 @@ const Content = styled.div`
   height: 100%;
   display: grid;
   grid-template-rows: 100px auto 100px;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${DESKTOP_STYLE} {
     grid-template-columns: 30% 70%;
   }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     max-width: 448px;
     margin: 0 auto;
     grid-template-columns: 100px auto;
@@ -50,7 +50,7 @@ const BlueItem = styled.div`
   background-color: dodgerblue;
   width: 300px;
   height: 200px;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     width: 200px;
     height: 150px;
   }
@@ -72,7 +72,7 @@ const BlueMenu = styled(Menu)`
   background-color: dodgerblue;
   width: fit-content;
   height: 100%;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     width: 88px;
     justify-content: center;
   }
@@ -91,7 +91,7 @@ const RedScrollView = styled.div`
   flex-wrap: wrap;
   padding: 32px;
   overflow-y: scroll;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     padding: 16px;
   }
 `
@@ -100,7 +100,7 @@ const GreenBar = styled.div`
   background-color: lime;
   height: 68px;
   width: 100%;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     height: 60px;
   }
 `
@@ -113,7 +113,7 @@ const ContentArea = styled.div`
   overflow-y: scroll;
   padding: 32px;
   grid-row-start: span 2;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     justify-content: center;
   }
 `

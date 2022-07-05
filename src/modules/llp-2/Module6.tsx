@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -12,11 +12,11 @@ const Content = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${DESKTOP_STYLE} {
     grid-template-rows: 100px auto 200px;
     grid-template-columns: 30% 70%;
   }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     max-width: 448px;
     margin: 0 auto;
     grid-template-rows: 200px auto 156px;
@@ -37,7 +37,7 @@ const GreenSquare = styled.div`
   height: 64px;
   background-color: lime;
   aspect-ratio: 1;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     width: 100%;
     height: inherit;
   }
@@ -46,7 +46,7 @@ const RedSquareLeft = styled.div`
   height: 80px;
   background-color: red;
   aspect-ratio: 1;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     display: none;
   }
 `
@@ -54,7 +54,7 @@ const RedSquareRight = styled.div`
   height: 80px;
   background-color: red;
   aspect-ratio: 1;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     height: 56px;
   }
 `
@@ -62,7 +62,7 @@ const BlueBar = styled.div`
   background-color: dodgerblue;
   height: 100%;
   width: 100%;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     height: 48px;
   }
 `
@@ -88,7 +88,7 @@ const OrangeMenu = styled(Menu)`
   background-color: orange;
   flex-wrap: wrap;
   min-height: 100px;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     padding: 32px;
     gap: 32px;
   }
@@ -110,7 +110,7 @@ const GreenBarTop = styled.div`
   height: 40px;
   width: 100%;
   margin-top: 18px;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     display: none;
   }
 `
@@ -123,7 +123,7 @@ const ContentArea = styled.div`
   overflow-y: hidden;
   padding-bottom: 0;
   grid-row-start: span 2;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     justify-content: center;
     padding: 0;
   }
@@ -137,7 +137,7 @@ const GreenMenu = styled(Menu)`
   background-color: lime;
   padding: 32px;
   flex-wrap: nowrap;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     flex-wrap: wrap;
     justify-content: center;
     padding: 16px 40px;
@@ -157,11 +157,11 @@ const BlueContentLeft = styled.div`
   padding: 32px;
   display: flex;
   flex-wrap: wrap;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${DESKTOP_STYLE} {
     min-width: 552px;
     gap: 32px;
   }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     gap: 16px;
   }
   overflow-y: scroll;
@@ -175,7 +175,7 @@ const BlueContentRight = styled.div`
   flex-wrap: wrap;
   gap: 24px;
   padding: 32px;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     display: none;
   }
 `

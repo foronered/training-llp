@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
 import { ModuleWrapper } from '../common'
 import { Black } from './Module2'
 

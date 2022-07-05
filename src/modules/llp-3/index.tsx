@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import { ModuleWrapper } from '../common'
 import { Orange } from './Orange'
 import { Blue } from './Blue'

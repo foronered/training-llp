@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -9,7 +9,7 @@ const Container = styled.div`
   display: flex;
   justify-content: flex-start;
   background-color: blue;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     align-items: center;
     flex-direction: column;
   }
@@ -21,7 +21,7 @@ const RedBox = styled.div`
   padding: 8px;
   gap: 8px;
   flex-direction: column;
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     flex-direction: row;
     width: 100%;
     max-height: 56px;
@@ -31,7 +31,7 @@ const RedBox = styled.div`
 `
 
 const BlueContentArea = styled.div`
-  max-width: 700px;
+  flex: 0 0 55%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -41,7 +41,7 @@ const BlueContentArea = styled.div`
 `
 
 const SmallBox = styled.div`
-  width: 200px;
+  flex: 0 0 200px;
   aspect-ratio: 1;
   background-color: red;
 `
@@ -50,10 +50,10 @@ const GreenBox = styled.div`
   // use flex 0 0 40px instead. good practice so that the height/width doesn't change
   // --> so that scroll is possible within the flex container.
   // otherwise, a wrapper is needed or flex-direction row and flex-wrap wrap
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${DESKTOP_STYLE} {
     flex: 0 0 40px;
   }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     flex: 0 0 200px;
   }
   background-color: green;

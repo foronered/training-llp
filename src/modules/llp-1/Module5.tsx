@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../../constants'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -20,10 +20,10 @@ const Box = styled.div`
   justify-content: center;
   background-color: red;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  ${DESKTOP_STYLE} {
   }
 
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  ${MOBILE_STYLE} {
     flex-direction: column;
   }
 `
@@ -31,13 +31,26 @@ const GreenBox = styled.div`
   // todo: use flex shorthand
   // BUT: how to handle mobile breakpoint then? because if the flex direction changes, everything falls apart.
   // --> do I need to specify each style for mobile / desktop individually?
-  width: 64px;
-  height: 64px;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 64px;
+    height: 64px;
+  }
+
+  ${MOBILE_STYLE} {
+    flex: 0 0 64px;
+    width: 64px;
+  }
   background-color: lime;
 `
 const BlueBox = styled.div`
-  width: 256px;
-  height: 64px;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 256px;
+    height: 64px;
+  }
+  ${MOBILE_STYLE} {
+    flex: 0 0 64px;
+    width: 256px;
+  }
   background-color: dodgerblue;
 `
 const OrangeBox = styled.div`

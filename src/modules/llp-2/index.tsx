@@ -1,5 +1,4 @@
 import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
 import { Module2 } from './Module2'
 import { Module1 } from './Module1'
 import { Module3 } from './Module3'
