@@ -3,37 +3,39 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
   align-items: center;
-  justify-content: center;
   background-color: orange;
   padding: 24px 48px;
   overflow-y: scroll;
+  overflow-x: hidden;
 `
 
 const Red = styled.div`
   background-color: red;
-  height: 90px;
+  flex: 0 0 90px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 12px;
-`
-
-const BlueSquare = styled.div`
-  height: 100%;
-  aspect-ratio: 1;
-  background-color: dodgerblue;
+  overflow: hidden;
 `
 
 const OrangeSquare = styled.div`
-  height: 100%;
+  flex: 0 1 56px;
   aspect-ratio: 1;
   padding: 12px;
   background-color: orange;
 `
+
+const BlueSquare = styled.div`
+  flex: 1;
+  aspect-ratio: 1;
+  background-color: dodgerblue;
+`
+
 const Square = () => (
   <OrangeSquare>
     <BlueSquare />
@@ -45,7 +47,7 @@ const Group = styled.div`
   align-items: center;
   gap: 16px;
   height: 100%;
-  width: 100%;
+  flex: 1;
 `
 
 const Item = () => (

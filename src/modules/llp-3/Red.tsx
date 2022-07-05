@@ -5,10 +5,9 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: red;
-  flex-wrap: wrap;
   gap: 32px;
   padding: 32px 40px;
   overflow-y: scroll;
@@ -16,7 +15,7 @@ const Container = styled.div`
 
 const Green = styled.div`
   width: 100%;
-  height: 22%;
+  flex: 0 0 22%;
   background-color: lime;
   padding: 16px;
   display: flex;
@@ -25,14 +24,14 @@ const Green = styled.div`
 `
 
 const SmallBlue = styled.div`
-  height: 28px;
+  flex: 0 0 28px;
   width: 30%;
   background-color: deepskyblue;
 `
 const LargeBlue = styled.div`
   background-color: deepskyblue;
   width: 100%;
-  height: 40px;
+  flex: 0 0 40px;
 `
 
 const Item = () => (

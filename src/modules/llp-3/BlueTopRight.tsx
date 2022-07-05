@@ -6,9 +6,8 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
   background-color: blue;
-  flex-wrap: wrap;
   gap: 20px;
   padding: 20px 40px;
   overflow-y: scroll;

@@ -5,35 +5,37 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 32px 0;
   gap: 32px;
   align-items: center;
-  justify-content: center;
-  padding: 32px 48px;
   background-color: blue;
   overflow-y: scroll;
 `
 
 const Red = styled.div`
   background-color: red;
-  padding: 24px 48px;
-  width: 100%;
-  height: 128px;
+  width: 80%;
+  flex: 0 0 128px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   gap: 16px;
+  padding: 0 48px;
 `
 
 const Green = styled.div`
-  height: 100%;
-  width: 100%;
-  padding: 18px;
+  flex: 1 0 auto;
+  height: 80px;
   background-color: lime;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 const Black = styled.div`
   background-color: black;
-  height: 100%;
-  width: 100%;
+  height: 60%;
+  width: 60%;
 `
 const Item = () => (
   <Red>
