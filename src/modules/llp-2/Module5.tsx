@@ -17,9 +17,9 @@ const Content = styled.div`
     grid-template-columns: 30% 70%;
   }
   ${MOBILE_STYLE} {
+    grid-template-columns: 100px auto;
     max-width: 448px;
     margin: 0 auto;
-    grid-template-columns: 100px auto;
   }
 `
 
@@ -30,9 +30,10 @@ const Menu = styled.div`
   gap: 16px;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
   overflow: hidden;
 `
-
+//todo: is this nesting also bad?
 const PinkMenu = styled(Menu)`
   background-color: hotpink;
 `
@@ -43,19 +44,20 @@ const BlueSquare = styled.div`
 `
 const BlueBar = styled.div`
   background-color: dodgerblue;
+  flex: 1;
   height: 100%;
-  width: 100%;
 `
 const BlueItem = styled.div`
   background-color: dodgerblue;
-  width: 300px;
-  height: 200px;
+  aspect-ratio: 1.5;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 300px;
+  }
   ${MOBILE_STYLE} {
-    width: 200px;
-    height: 150px;
+    flex: 0 0 200px;
   }
 `
-
+//todo: here I didn't know how to use flex shorthand, because the parent container is fit-content...
 const RedBar = styled.div`
   background-color: red;
   height: 36px;
@@ -64,7 +66,7 @@ const RedBar = styled.div`
 const LongRedBar = styled.div`
   background-color: red;
   height: 36px;
-  width: 192px;
+  flex: 0 1 192px;
   margin: 16px;
 `
 
@@ -73,13 +75,12 @@ const BlueMenu = styled(Menu)`
   width: fit-content;
   height: 100%;
   ${MOBILE_STYLE} {
-    width: 88px;
+    flex: 1 0 88px;
     justify-content: center;
   }
 `
 const OrangeMenu = styled(Menu)`
   background-color: orange;
-  align-items: center;
   flex-wrap: nowrap;
   min-height: 100px;
 `
@@ -98,8 +99,10 @@ const RedScrollView = styled.div`
 
 const GreenBar = styled.div`
   background-color: lime;
-  height: 68px;
-  width: 100%;
+  flex: 0 0 100%;
+  ${DESKTOP_STYLE} {
+    height: 68px;
+  }
   ${MOBILE_STYLE} {
     height: 60px;
   }

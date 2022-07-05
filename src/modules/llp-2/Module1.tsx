@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_STYLE } from '../../constants'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
@@ -13,7 +13,7 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 200px;
+  flex: 0 0 200px;
   height: 200px;
   padding: 16px;
   overflow-y: scroll;
@@ -21,8 +21,10 @@ const RedBox = styled.div`
 `
 const Inner = styled.div`
   width: 100%;
-  background-color: lime;
   height: 400px;
+  ${DESKTOP_STYLE} {
+    background-color: lime;
+  }
   ${MOBILE_STYLE} {
     background-color: orange;
   }

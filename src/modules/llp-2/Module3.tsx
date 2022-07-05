@@ -16,7 +16,7 @@ const Green = styled.div`
   padding: 16px;
   background-color: lime;
 `
-const GreenWrapper = styled.div`
+const Menu = styled.div`
   display: flex;
   ${DESKTOP_STYLE} {
     justify-content: space-between;
@@ -29,14 +29,11 @@ const GreenWrapper = styled.div`
   }
 `
 
-const Red = styled.div`
+const RedScrollView = styled.div`
   display: flex;
   gap: 16px;
   flex-direction: column;
   background-color: red;
-`
-
-const RedScrollView = styled.div`
   background-color: red;
   height: 100%;
   ${MOBILE_STYLE} {
@@ -49,7 +46,7 @@ const RedScrollView = styled.div`
 
 const BlueItem = styled.div`
   width: 100%;
-  height: 64px;
+  flex: 0 0 64px;
   background-color: dodgerblue;
 `
 
@@ -69,24 +66,22 @@ export const Module3 = () => {
     <ModuleWrapper>
       <Container>
         <Green>
-          <GreenWrapper>
+          <Menu>
             <PinkOne />
             <PinkTwo />
-          </GreenWrapper>
+          </Menu>
         </Green>
         <RedScrollView>
-          <Red>
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-          </Red>
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
         </RedScrollView>
       </Container>
     </ModuleWrapper>

@@ -34,7 +34,7 @@ const Menu = styled.div`
   overflow: hidden;
 `
 const GreenSquare = styled.div`
-  height: 64px;
+  width: 64px;
   background-color: lime;
   aspect-ratio: 1;
   ${MOBILE_STYLE} {
@@ -43,7 +43,7 @@ const GreenSquare = styled.div`
   }
 `
 const RedSquareLeft = styled.div`
-  height: 80px;
+  flex: 0 0 80px;
   background-color: red;
   aspect-ratio: 1;
   ${MOBILE_STYLE} {
@@ -51,11 +51,11 @@ const RedSquareLeft = styled.div`
   }
 `
 const RedSquareRight = styled.div`
-  height: 80px;
+  flex: 0 0 80px;
   background-color: red;
   aspect-ratio: 1;
   ${MOBILE_STYLE} {
-    height: 56px;
+    flex: 0 0 56px;
   }
 `
 const BlueBar = styled.div`
@@ -169,7 +169,7 @@ const BlueContentLeft = styled.div`
 const BlueContentRight = styled.div`
   background-color: dodgerblue;
   height: 100%;
-  width: 100%;
+  flex: 0 1 auto;
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;

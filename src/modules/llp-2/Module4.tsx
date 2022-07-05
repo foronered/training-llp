@@ -16,7 +16,7 @@ const Green = styled.div`
   padding: 16px;
   background-color: lime;
 `
-const GreenWrapper = styled.div`
+const Menu = styled.div`
   display: flex;
   ${DESKTOP_STYLE} {
     justify-content: space-between;
@@ -30,27 +30,23 @@ const GreenWrapper = styled.div`
   }
 `
 
-const Red = styled.div`
+const RedScrollView = styled.div`
   display: flex;
   gap: 16px;
   flex-direction: column;
+  padding: 32px;
   background-color: red;
+  height: 100%;
+  overflow-y: scroll;
   ${MOBILE_STYLE} {
     margin: 0 auto;
     width: 256px;
   }
-  padding: 32px;
-`
-
-const RedScrollView = styled.div`
-  background-color: red;
-  height: 100%;
-  overflow-y: scroll;
 `
 
 const Blue = styled.div`
   width: 100%;
-  height: 64px;
+  flex: 0 0 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,11 +58,6 @@ const PinkOne = styled.div`
   height: 48px;
   background-color: hotpink;
 `
-const PinkLong = styled.div`
-  width: 256px;
-  height: 48px;
-  background-color: hotpink;
-`
 const PinkTwo = styled.div`
   width: 256px;
   height: 48px;
@@ -75,13 +66,18 @@ const PinkTwo = styled.div`
     display: none;
   }
 `
+const PinkLong = styled.div`
+  width: 256px;
+  height: 48px;
+  background-color: hotpink;
+`
 const Row = styled.div`
   display: flex;
   gap: 16px;
 `
 
 const Orange = styled.div`
-  width: 40px;
+  flex: 0 0 40px;
   height: 32px;
   background-color: orange;
 `
@@ -97,33 +93,31 @@ export const Module4 = () => {
     <ModuleWrapper>
       <Container>
         <Green>
-          <GreenWrapper>
+          <Menu>
             <PinkOne />
             <PinkTwo />
-          </GreenWrapper>
+          </Menu>
         </Green>
         <RedScrollView>
-          <Red>
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-            <BlueItem />
-          </Red>
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
+          <BlueItem />
         </RedScrollView>
         <Green>
-          <GreenWrapper>
+          <Menu>
             <Row>
               <PinkLong />
               <PinkOne />
             </Row>
             <PinkOne />
-          </GreenWrapper>
+          </Menu>
         </Green>
       </Container>
     </ModuleWrapper>
