@@ -2,40 +2,33 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 32px 0;
+  padding: 32px 48px;
   gap: 32px;
-  align-items: center;
   background-color: blue;
   overflow-y: scroll;
 `
 
 const Red = styled.div`
   background-color: red;
-  width: 80%;
   flex: 0 0 128px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
   gap: 16px;
-  padding: 0 48px;
+  padding: 16px 48px;
 `
 
 const Green = styled.div`
-  flex: 1 0 auto;
-  height: 80px;
+  flex: 1;
   background-color: lime;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 16px 8px;
 `
 const Black = styled.div`
+  flex: 1;
   background-color: black;
-  height: 60%;
-  width: 60%;
 `
 const Item = () => (
   <Red>

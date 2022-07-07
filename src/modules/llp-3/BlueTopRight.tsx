@@ -2,10 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
+  flex: 0 0 200px;
   display: flex;
-  align-items: center;
   flex-direction: column;
   background-color: blue;
   gap: 20px;
@@ -16,19 +14,21 @@ const Container = styled.div`
 const Red = styled.div`
   background-color: red;
   padding: 12px 16px;
-  width: 100%;
+  flex: 1;
+  display: flex;
 `
 
 const Blue = styled.div`
   background-color: deepskyblue;
   padding: 8px 12px;
-  width: 100%;
+  flex: 1;
+  display: flex;
 `
 
 const Black = styled.div`
   background-color: black;
+  flex: 0 0 24px;
   height: 24px;
-  aspect-ratio: 1;
 `
 
 const Item = () => (

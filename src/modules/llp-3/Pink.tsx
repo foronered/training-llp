@@ -2,44 +2,52 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  display: grid;
+  flex: 1;
+  display: flex;
   background-color: hotpink;
-  grid-gap: 20px;
-  grid-template-columns: auto auto;
-  grid-template-rows: 156px auto;
+  gap: 24px;
   padding: 32px 40px;
   overflow-y: scroll;
 `
 
-const Blue = styled.div`
+const LeftBlue = styled.div`
   background-color: deepskyblue;
-  width: 100%;
   padding: 24px;
-  height: 700px;
+  height: 600px;
+  width: 50%;
+  display: flex;
 `
-const FirstBlue = styled.div`
-  background-color: deepskyblue;
-  width: 100%;
-  padding: 24px;
-  height: 700px;
-  grid-row-start: span 2;
-`
-const Black = styled.div`
+const BlackLeft = styled.div`
   background-color: black;
-  width: 100%;
-  height: 100%;
+  flex: 1;
+`
+
+const Right = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 16px;
+`
+const RightBlue = styled.div`
+  background-color: deepskyblue;
+  flex: 0 0 600px;
+`
+
+const BlackRight = styled.div`
+  background-color: black;
+  flex: 0 0 136px;
 `
 
 export const Pink = () => {
   return (
     <Container>
-      <FirstBlue>
-        <Black />
-      </FirstBlue>
-      <Black />
-      <Blue />
+      <LeftBlue>
+        <BlackLeft />
+      </LeftBlue>
+      <Right>
+        <BlackRight />
+        <RightBlue />
+      </Right>
     </Container>
   )
 }

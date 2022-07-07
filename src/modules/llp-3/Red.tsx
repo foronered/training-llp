@@ -2,11 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: red;
   gap: 32px;
   padding: 32px 40px;
@@ -14,7 +12,6 @@ const Container = styled.div`
 `
 
 const Green = styled.div`
-  width: 100%;
   flex: 0 0 22%;
   background-color: lime;
   padding: 16px;
@@ -25,12 +22,11 @@ const Green = styled.div`
 
 const SmallBlue = styled.div`
   flex: 0 0 28px;
-  width: 30%;
+  width: 100px;
   background-color: deepskyblue;
 `
 const LargeBlue = styled.div`
   background-color: deepskyblue;
-  width: 100%;
   flex: 0 0 40px;
 `
 

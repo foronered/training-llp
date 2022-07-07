@@ -10,19 +10,18 @@ import { Pink } from './Pink'
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 37% 26% 37%;
-  grid-template-rows: 100%;
-  overflow: hidden;
+  display: flex;
 `
 
 const Left = styled.div`
-  display: grid;
-  grid-template-rows: 50% 50%;
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
 `
 const Right = styled.div`
-  display: grid;
-  grid-template-rows: 26% auto;
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
 `
 
 export const LLP3 = () => {

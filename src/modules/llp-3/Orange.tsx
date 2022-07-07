@@ -2,14 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center;
   background-color: orange;
   padding: 24px 48px;
   overflow-y: scroll;
-  overflow-x: hidden;
 `
 
 const Red = styled.div`
@@ -25,14 +24,14 @@ const Red = styled.div`
 
 const OrangeSquare = styled.div`
   flex: 0 1 56px;
-  aspect-ratio: 1;
+  display: flex;
+  height: 56px;
   padding: 12px;
   background-color: orange;
 `
 
 const BlueSquare = styled.div`
   flex: 1;
-  aspect-ratio: 1;
   background-color: dodgerblue;
 `
 
@@ -44,10 +43,8 @@ const Square = () => (
 
 const Group = styled.div`
   display: flex;
-  align-items: center;
-  gap: 16px;
-  height: 100%;
   flex: 1;
+  gap: 16px;
 `
 
 const Item = () => (
