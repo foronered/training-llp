@@ -24,6 +24,7 @@ const Menu = styled.div`
   ${MOBILE_STYLE} {
     margin: 0 auto;
     align-items: center;
+    //todo: remove fit content
     width: fit-content;
     flex-direction: column;
     gap: 16px;

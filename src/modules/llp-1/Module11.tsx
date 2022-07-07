@@ -7,37 +7,42 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
   background-color: blue;
   ${MOBILE_STYLE} {
-    align-items: center;
     flex-direction: column;
+    align-items: center;
   }
 `
 
-const RedBox = styled.div`
+const SideBar = styled.div`
   display: flex;
-  flex: 0 0 300px;
   padding: 8px;
   gap: 8px;
-  flex-direction: column;
-  ${MOBILE_STYLE} {
-    flex-direction: row;
-    width: 100%;
-    max-height: 56px;
-  }
   background-color: red;
   overflow-y: scroll;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 300px;
+    flex-direction: column;
+  }
+  ${MOBILE_STYLE} {
+    flex-direction: row;
+    flex: 0 0 56px;
+    width: 100%;
+  }
 `
 
 const BlueContentArea = styled.div`
-  flex: 0 0 55%;
-  height: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   overflow-y: scroll;
   padding: 16px;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 648px;
+  }
+  ${MOBILE_STYLE} {
+    width: 232px;
+  }
 `
 
 const SmallBox = styled.div`
@@ -47,47 +52,31 @@ const SmallBox = styled.div`
 `
 
 const GreenBox = styled.div`
-  // use flex 0 0 40px instead. good practice so that the height/width doesn't change
-  // --> so that scroll is possible within the flex container.
-  // otherwise, a wrapper is needed or flex-direction row and flex-wrap wrap
+  background-color: green;
   ${DESKTOP_STYLE} {
     flex: 0 0 40px;
   }
   ${MOBILE_STYLE} {
     flex: 0 0 200px;
   }
-  background-color: green;
 `
 
 export const Module11 = () => {
-  const objects = new Array<undefined>(36)
-  objects.fill(undefined)
+  const redObjects = new Array<undefined>(36)
+  const greenObjects = new Array<undefined>(16)
+  redObjects.fill(undefined)
+  greenObjects.fill(undefined)
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox>
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-          <GreenBox />
-        </RedBox>
+        <SideBar>
+          {greenObjects.map((ind) => (
+            <GreenBox key={ind} />
+          ))}
+        </SideBar>
         <BlueContentArea>
-          {objects.map(() => (
-            <SmallBox />
+          {redObjects.map((ind) => (
+            <SmallBox key={ind} />
           ))}
         </BlueContentArea>
       </Container>

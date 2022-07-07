@@ -15,15 +15,17 @@ const Green = styled.div`
   width: 100%;
   padding: 16px;
   background-color: lime;
+
+  display: flex;
+  justify-content: center;
 `
 const Menu = styled.div`
   display: flex;
   ${DESKTOP_STYLE} {
+    flex: 1;
     justify-content: space-between;
   }
   ${MOBILE_STYLE} {
-    margin: 0 auto;
-    width: fit-content;
     flex-direction: column;
     gap: 16px;
   }

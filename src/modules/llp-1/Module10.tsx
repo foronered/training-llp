@@ -1,13 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_STYLE } from '../../constants'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
   background-color: blue;
   ${MOBILE_STYLE} {
     overflow-y: scroll;
@@ -18,41 +17,61 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 300px;
   background-color: red;
   padding: 8px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 300px;
+  }
+  ${MOBILE_STYLE} {
+    flex: 0 0 100px;
+    width: 300px;
+  }
+`
+const PurpleWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  width: 100%;
+  padding: 16px 8px 0 16px;
 `
 
 const PurpleBox = styled.div`
+  flex: 1;
   padding: 8px;
-  display: grid;
-  grid-template-columns: 200px auto 200px;
-  grid-template-rows: 144px 200px;
-  grid-gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   background-color: purple;
-  min-width: calc(100% - 332px);
-  margin: 0 16px;
-  margin-top: 8px;
-`
-
-const SmallBox = styled.div`
-  width: 200px;
-  aspect-ratio: 1;
-  background-color: red;
 `
 const WideBox = styled.div`
   width: 100%;
-  height: 100%;
-  grid-column-start: 1;
-  grid-column-end: 4;
+  flex: 0 0 150px;
   background-color: red;
 `
 
+const Row = styled.div`
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+`
+
+const SmallBox = styled.div`
+  background-color: red;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 200px;
+    height: 200px;
+  }
+  ${MOBILE_STYLE} {
+    flex: 1;
+    aspect-ratio: 1;
+  }
+`
+
 const BlueBox = styled.div`
-  height: 40px;
+  flex: 0 0 40px;
   width: 100%;
   background-color: blue;
 `
@@ -68,12 +87,15 @@ export const Module10 = () => {
           <BlueBox />
           <BlueBox />
         </RedBox>
-        <PurpleBox>
-          <WideBox />
-          <SmallBox />
-          <div />
-          <SmallBox />
-        </PurpleBox>
+        <PurpleWrapper>
+          <PurpleBox>
+            <WideBox />
+            <Row>
+              <SmallBox />
+              <SmallBox />
+            </Row>
+          </PurpleBox>
+        </PurpleWrapper>
       </Container>
     </ModuleWrapper>
   )

@@ -6,15 +6,13 @@ import { ModuleWrapper } from '../common'
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  padding: 8px 16px;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   background-color: blue;
 `
 
 const Box = styled.div`
-  width: calc(100% - 32px);
-  height: calc(100% - 16px);
+  flex: 1;
 
   ${DESKTOP_STYLE} {
     background-color: red;

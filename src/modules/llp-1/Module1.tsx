@@ -13,7 +13,7 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 200px;
+  flex: 0 0 200px;
   height: 200px;
 
   ${DESKTOP_STYLE} {

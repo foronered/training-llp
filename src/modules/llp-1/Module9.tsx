@@ -1,53 +1,55 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_STYLE } from '../../constants'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
-  background-color: blue;
   ${MOBILE_STYLE} {
     flex-direction: column;
   }
 `
 
 const RedBox = styled.div`
-  width: 300px;
-  min-height: 100px;
   background-color: red;
-  ${MOBILE_STYLE} {
-    width: 100%;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 300px;
   }
+  ${MOBILE_STYLE} {
+    flex: 0 0 100px;
+  }
+`
+const BlueBox = styled.div`
+  flex: 1;
+  background-color: blue;
+  padding: 8px 16px 0 16px;
+  display: flex;
+  justify-content: center;
 `
 
 const PurpleBox = styled.div`
   padding: 8px;
   display: grid;
-  grid-template-columns: auto auto auto;
   grid-gap: 8px;
-  align-content: start;
-  background-color: purple;
-  min-width: calc(100% - 332px);
-  margin: 0 16px;
-  margin-top: 8px;
+  ${DESKTOP_STYLE} {
+    flex: 1;
+    align-content: flex-start;
+    grid-template-columns: auto auto auto;
+    background-color: purple;
+  }
   ${MOBILE_STYLE} {
-    display: flex;
+    flex: 0 0 256px;
     background-color: transparent;
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: auto;
   }
 `
 
 const SmallBox = styled.div`
-  width: 100%;
+  flex: 1;
   aspect-ratio: 1;
   background-color: red;
-  ${MOBILE_STYLE} {
-    width: 250px;
-  }
 `
 
 export const Module9 = () => {
@@ -55,14 +57,16 @@ export const Module9 = () => {
     <ModuleWrapper>
       <Container>
         <RedBox />
-        <PurpleBox>
-          <SmallBox />
-          <SmallBox />
-          <SmallBox />
-          <SmallBox />
-          <SmallBox />
-          <SmallBox />
-        </PurpleBox>
+        <BlueBox>
+          <PurpleBox>
+            <SmallBox />
+            <SmallBox />
+            <SmallBox />
+            <SmallBox />
+            <SmallBox />
+            <SmallBox />
+          </PurpleBox>
+        </BlueBox>
       </Container>
     </ModuleWrapper>
   )

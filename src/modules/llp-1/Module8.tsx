@@ -1,33 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_STYLE } from '../../constants'
+import { DESKTOP_STYLE, MOBILE_STYLE } from '../../constants'
 import { ModuleWrapper } from '../common'
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
-  background-color: blue;
   ${MOBILE_STYLE} {
     flex-direction: column;
-    align-items: stretch;
   }
 `
 
 const RedBox = styled.div`
-  width: 300px;
-  min-height: 100px;
   background-color: red;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 300px;
+  }
   ${MOBILE_STYLE} {
-    width: 100%;
+    flex: 0 0 100px;
   }
 `
+const BlueBox = styled.div`
+  flex: 1;
+  background-color: blue;
+  display: flex;
+  padding: 16px 32px 0 32px;
+`
 const GreenBox = styled.div`
-  height: 100%;
-  min-width: calc(100% - 332px);
-  margin: 8px 16px 0;
   background-color: lime;
+  flex: 1;
 `
 
 export const Module8 = () => {
@@ -35,7 +37,9 @@ export const Module8 = () => {
     <ModuleWrapper>
       <Container>
         <RedBox />
-        <GreenBox />
+        <BlueBox>
+          <GreenBox />
+        </BlueBox>
       </Container>
     </ModuleWrapper>
   )

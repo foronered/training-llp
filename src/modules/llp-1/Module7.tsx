@@ -7,38 +7,38 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 8px 16px;
   background-color: blue;
 `
 
 const Box = styled.div`
-  width: calc(100% - 32px);
-  height: calc(100% - 16px);
+  flex: 1;
   display: flex;
-  ${DESKTOP_STYLE} {
-  }
-
   ${MOBILE_STYLE} {
     flex-direction: column;
   }
 `
 
 const Half = styled.div`
-  width: 100%;
   min-height: 100px;
   display: flex;
+  ${DESKTOP_STYLE} {
+    flex: 1;
+  }
+  ${MOBILE_STYLE} {
+    flex: 0 0 100px;
+  }
 `
 const RedBox = styled.div`
-  width: 100%;
+  flex: 1;
   background-color: red;
 `
 const OrangeBox = styled.div`
-  width: 100%;
+  flex: 1;
   background-color: orange;
 `
 const GreenBox = styled.div`
-  width: 100%;
+  flex: 1;
   display: flex;
   height: 100%;
   background-color: lime;
