@@ -1,7 +1,10 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 
-import { Module1 } from './modules/Module1'
+import { LLP1 } from './modules/llp-1'
+import { LLP2 } from './modules/llp-2'
+import { LLP3 } from './modules/llp-3'
+import { LLP4 } from './modules/llp-4'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -14,6 +17,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+
+  h1 {
+    padding-top: 40px;
+    font-family: Helvetica;
+    font-size: 45px;
+    text-align: center;
+  } 
 
   * {
     box-sizing: border-box;
@@ -28,7 +38,10 @@ export const App = () => {
   return (
     <Wrapper>
       <GlobalStyle />
-      <Module1 />
+      <LLP1 />
+      <LLP2 />
+      <LLP3 />
+      <LLP4 />
     </Wrapper>
   )
 }
