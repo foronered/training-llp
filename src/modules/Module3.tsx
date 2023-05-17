@@ -17,7 +17,7 @@ const RedBox = styled.div`
   height: 400px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 8px;
   background-color: red;
 `
