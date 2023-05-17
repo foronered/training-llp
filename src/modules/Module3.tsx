@@ -12,27 +12,34 @@ const Container = styled.div`
   background-color: blue;
 `
 
-const Text = styled.p`
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
+const OrangeBox = styled.div`
+  width: 200px;
+  height: 200px;
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    background-color: orange;
+  }
 `
 
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (min-width: ${MOBILE_BREAKPOINT}) {
     background-color: red;
   }
 `
 
-export const Module1 = () => {
+export const Module3 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <Text>This is Module 1</Text>
-        <RedBox />
+        <RedBox>
+          <OrangeBox />
+        </RedBox>
       </Container>
     </ModuleWrapper>
   )
