@@ -7,7 +7,6 @@ export const ModuleWrapper = styled.div`
   height: 600px;
   margin-bottom: 2px;
   overflow: hidden;
-
   @media (min-width: ${MOBILE_BREAKPOINT}) {
     width: 1200px;
   }

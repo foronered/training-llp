@@ -41,9 +41,14 @@ export const App = () => {
   return (
     <Wrapper>
       <GlobalStyle />
+      <p>Module 1</p>
       <Module1 />
+      <p>Module 2</p>
       <Module2 />
+      <p>Module 3</p>
+
       <Module3 />
+      <p>Module 4</p>
       <Module4 />
       <Module5 />
       <Module6 />

@@ -2,99 +2,73 @@ import React from 'react'
 import styled from 'styled-components'
 import { MOBILE_BREAKPOINT } from '../constants'
 import { ModuleWrapper } from './common'
-const RedContainer = styled.div`
-  width: 100%;
+
+const Container = styled.div`
   height: 100%;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: red;
 `
-const PurpleBox = styled.div`
-  width: 100%;
-  height: 100%;
-  padding-left: 8px;
-  padding-top: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: space-between;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: purple;
-  }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: purple;
-  }
-`
-const BlueBox = styled.div`
-  width: 100%;
-  height: 100%;
-  padding-left: 16px;
-  padding-top: 8px;
-  padding-right: 16px;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: blue;
-  }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: blue;
-  }
-`
-const RedBox = styled.div`
-  width: 200px;
-  aspect-ratio: 1;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
-`
-const RedRectangle = styled.div`
-  width: 100%;
-  height: 144px;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
-`
-const LeftColumn = styled.div`
+const RedColumn = styled.div`
   flex: 0 0 300px;
   height: 100%;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+  padding: 8px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: red;
 `
-const BlueButton = styled.div`
+const BlueBotton = styled.div`
   height: 40px;
-  margin: 8px 8px 8px 8px;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: blue;
-  }
+  background-color: blue;
+`
+const BlueBox = styled.div`
+  flex: 1;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  display: flex;
+  background-color: blue;
+`
+const PurpleBox = styled.div`
+  flex: 0 0 100%;
+  height: 100%;
+  padding: 8px;
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  background-color: purple;
+`
+const LongRedBox = styled.div`
+  height: 144px;
+  width: 100%;
+  background-color: red;
+`
+const RedBox = styled.div`
+  height: 200px;
+  width: 200px;
+  background-color: red;
 `
 export const Module10 = () => {
   return (
     <ModuleWrapper>
-      <RedContainer>
-        <LeftColumn>
-          <BlueButton />
-          <BlueButton />
-          <BlueButton />
-          <BlueButton />
-        </LeftColumn>
+      <Container>
+        <RedColumn>
+          <BlueBotton />
+          <BlueBotton />
+          <BlueBotton />
+          <BlueBotton />
+          <BlueBotton />
+        </RedColumn>
         <BlueBox>
           <PurpleBox>
-            <RedRectangle />
+            <LongRedBox />
             <RedBox />
             <RedBox />
           </PurpleBox>
         </BlueBox>
-      </RedContainer>
+      </Container>
     </ModuleWrapper>
   )
 }

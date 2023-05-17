@@ -3,75 +3,50 @@ import styled from 'styled-components'
 import { MOBILE_BREAKPOINT } from '../constants'
 import { ModuleWrapper } from './common'
 
-const RedBox = styled.div`
-  width: 100%;
+const Container = styled.div`
   height: 100%;
-  padding-left: 300px;
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+  width: 100%;
+  display: flex;
 `
-
-const BlueBox = styled.div`
-  width: 100%;
+const RedColumn = styled.div`
+  flex: 0 0 300px;
   height: 100%;
+  background-color: red;
+`
+const BlueBox = styled.div`
+  flex: 1;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 8px;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: blue;
-  }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: blue;
-  }
-`
-
-const PurpleBox = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  padding-left: 8px;
-  padding-top: 8px;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: purple;
-  }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: purple;
-  }
+  background-color: blue;
 `
-const SmallRedBox = styled.div`
-  width: calc(33.33% - 16px);
-  aspect-ratio: 1/1;
-  margin-bottom: 8px;
-  margin-right: 8px;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+const PurpleBox = styled.div`
+  flex: 0 0 100%;
+  height: 100%;
+  padding: 8px;
+  gap: 8px;
+  display: flex;
+  background-color: purple;
+`
+const RedBox = styled.div`
+  flex: 1;
+  background-color: red;
 `
 
 export const Module9 = () => {
   return (
     <ModuleWrapper>
-      <RedBox>
+      <Container>
+        <RedColumn />
         <BlueBox>
           <PurpleBox>
-            {[...Array(6)].map((_, idx) => (
-              <SmallRedBox key={idx} />
-            ))}
+            <RedBox />
+            <RedBox />
+            <RedBox />
           </PurpleBox>
         </BlueBox>
-      </RedBox>
+      </Container>
     </ModuleWrapper>
   )
 }

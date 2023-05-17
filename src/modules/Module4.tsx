@@ -10,19 +10,13 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 8px;
-  padding-top: 8px;
+  padding: 8px 16px;
 `
 
 const RedBox = styled.div`
-  width: 100%;
+  flex: 0 0 100%;
   height: 100%;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+  background-color: red;
 `
 
 export const Module4 = () => {

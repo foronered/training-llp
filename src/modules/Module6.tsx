@@ -7,39 +7,28 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 8px 16px;
   background-color: blue;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 8px;
-  padding-top: 8px;
 `
 const RedBox = styled.div`
-  width: 100%;
+  flex: 0 0 300px;
   height: 100%;
-  padding-left: 300px;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+  background-color: red;
 `
-const GreenBox = styled.div`
-  width: 100%;
-  height: 100%;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: #49ff49;
-  }
+const GreenBox = styled.div`
+  //Why (flex: 0 0 110%;) instead of (flex: 1;) doesn't work?
+  flex: 1;
+  height: 100%;
+  background-color: #49ff49;
 `
 
 export const Module6 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox>
-          <GreenBox />
-        </RedBox>
+        <RedBox />
+        <GreenBox />
       </Container>
     </ModuleWrapper>
   )

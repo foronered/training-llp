@@ -16,10 +16,7 @@ const Container = styled.div`
 const RedBox = styled.div`
   width: 200px;
   height: 200px;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+  background-color: red;
 `
 
 export const Module2 = () => {

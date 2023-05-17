@@ -12,25 +12,19 @@ const Container = styled.div`
   background-color: blue;
 `
 
-const OrangeBox = styled.div`
-  width: 200px;
-  height: 200px;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: orange;
-  }
-`
-
 const RedBox = styled.div`
   width: 400px;
   height: 400px;
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+  justify-content: flex-start;
+  gap: 8px;
+  background-color: red;
+`
+const OrangeBox = styled.div`
+  width: 200px;
+  height: 200px;
+  background-color: orange;
 `
 
 export const Module3 = () => {
