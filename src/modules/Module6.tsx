@@ -10,10 +10,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
-  padding-left: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-right: 16px;
+  padding: 8px 16px;
 `
 
 const GreenBox = styled.div`
@@ -21,28 +18,12 @@ const GreenBox = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: left;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: #60d937;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: #60d937;
-  }
+  background-color: #60d937;
 `
 
 const RedBox = styled.div`
-  width: 300px;
-  height: 100%;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+  flex: 0 0 300px;
+  background-color: red;
 `
 
 export const Module6 = () => {

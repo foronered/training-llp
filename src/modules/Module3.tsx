@@ -18,26 +18,12 @@ const RedBox = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+  background-color: red;
 `
 const OrangeBox = styled.div`
   width: 200px;
   height: 200px;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: orange;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: orange;
-  }
+  background-color: orange;
 `
 
 export const Module3 = () => {

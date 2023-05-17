@@ -4,51 +4,37 @@ import { MOBILE_BREAKPOINT } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
-  width: 100%;
   height: 100%;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+`
+const RedBox = styled.div`
+  flex: 0 0 300px;
+  height: 100%;
   background-color: red;
-  padding-left: 300px;
 `
-
-const GreenBox = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: #60d937;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: #60d937;
-  }
-`
-
 const BlueBox = styled.div`
-  width: 100%;
-  height: 100%;
+  flex: 1;
   padding-left: 16px;
   padding-top: 8px;
   padding-right: 16px;
+  background-color: blue;
+`
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: blue;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: blue;
-  }
+const GreenBox = styled.div`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #60d937;
 `
 
 export const Module8 = () => {
   return (
     <ModuleWrapper>
       <Container>
+        <RedBox />
         <BlueBox>
           <GreenBox />
         </BlueBox>

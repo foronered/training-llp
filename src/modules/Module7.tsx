@@ -10,61 +10,36 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
-  padding-left: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-right: 16px;
+  padding: 8px 16px;
 `
 
 const GreenBox = styled.div`
-  width: 100%;
+  flex: 2;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: left;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: #60d937;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: #60d937;
-  }
+  background-color: #60d937;
 `
 
 const RedBox = styled.div`
-  width: 25%;
+  flex: 1;
   height: 100%;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+  background-color: red;
 `
 const OrangeBox = styled.div`
-  width: 25%;
+  flex: 1;
   height: 100%;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: orange;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: Orange;
-  }
+  background-color: Orange;
 `
 
 export const Module7 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <GreenBox>
-          <RedBox />
-          <OrangeBox />
-        </GreenBox>
+        <RedBox />
+        <OrangeBox />
+        <GreenBox />
       </Container>
     </ModuleWrapper>
   )

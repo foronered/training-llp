@@ -4,72 +4,50 @@ import { MOBILE_BREAKPOINT } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
-  width: 100%;
   height: 100%;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+`
+const RedBox = styled.div`
+  flex: 0 0 300px;
+  height: 100%;
   background-color: red;
-  padding-left: 300px;
 `
-
-const PurpleBox = styled.div`
-  width: 100%;
-  height: 100%;
-  padding-left: 8px;
-  padding-top: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: purple;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: purple;
-  }
-`
-
 const BlueBox = styled.div`
-  width: 100%;
-  height: 100%;
+  flex: 1;
   padding-left: 16px;
   padding-top: 8px;
   padding-right: 16px;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: blue;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: blue;
-  }
+  background-color: blue;
 `
 
-const RedBox = styled.div`
-  width: calc(33.33% - 8px);
+const PurpleBox = styled.div`
+  flex: 0 0 100%;
+  height: 100%;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: purple;
+`
+const RedSquare = styled.div`
+  flex: 1;
   aspect-ratio: 1;
-  margin-right: 8px;
-  margin-bottom: 8px;
-
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
+  display: flex;
+  background-color: Red;
 `
 
 export const Module9 = () => {
   return (
     <ModuleWrapper>
       <Container>
+        <RedBox />
         <BlueBox>
           <PurpleBox>
-            {[...Array(6)].map((_, idx) => (
-              <RedBox key={idx} />
+            {[...Array(3)].map((_, idx) => (
+              <RedSquare key={idx} />
             ))}
           </PurpleBox>
         </BlueBox>
