@@ -17,6 +17,9 @@ const RedBox = styled.div`
   flex-direction: column;
   background-color: red;
 `
+
+// add a comment
+
 const BlueBox = styled.div`
   flex: 1;
   display: flex;
