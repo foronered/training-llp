@@ -10,11 +10,15 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 16px;
 `
 
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
 
   @media (min-width: ${MOBILE_BREAKPOINT}) {
     background-color: red;
@@ -25,7 +29,7 @@ const RedBox = styled.div`
   }
 `
 
-export const Module1 = () => {
+export const Module4 = () => {
   return (
     <ModuleWrapper>
       <Container>

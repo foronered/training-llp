@@ -10,25 +10,24 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
+  justify-content: space-evenly;
 `
 
 const RedBox = styled.div`
   width: 200px;
-  height: 200px;
+  aspect-ratio: 1;
 
   @media (min-width: ${MOBILE_BREAKPOINT}) {
     background-color: red;
   }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
-  }
 `
 
-export const Module1 = () => {
+export const Module2 = () => {
   return (
     <ModuleWrapper>
       <Container>
+        <RedBox />
+        <RedBox />
         <RedBox />
       </Container>
     </ModuleWrapper>
