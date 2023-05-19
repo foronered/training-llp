@@ -18,7 +18,11 @@ import { Module23 } from './modules/Module23'
 import { Module24 } from './modules/Module24'
 import { Module25 } from './modules/Module25'
 import { Module26 } from './modules/Module26'
-
+import { Module31 } from './modules/Module31'
+import { Module41 } from './modules/Module41'
+import { Module42 } from './modules/Module42'
+import { Module43 } from './modules/Module43'
+import { Module44 } from './modules/Module44'
 const GlobalStyle = createGlobalStyle`
   html {
     margin: 0;
@@ -62,6 +66,11 @@ export const App = () => {
       <Module24 />
       <Module25 />
       <Module26 />
+      <Module31 />
+      <Module41 />
+      <Module42 />
+      <Module43 />
+      <Module44 />
     </Wrapper>
   )
 }
