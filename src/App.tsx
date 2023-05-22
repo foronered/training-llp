@@ -12,6 +12,17 @@ import { Module8 } from './modules/Module8'
 import { Module9 } from './modules/Module9'
 import { Module10 } from './modules/Module10'
 import { Module11 } from './modules/Module11'
+import { Module21 } from './modules/Module21'
+import { Module22 } from './modules/Module22'
+import { Module23 } from './modules/Module23'
+import { Module24 } from './modules/Module24'
+import { Module25 } from './modules/Module25'
+import { Module26 } from './modules/Module26'
+import { Module31 } from './modules/Module31'
+import { Module41 } from './modules/Module41'
+import { Module42 } from './modules/Module42'
+import { Module43 } from './modules/Module43'
+import { Module44 } from './modules/Module44'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -35,6 +46,7 @@ const GlobalStyle = createGlobalStyle`
 const Wrapper = styled.div`
   padding: 32px;
   gap: 200px;
+  background-color: black;
 `
 
 export const App = () => {
@@ -46,7 +58,6 @@ export const App = () => {
       <p>Module 2</p>
       <Module2 />
       <p>Module 3</p>
-
       <Module3 />
       <p>Module 4</p>
       <Module4 />
@@ -57,6 +68,17 @@ export const App = () => {
       <Module9 />
       <Module10 />
       <Module11 />
+      <Module21 />
+      <Module22 />
+      <Module23 />
+      <Module24 />
+      <Module25 />
+      <Module26 />
+      <Module31 />
+      <Module41 />
+      <Module42 />
+      <Module43 />
+      <Module44 />
     </Wrapper>
   )
 }

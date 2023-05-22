@@ -17,7 +17,7 @@ const RedColumn = styled.div`
   flex-direction: column;
   background-color: red;
 `
-const BlueBotton = styled.div`
+const GreenButton = styled.div`
   height: 40px;
   background-color: green;
 `
@@ -40,11 +40,11 @@ export const Module11 = () => {
     <ModuleWrapper>
       <Container>
         <RedColumn>
-          <BlueBotton />
-          <BlueBotton />
-          <BlueBotton />
-          <BlueBotton />
-          <BlueBotton />
+          <GreenButton />
+          <GreenButton />
+          <GreenButton />
+          <GreenButton />
+          <GreenButton />
         </RedColumn>
         <BlueBox>
           {[...Array(36)].map((_, idx) => (
