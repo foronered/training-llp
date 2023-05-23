@@ -7,22 +7,32 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 8px 16px;
   background-color: blue;
 `
-
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  flex: 0 0 25%;
+  height: 100%;
   background-color: red;
 `
+const OrangeBox = styled.div`
+  flex: 0 0 25%;
+  height: 100%;
+  background-color: orange;
+`
+const GreenBox = styled.div`
+  flex: 1;
+  height: 100%;
+  background-color: #49ff49;
+`
 
-export const Module1 = () => {
+export const Module7 = () => {
   return (
     <ModuleWrapper>
       <Container>
         <RedBox />
+        <OrangeBox />
+        <GreenBox />
       </Container>
     </ModuleWrapper>
   )

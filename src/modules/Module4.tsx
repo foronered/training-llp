@@ -10,15 +10,16 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
+  padding: 8px 16px;
 `
 
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  flex: 0 0 100%;
+  height: 100%;
   background-color: red;
 `
 
-export const Module1 = () => {
+export const Module4 = () => {
   return (
     <ModuleWrapper>
       <Container>

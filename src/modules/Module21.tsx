@@ -13,16 +13,26 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  padding: 20px;
+  overflow-y: auto;
   background-color: red;
 `
+const GreenBox = styled.div`
+  flex: 1;
+  height: 2000px;
+  background-color: green;
+`
 
-export const Module1 = () => {
+export const Module21 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox />
+        <RedBox>
+          <GreenBox />
+        </RedBox>
       </Container>
     </ModuleWrapper>
   )

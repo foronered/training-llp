@@ -7,22 +7,28 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 8px 16px;
   background-color: blue;
 `
-
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  flex: 0 0 300px;
+  height: 100%;
   background-color: red;
 `
 
-export const Module1 = () => {
+const GreenBox = styled.div`
+  //Why (flex: 0 0 110%;) instead of (flex: 1;) doesn't work?
+  flex: 1;
+  height: 100%;
+  background-color: #49ff49;
+`
+
+export const Module6 = () => {
   return (
     <ModuleWrapper>
       <Container>
         <RedBox />
+        <GreenBox />
       </Container>
     </ModuleWrapper>
   )

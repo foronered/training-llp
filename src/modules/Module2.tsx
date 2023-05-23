@@ -10,6 +10,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
+  justify-content: space-evenly;
 `
 
 const RedBox = styled.div`
@@ -18,10 +19,12 @@ const RedBox = styled.div`
   background-color: red;
 `
 
-export const Module1 = () => {
+export const Module2 = () => {
   return (
     <ModuleWrapper>
       <Container>
+        <RedBox />
+        <RedBox />
         <RedBox />
       </Container>
     </ModuleWrapper>
