@@ -1,12 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { DESKTOP_STYLE, MOBILE_BREAKPOINT, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
+  ${DESKTOP_STYLE} {
+    flex-direction: row;
+  }
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+  }
 `
 const RedBox = styled.div`
   flex: 0 0 300px;
@@ -30,13 +36,25 @@ const PurpleBox = styled.div`
   gap: 8px;
   display: flex;
   flex-wrap: wrap;
-  background-color: purple;
+  ${DESKTOP_STYLE} {
+    background-color: purple;
+  }
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const RedSquare = styled.div`
-  flex: 1;
   aspect-ratio: 1;
   display: flex;
   background-color: Red;
+  ${DESKTOP_STYLE} {
+    flex: 1;
+  }
+  ${MOBILE_STYLE} {
+    height: 200px;
+    width: 200px;
+  }
 `
 
 export const Module9 = () => {

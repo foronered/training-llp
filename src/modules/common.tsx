@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { MOBILE_STYLE } from '../constants'
 
 // DO NOT EDIT
 export const ModuleWrapper = styled.div`
@@ -8,12 +8,8 @@ export const ModuleWrapper = styled.div`
   margin-bottom: 20px;
   overflow: hidden;
 
-  @media (min-width: ${MOBILE_BREAKPOINT}) {
-    width: 1200px;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: 100%;
+  ${MOBILE_STYLE} {
+    height: 800px;
   }
 `
 //

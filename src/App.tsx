@@ -43,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Wrapper = styled.div`
   padding: 32px;
+  width: 100%;
 `
 
 export const App = () => {

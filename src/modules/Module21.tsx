@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { DESKTOP_STYLE, MOBILE_BREAKPOINT, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -23,7 +23,12 @@ const RedBox = styled.div`
 const GreenBox = styled.div`
   flex: 1;
   height: 2000px;
-  background-color: green;
+  ${DESKTOP_STYLE} {
+    background-color: green;
+  }
+  ${MOBILE_STYLE} {
+    background-color: orange;
+  }
 `
 
 export const Module21 = () => {

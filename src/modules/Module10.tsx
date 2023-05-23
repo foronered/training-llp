@@ -1,21 +1,37 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { DESKTOP_STYLE, MOBILE_BREAKPOINT, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
+  background-color: blue;
+  ${DESKTOP_STYLE} {
+    flex-direction: row;
+  }
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+  }
 `
 const RedBox = styled.div`
-  flex: 0 0 300px;
-  height: 100%;
   padding: 8px;
   gap: 8px;
   display: flex;
   flex-direction: column;
   background-color: red;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 300px;
+    height: 100%;
+  }
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+    flex: 0 0 100px;
+    width: 200px;
+  }
 `
 const BlueBox = styled.div`
   flex: 1;
