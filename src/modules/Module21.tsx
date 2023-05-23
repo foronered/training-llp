@@ -13,23 +13,31 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
-
+  width: 400px;
+  height: 400px;
+  padding: 16px;
+  display: flex;
+  overflow-y: auto;
+  background-color: red;
+`
+const GreenBox = styled.div`
+  flex: 1;
+  height: 2000px;
   ${DESKTOP_STYLE} {
-    background-color: red;
+    background-color: green;
   }
   ${MOBILE_STYLE} {
-    background-color: yellow;
+    background-color: orange;
   }
-
 `
 
-export const Module1 = () => {
+export const Module21 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox />
+        <RedBox>
+          <GreenBox />
+        </RedBox>
       </Container>
     </ModuleWrapper>
   )

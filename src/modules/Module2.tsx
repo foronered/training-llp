@@ -10,25 +10,26 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: blue;
+  justify-content: space-evenly;
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px;
+  }
 `
 
 const RedBox = styled.div`
   width: 200px;
-  height: 200px;
-
-  ${DESKTOP_STYLE} {
-    background-color: red;
-  }
-  ${MOBILE_STYLE} {
-    background-color: yellow;
-  }
-
+  aspect-ratio: 1;
+  background-color: red;
 `
 
-export const Module1 = () => {
+export const Module2 = () => {
   return (
     <ModuleWrapper>
       <Container>
+        <RedBox />
+        <RedBox />
         <RedBox />
       </Container>
     </ModuleWrapper>

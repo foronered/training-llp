@@ -13,23 +13,38 @@ const Container = styled.div`
 `
 
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  ${MOBILE_STYLE} {
+    background-color: black;
+  }
 
   ${DESKTOP_STYLE} {
     background-color: red;
   }
+`
+const OrangeBox = styled.div`
+  width: 200px;
+  height: 200px;
   ${MOBILE_STYLE} {
-    background-color: yellow;
+    background-color: lime;
   }
 
+  ${DESKTOP_STYLE} {
+    background-color: orange;
+  }
 `
 
-export const Module1 = () => {
+export const Module3 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox />
+        <RedBox>
+          <OrangeBox />
+        </RedBox>
       </Container>
     </ModuleWrapper>
   )

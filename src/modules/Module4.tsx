@@ -8,24 +8,23 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   background-color: blue;
+  padding: 8px 16px;
 `
 
 const RedBox = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
 
   ${DESKTOP_STYLE} {
     background-color: red;
   }
   ${MOBILE_STYLE} {
-    background-color: yellow;
+    background-color: lightskyblue;
   }
-
 `
 
-export const Module1 = () => {
+export const Module4 = () => {
   return (
     <ModuleWrapper>
       <Container>
