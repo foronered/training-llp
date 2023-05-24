@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { DESKTOP_STYLE, MOBILE_BREAKPOINT, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const ContainerMain = styled.div`
@@ -10,31 +10,65 @@ const ContainerMain = styled.div`
   flex-direction: row;
 `
 const ContainerLeft = styled.div`
-  flex: 0 0 33%;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  ${DESKTOP_STYLE} {
+    flex: 0 0 33%;
+    height: 100%;
+  }
+  ${MOBILE_STYLE} {
+    flex: 0 0 20%;
+    height: 100%;
+  }
 `
 const PinkHeader = styled.div`
   height: 100px;
   background-color: #f702eb;
-  display: flex;
   padding: 20px;
-  justify-content: space-between;
+  display: flex;
+  ${DESKTOP_STYLE} {
+    justify-content: space-between;
+  }
+  ${MOBILE_STYLE} {
+    justify-content: center;
+  }
 `
 const BlueBox = styled.div`
-  height: 100%;
-  width: 70px;
   background-color: #00befd;
+  ${DESKTOP_STYLE} {
+    height: 100%;
+    width: 70px;
+  }
+  ${MOBILE_STYLE} {
+    flex: 1;
+    aspect-ratio: 1;
+  }
+`
+const BlueBox1 = styled.div`
+  ${DESKTOP_STYLE} {
+    height: 100%;
+    width: 70px;
+    background-color: #00befd;
+  }
+  ${MOBILE_STYLE} {
+    height: 0;
+    width: 0;
+  }
 `
 const RedContainer = styled.div`
   flex: 1;
-  padding: 50px;
-  gap: 20px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   background-color: red;
+  ${DESKTOP_STYLE} {
+    padding: 50px;
+    gap: 20px;
+  }
+  ${MOBILE_STYLE} {
+    padding: 20px;
+    gap: 20px;
+  }
 `
 const GreenBox = styled.div`
   flex: 0 0 60px;
@@ -43,15 +77,26 @@ const GreenBox = styled.div`
 `
 const YellowFooter = styled.div`
   height: 100px;
-  padding: 20px;
-  gap: 20px;
   display: flex;
+  padding: 20px;
   background-color: gold;
+  ${DESKTOP_STYLE} {
+    gap: 20px;
+  }
+  ${MOBILE_STYLE} {
+    justify-content: center;
+  }
 `
 const BlueLongBox = styled.div`
-  flex: 1;
-  height: 100;
-  background-color: #00befd;
+  ${DESKTOP_STYLE} {
+    flex: 1;
+    height: 100;
+    background-color: #00befd;
+  }
+  ${MOBILE_STYLE} {
+    height: 0;
+    width: 0;
+  }
 `
 const ContainerRight = styled.div`
   flex: 1;
@@ -63,37 +108,64 @@ const YellowHeader = styled.div`
   height: 100px;
   background-color: gold;
   display: flex;
-  padding: 20px;
-  padding-left: 30px;
   align-items: center;
-  justify-content: space-between;
+  padding: 20px;
+  ${DESKTOP_STYLE} {
+    justify-content: space-between;
+  }
+  ${MOBILE_STYLE} {
+    justify-content: center;
+    gap: 60px;
+  }
 `
 const RedLongBox = styled.div`
   height: calc(100% - 10px);
-  width: 250px;
+  width: 200px;
   background-color: red;
 `
 const BlueLongContainer = styled.div`
-  height: 100%;
-  width: 300px;
-  display: flex;
-  padding: 10px;
-  gap: 20px;
-  justify-content: space-between;
   background-color: #00befd;
+  display: flex;
+  ${DESKTOP_STYLE} {
+    height: 100%;
+    width: 300px;
+    padding: 10px;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  ${MOBILE_STYLE} {
+    height: 100%;
+    width: 100px;
+    padding: 10px 20px;
+  }
 `
 const RedBox = styled.div`
   flex: 1;
+  background-color: green;
+`
+const RedBox1 = styled.div`
   background-color: red;
+  ${DESKTOP_STYLE} {
+    flex: 1;
+  }
+  ${MOBILE_STYLE} {
+    flex: 0;
+  }
 `
 const BlueContainer = styled.div`
   flex: 1;
-  padding: 45px;
-  gap: 40px;
   display: flex;
   flex-wrap: wrap;
   overflow-y: auto;
   background-color: blue;
+  ${DESKTOP_STYLE} {
+    padding: 45px;
+    gap: 40px;
+  }
+  ${MOBILE_STYLE} {
+    padding: 45px 100px;
+    gap: 40px;
+  }
 `
 const BlueBigBox = styled.div`
   height: 200px;
@@ -107,7 +179,7 @@ export const Module25 = () => {
         <ContainerLeft>
           <PinkHeader>
             <BlueBox />
-            <BlueBox />
+            <BlueBox1 />
           </PinkHeader>
           <RedContainer>
             {[...Array(36)].map((_, idx) => (
@@ -124,9 +196,9 @@ export const Module25 = () => {
             <RedLongBox />
             <BlueLongContainer>
               <RedBox />
-              <RedBox />
-              <RedBox />
-              <RedBox />
+              <RedBox1 />
+              <RedBox1 />
+              <RedBox1 />
             </BlueLongContainer>
           </YellowHeader>
           <BlueContainer>

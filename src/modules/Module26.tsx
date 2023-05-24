@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { DESKTOP_STYLE, MOBILE_BREAKPOINT, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const ContainerMain = styled.div`
@@ -10,7 +10,6 @@ const ContainerMain = styled.div`
 `
 const ContainerLeft = styled.div`
   flex: 1;
-  height: 100%;
   display: flex;
   flex-direction: column;
 `
@@ -28,9 +27,15 @@ const GreenSmallBox = styled.div`
   background-color: lime;
 `
 const GreenLongBox = styled.div`
-  height: 45px;
-  width: 100%;
   background-color: lime;
+  ${DESKTOP_STYLE} {
+    height: 45px;
+    width: 100%;
+  }
+  ${MOBILE_STYLE} {
+    height: 0px;
+    width: 0px;
+  }
 `
 const YellowFooter = styled.div`
   flex: 1;
@@ -43,16 +48,29 @@ const YellowFooter = styled.div`
 const GreenBox = styled.div`
   width: 100%;
   background-color: lime;
+  ${MOBILE_STYLE} {
+    height: 70px;
+  }
 `
 const RedBox = styled.div`
-  flex: 1;
   background-color: red;
+  ${DESKTOP_STYLE} {
+    flex: 1;
+  }
+  ${MOBILE_STYLE} {
+    width: 0;
+    height: 0;
+  }
 `
 const ContainerRight = styled.div`
-  flex: 2;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  ${DESKTOP_STYLE} {
+    flex: 2;
+  }
+  ${MOBILE_STYLE} {
+    flex: 6;
+  }
 `
 const YellowHeader = styled.div`
   height: 100px;
@@ -61,6 +79,11 @@ const YellowHeader = styled.div`
   padding: 20px;
   gap: 20px;
   align-items: center;
+  ${DESKTOP_STYLE} {
+  }
+  ${MOBILE_STYLE} {
+    flex-wrap: wrap;
+  }
 `
 const RedSmallBox = styled.div`
   height: calc(100% - 5px);

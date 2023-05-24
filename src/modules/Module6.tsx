@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { DESKTOP_STYLE, MOBILE_BREAKPOINT, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -9,6 +9,9 @@ const Container = styled.div`
   display: flex;
   padding: 8px 16px;
   background-color: blue;
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+  }
 `
 const RedBox = styled.div`
   flex: 0 0 300px;
@@ -17,7 +20,7 @@ const RedBox = styled.div`
 `
 
 const GreenBox = styled.div`
-  //Why (flex: 0 0 110%;) instead of (flex: 1;) doesn't work?
+  //Why (flex: 0 0 100%;) instead of (flex: 1;) doesn't work?
   flex: 1;
   height: 100%;
   background-color: #49ff49;

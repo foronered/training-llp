@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { DESKTOP_STYLE, MOBILE_BREAKPOINT, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -9,29 +9,42 @@ const Container = styled.div`
   display: flex;
   padding: 8px 16px;
   background-color: blue;
+  ${MOBILE_STYLE} {
+    flex-direction: column;
+  }
+`
+const SubContainer = styled.div`
+  display: flex;
+  ${DESKTOP_STYLE} {
+    flex: 2;
+  }
+  ${MOBILE_STYLE} {
+    flex: 1;
+  }
 `
 const RedBox = styled.div`
-  flex: 0 0 25%;
-  height: 100%;
+  flex: 1;
   background-color: red;
 `
 const OrangeBox = styled.div`
-  flex: 0 0 25%;
+  flex: 1;
   height: 100%;
   background-color: orange;
 `
 const GreenBox = styled.div`
-  flex: 1;
+  flex: 2;
   height: 100%;
-  background-color: #49ff49;
+  background-color: lime;
 `
 
 export const Module7 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox />
-        <OrangeBox />
+        <SubContainer>
+          <RedBox />
+          <OrangeBox />
+        </SubContainer>
         <GreenBox />
       </Container>
     </ModuleWrapper>

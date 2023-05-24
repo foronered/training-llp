@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { DESKTOP_STYLE, MOBILE_BREAKPOINT, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -10,19 +10,30 @@ const Container = styled.div`
   flex-direction: column;
 `
 const GreenHeader = styled.div`
-  height: 120px;
-  background-color: greenyellow;
+  background-color: lime;
   display: flex;
-  padding: 20px;
-  justify-content: space-between;
+  ${DESKTOP_STYLE} {
+    justify-content: space-between;
+    padding: 20px;
+    height: 100px;
+  }
+  ${MOBILE_STYLE} {
+    height: 150px;
+    //Why can't I control Height on desktop version with flex = 1 while I can on mobile version??
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 160px;
+    gap: 30px;
+  }
 `
 const PinkBox = styled.div`
-  height: 100%;
+  height: 70px;
   width: 150px;
   background-color: pink;
 `
 const PinkLongBox = styled.div`
-  height: 100%;
+  height: 70px;
   width: 400px;
   background-color: pink;
 `
@@ -34,10 +45,12 @@ const RedBox = styled.div`
   flex-direction: column;
   overflow-y: auto;
   background-color: red;
+  ${MOBILE_STYLE} {
+    padding: 40px 200px;
+  }
 `
 const BlueBox = styled.div`
-  flex: 0 0 60px;
-  width: 100%;
+  flex: 0 0 80px;
   background-color: blue;
 `
 export const Module23 = () => {

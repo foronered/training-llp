@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MOBILE_BREAKPOINT } from '../constants'
+import { DESKTOP_STYLE, MOBILE_BREAKPOINT, MOBILE_STYLE } from '../constants'
 import { ModuleWrapper } from './common'
 
 const Container = styled.div`
@@ -10,46 +10,84 @@ const Container = styled.div`
   flex-direction: column;
 `
 const GreenHeader = styled.div`
-  height: 120px;
-  background-color: greenyellow;
+  background-color: lime;
   display: flex;
   padding: 20px;
-  justify-content: space-between;
+  ${DESKTOP_STYLE} {
+    height: 120px;
+    justify-content: space-between;
+  }
+  ${MOBILE_STYLE} {
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+  }
 `
 const GreenFooter = styled.div`
-  height: 120px;
-  background-color: greenyellow;
+  background-color: lime;
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
+  ${DESKTOP_STYLE} {
+    align-items: flex-start;
+    height: 120px;
+    padding: 20px;
+  }
+  ${MOBILE_STYLE} {
+    height: 250px;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+  }
 `
 const PinkBox = styled.div`
-  height: 100%;
+  height: 100px;
   width: 150px;
   background-color: pink;
 `
 const PinkBox1 = styled.div`
-  height: 100%;
-  width: 130px;
   background-color: pink;
+  ${DESKTOP_STYLE} {
+    height: 100%;
+    width: 130px;
+  }
+  ${MOBILE_STYLE} {
+    height: 90px;
+    width: 150px;
+  }
 `
 const PinkBox2 = styled.div`
-  height: 100%;
-  align-self: end;
-  width: 150px;
   background-color: pink;
-  margin-left: auto;
+  ${DESKTOP_STYLE} {
+    align-self: end;
+    height: 100%;
+    width: 150px;
+  }
+  ${MOBILE_STYLE} {
+    height: 90px;
+    width: 150px;
+  }
 `
 const PinkLongBox1 = styled.div`
-  height: 100%;
-  width: 400px;
-  background-color: pink;
+  ${DESKTOP_STYLE} {
+    height: 100%;
+    width: 400px;
+    background-color: pink;
+  }
+  ${MOBILE_STYLE} {
+    flex: 0;
+  }
 `
 const PinkLongBox2 = styled.div`
-  height: 100%;
-  width: 400px;
   background-color: pink;
+  ${DESKTOP_STYLE} {
+    height: 100%;
+    width: 400px;
+  }
+  ${MOBILE_STYLE} {
+    height: 90px;
+    width: 400px;
+  }
 `
 const RedBox = styled.div`
   flex: 1;
@@ -59,6 +97,9 @@ const RedBox = styled.div`
   flex-direction: column;
   overflow-y: auto;
   background-color: red;
+  ${MOBILE_STYLE} {
+    padding: 40px 200px;
+  }
 `
 const BlueBox = styled.div`
   flex: 0 0 60px;
