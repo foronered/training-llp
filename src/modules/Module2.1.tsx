@@ -9,27 +9,35 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: red;
+  background-color: blue;
 `
 
 const RedBox = styled.div`
+  background-color: red;
   width: 200px;
   height: 200px;
-
+  padding: 8px 8px 0px;
+  overflow-y: scroll;
+`
+const GreenBox = styled.div`
+  width: 100%;
+  height: 500px;
   @media (min-width: ${MOBILE_BREAKPOINT}) {
-    background-color: yellow;
+    background-color: green;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    background-color: red;
+    background-color: orange;
   }
 `
 
-export const Module1 = () => {
+export const Module21 = () => {
   return (
     <ModuleWrapper>
       <Container>
-        <RedBox />
+        <RedBox>
+          <GreenBox />
+        </RedBox>
       </Container>
     </ModuleWrapper>
   )

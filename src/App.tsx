@@ -1,12 +1,15 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 
-import { Module1 } from './modules/Module1'
 import { Module7 } from './modules/Module7'
 import { Module8 } from './modules/Module8'
 import { Module9 } from './modules/Module9'
 import { Module10 } from './modules/Module10'
 import { Module11 } from './modules/Module11'
+import { Module21 } from './modules/Module2.1'
+import { Module22 } from './modules/Module2.2'
+import { Module23 } from './modules/Module2.3'
+import { Module24 } from './modules/Module2.4'
 const GlobalStyle = createGlobalStyle`
   html {
     margin: 0;
@@ -27,14 +30,13 @@ const GlobalStyle = createGlobalStyle`
 const Wrapper = styled.div`
   padding: 32px;
 `
-const StyledModule1 = styled(Module1)`
+const StyledModule1 = styled(Module7)`
   margin-bottom: 20px; // Adjust the value to get the desired space
 `
 export const App = () => {
   return (
     <Wrapper>
       <GlobalStyle />
-      <Module1 />
       <div style={{ height: '20px' }}></div>{' '}
       {/* Adjust the height for more or less space */}
       <Module7 />
@@ -42,6 +44,10 @@ export const App = () => {
       <div style={{ height: '20px' }}></div> <Module9 />
       <div style={{ height: '20px' }}></div> <Module10 />
       <div style={{ height: '20px' }}></div> <Module11 />
+      <div style={{ height: '20px' }}></div> <Module21 />
+      <div style={{ height: '20px' }}></div> <Module22 />
+      <div style={{ height: '20px' }}></div> <Module23 />
+      <div style={{ height: '20px' }}></div> <Module24 />
     </Wrapper>
   )
 }
