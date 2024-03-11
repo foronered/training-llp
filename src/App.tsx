@@ -10,6 +10,7 @@ import { Module21 } from './modules/Module2.1'
 import { Module22 } from './modules/Module2.2'
 import { Module23 } from './modules/Module2.3'
 import { Module24 } from './modules/Module2.4'
+import { Module25 } from './modules/Module2.5'
 const GlobalStyle = createGlobalStyle`
   html {
     margin: 0;
@@ -48,6 +49,7 @@ export const App = () => {
       <div style={{ height: '20px' }}></div> <Module22 />
       <div style={{ height: '20px' }}></div> <Module23 />
       <div style={{ height: '20px' }}></div> <Module24 />
+      <div style={{ height: '20px' }}></div> <Module25 />
     </Wrapper>
   )
 }
