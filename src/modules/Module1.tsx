@@ -9,7 +9,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: blue;
+  background-color: red;
 `
 
 const RedBox = styled.div`
