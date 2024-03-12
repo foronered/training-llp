@@ -14,15 +14,13 @@ const Container = styled.div`
 
 const RedBox = styled.div`
   background-color: red;
+  width: 100%;
+  height: 25%;
+
   @media (min-width: ${MOBILE_BREAKPOINT}) {
     width: 300px;
     height: 100%;
   }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-  }
-  width: 100%;
-  height: 25%;
 `
 const BlueBox = styled.div`
   background-color: blue;

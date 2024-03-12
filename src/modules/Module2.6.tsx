@@ -7,13 +7,20 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
+
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 80px 1fr 160px;
-  background-color: red;
+  background-color: blue;
   @media (min-width: ${MOBILE_BREAKPOINT}) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 80px 1fr 160px;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 160px 1fr 160px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 `
 
@@ -25,7 +32,14 @@ const YellowBarRight = styled.div`
   grid-column: 2;
   grid-row: 1;
   display: flex;
-  justify-content: space-between;
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    justify-content: space-between;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+  }
 `
 
 const YellowYellow = styled.div`
@@ -38,7 +52,7 @@ const YellowYellow = styled.div`
 `
 const YellowBlueRight = styled.div`
   background-color: blue;
-  height: 100%;
+  height: 60px;
   width: 200px;
   padding: 8px;
   display: grid;
@@ -46,9 +60,6 @@ const YellowBlueRight = styled.div`
   grid-template-columns: repeat(4, 1fr);
 `
 const YellowBarBot = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   background-color: yellow;
   padding: 20px;
   height: 100%;
@@ -56,6 +67,17 @@ const YellowBarBot = styled.div`
   grid-column: 1;
   grid-row: 3;
   gap: 20px;
+
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+    justify-content: center;
+  }
 `
 
 const RedBox = styled.div`
@@ -68,14 +90,12 @@ const RedBox = styled.div`
   flex: 1;
   padding: 8px 8px 0px;
   gap: 8px;
-  overflow-y: scroll;
-
+  width: 100%;
   @media (min-width: ${MOBILE_BREAKPOINT}) {
-    width: 100%;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: 40%;
+    align-items: center;
   }
 `
 const GreenSquare = styled.div`
@@ -85,15 +105,20 @@ const GreenSquare = styled.div`
   background-color: #00ff51;
 `
 const RedSquare = styled.div`
-  flex: 0 0 auto;
   width: 100%;
   height: 100%;
   background-color: #ff0011;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
+  }
 `
 const RedSquareYellow = styled.div`
   flex: 0 0 auto;
-  width: 60px;
-  height: 100%;
+  width: 40px;
+  height: 40px;
   background-color: #ff0011;
 `
 const GreenBoxLong = styled.div`
@@ -101,26 +126,43 @@ const GreenBoxLong = styled.div`
   width: 100%;
   height: 40px;
   background-color: #00ff51;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
+  }
 `
 const GreenBoxLong2 = styled.div`
-  grid-column: 1/4;
-  grid-row: 1;
-  flex: 0 0 auto;
-  width: 100%;
   height: 60px;
   background-color: #00ff51;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    grid-column: 1/4;
+    grid-row: 1;
+    width: 100%;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 60px;
+  }
 `
 const BlueMain = styled.div`
   grid-column: 2;
   grid-row: 2 / 4;
-  display: grid;
+
   overflow-y: hidden;
   grid-template-columns: 2fr 1fr;
   background-color: blue;
   width: 100%;
   height: 100%;
-  padding: 8px;
   gap: 8px;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    display: grid;
+    padding: 8px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  }
 `
 
 const BrightBlueBox1 = styled.div`
@@ -134,6 +176,11 @@ const BrightBlueBox1 = styled.div`
   gap: 8px;
   padding: 8px;
   overflow-y: scroll;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+  }
 `
 const BrightBlueBox2 = styled.div`
   grid-column: 2;
@@ -145,28 +192,34 @@ const BrightBlueBox2 = styled.div`
   gap: 8px;
   padding: 8px;
   overflow-y: scroll;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
+  }
 `
 const RedBoxRightLong = styled.div`
   flex: 0 0 auto;
   width: 100%;
-  height: 100%;
+  height: 40px;
   background-color: red;
 `
 const RedBoxTopRight1 = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
   background-color: red;
   grid-column: 1;
 `
 const RedBoxTopRight2 = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
   background-color: red;
   grid-column: 2;
 `
 const RedBoxTopRight4 = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
   background-color: red;
   grid-column: 4;
 `
@@ -179,23 +232,36 @@ const GreenBoxesArray = styled.div`
 
 const GreenBoxesArrayLeft = styled.div`
   display: flex;
-  flex-direction: row;
+
   width: 100%;
   height: auto;
-  background-color: #4cb94c;
+  background-color: #14cc26;
   padding: 8px;
-  flex: 0 0 auto;
   gap: 8px;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: row;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const RedBoxScroll = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   background-color: #ef1414;
 `
 const BlueBarScroll = styled.div`
-  flex: 1;
-  height: 100px;
+  height: 70px;
   background-color: #14c3ef;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    flex: 1;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 200px;
+  }
 `
 export const Module26 = () => {
   const threeredboxes = Array.from({ length: 3 }).map((_, index) => (

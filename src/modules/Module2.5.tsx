@@ -9,11 +9,14 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 80px 1fr 80px;
-  background-color: red;
+  background-color: blue;
+
   @media (min-width: ${MOBILE_BREAKPOINT}) {
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
+    padding-left: 100px;
+    padding-right: 100px;
   }
 `
 const BlueMain = styled.div`
@@ -21,13 +24,21 @@ const BlueMain = styled.div`
   grid-row: 2 / 4;
   display: grid;
   overflow-y: scroll;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(6, 200px);
+
   background-color: blue;
   width: 100%;
   height: 100%;
-  padding: 8px 80px 8px 8px;
   gap: 8px;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 200px);
+    padding: 8px 80px 8px 8px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    grid-template-rows: repeat(6, 200px);
+    padding: 8px;
+  }
 `
 const PinkBar = styled.div`
   background-color: pink;
@@ -36,9 +47,17 @@ const PinkBar = styled.div`
   width: 100%;
   grid-column: 1;
   grid-row: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
   gap: 8px;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    display: grid;
+    grid-template-columns: 70px 1fr 70px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+    justify-content: center;
+  }
 `
 const YellowBarRight = styled.div`
   background-color: yellow;
@@ -60,16 +79,45 @@ const YellowYellow = styled.div`
 const YellowBlueRight = styled.div`
   background-color: blue;
   height: 100%;
-  width: 200px;
+
   padding: 8px;
-  display: grid;
+
   gap: 8px;
-  grid-template-columns: repeat(4, 1fr);
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    width: 200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+  }
+`
+
+const RedFillGridsingle = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 50px;
+    height: 100%;
+  }
 `
 const RedFillGrid = styled.div`
   width: 100%;
   height: 100%;
   background-color: red;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
+  }
 `
 const YellowBarBot = styled.div`
   background-color: yellow;
@@ -78,9 +126,18 @@ const YellowBarBot = styled.div`
   width: 100%;
   grid-column: 1;
   grid-row: 3;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
   gap: 8px;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 const RedBox = styled.div`
@@ -92,27 +149,40 @@ const RedBox = styled.div`
   padding: 8px 8px 0px;
   gap: 8px;
   overflow-y: scroll;
-
+  width: 100%;
   @media (min-width: ${MOBILE_BREAKPOINT}) {
-    width: 100%;
   }
 
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    width: 40%;
+    align-items: center;
   }
 `
 const GreenBox = styled.div`
   flex: 0 0 auto;
-  width: 100%;
-  height: 100px;
+
   background-color: green;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+    height: 100px;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 60px;
+    height: 60px;
+  }
 `
 const BlueSquare1 = styled.div`
-  flex: 0 0 auto;
-  grid-column: 1;
-  width: 100%;
-  height: 100%;
   background-color: #0096ff;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    width: 60px;
+    height: 60px;
+  }
 `
 const BlueSquare5 = styled.div`
   flex: 0 0 auto;
@@ -120,13 +190,26 @@ const BlueSquare5 = styled.div`
   width: 100%;
   height: 100%;
   background-color: #0096ff;
+  grid-column: 3;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
+  }
 `
 const BlueSquareLong = styled.div`
   flex: 0 0 auto;
-  grid-column: 3/6;
+  grid-column: 2;
   width: 100%;
   height: 100%;
   background-color: #0096ff;
+  @media (min-width: ${MOBILE_BREAKPOINT}) {
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: none;
+  }
 `
 const BrightBlueBox = styled.div`
   flex: 0 0 auto;
@@ -149,7 +232,7 @@ export const Module25 = () => {
     <BrightBlueBox key={index} />
   ))
 
-  const redboxes = Array.from({ length: 4 }).map((_, index) => (
+  const redboxes = Array.from({ length: 3 }).map((_, index) => (
     <RedFillGrid key={index} />
   ))
   return (
@@ -170,7 +253,10 @@ export const Module25 = () => {
           <YellowYellow>
             <RedBoxRightLong />
           </YellowYellow>
-          <YellowBlueRight>{redboxes}</YellowBlueRight>
+          <YellowBlueRight>
+            <RedFillGridsingle />
+            {redboxes}
+          </YellowBlueRight>
         </YellowBarRight>
 
         <BlueMain> {blueboxes} </BlueMain>
