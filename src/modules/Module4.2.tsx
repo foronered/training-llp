@@ -15,10 +15,31 @@ const Container = styled.div`
 
 const RedBox = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: red;
-  width: 100px;
+  width: 400px;
   height: 100px;
 `
+
+const BlueBox = styled.div`
+  position: relative;
+  background-color: blue;
+  width: 200px;
+  height: 50px;
+`
+const BlackDot = styled.div`
+  position: absolute;
+  width: 25px; // size of the dot
+  height: 25px; // size of the dot
+  background-color: black; // color of the dot
+  border-radius: 50%; // makes the square a circle
+  top: 0%; // position from the top inside the container
+  left: 100%; // position from the left inside the container
+  transform: translate(-50%, -50%); // centers the dot in the container
+`
+
 const Dot = styled.div`
   position: absolute;
   width: 50px; // size of the dot
@@ -41,26 +62,16 @@ const DotInside = styled.div`
   transform: translate(-50%, -50%); // centers the dot in the container
 `
 
-export const Module41 = () => {
+export const Module42 = () => {
   return (
     <ModuleWrapper>
       <Container>
         <RedBox>
-          <Dot>
-            <DotInside />
-          </Dot>
-        </RedBox>
-        <RedBox>
-          <Dot>
-            <DotInside />
-          </Dot>
-        </RedBox>
-        <RedBox>
-          <Dot>
-            <DotInside />
-          </Dot>
-        </RedBox>
-        <RedBox>
+          <BlueBox>
+            <BlackDot style={{ top: '100%', left: '0%' }} />
+            <BlackDot style={{ top: '10%', left: '50%' }} />
+            <BlackDot style={{ top: '100%', left: '100%' }} />
+          </BlueBox>
           <Dot>
             <DotInside />
           </Dot>
